@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基金评估报告 - 2026年6月22日</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.6; color: #333; max-width: 1200px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
+        .container { background: white; border-radius: 12px; padding: 30px; box-shadow: 0 2px 12px rgba(0,0,0,0.1); }
+        h1 { color: #1a73e8; border-bottom: 3px solid #1a73e8; padding-bottom: 15px; margin-bottom: 25px; }
+        h2 { color: #2c3e50; border-left: 4px solid #1a73e8; padding-left: 15px; margin-top: 30px; }
+        h3 { color: #34495e; margin-top: 25px; }
+        .summary-box { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 10px; padding: 25px; margin: 20px 0; }
+        .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 15px; }
+        .summary-item { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 15px; text-align: center; }
+        .summary-item .value { font-size: 28px; font-weight: bold; margin: 5px 0; }
+        .summary-item .label { font-size: 14px; opacity: 0.9; }
+        .positive { color: #e74c3c; }
+        .negative { color: #27ae60; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+        th, td { padding: 12px 10px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        th { background: #f8f9fa; font-weight: 600; color: #2c3e50; }
+        tr:hover { background: #f8f9fa; }
+        .fund-card { border: 1px solid #e0e0e0; border-radius: 8px; padding: 15px; margin: 10px 0; background: #fafafa; }
+        .fund-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .fund-name { font-weight: 600; font-size: 16px; }
+        .fund-code { color: #666; font-size: 13px; }
+        .fund-metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+        .metric { text-align: center; padding: 8px; background: white; border-radius: 6px; }
+        .metric-value { font-size: 18px; font-weight: bold; }
+        .metric-label { font-size: 12px; color: #666; }
+        .up { color: #e74c3c; }
+        .down { color: #27ae60; }
+        .news-item { border-left: 3px solid #1a73e8; padding: 10px 15px; margin: 15px 0; background: #f8f9fa; }
+        .news-source { font-size: 12px; color: #666; margin-bottom: 5px; }
+        .news-title { font-weight: 600; margin-bottom: 5px; }
+        .recommendation { background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 15px; margin: 15px 0; }
+        .recommendation.buy { background: #d4edda; border-color: #28a745; }
+        .recommendation.sell { background: #f8d7da; border-color: #dc3545; }
+        .recommendation.hold { background: #e2e3e5; border-color: #6c757d; }
+        .tag { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 12px; margin-right: 5px; }
+        .tag-ding { background: #e3f2fd; color: #1976d2; }
+        .tag-jinxuan { background: #fff3e0; color: #f57c00; }
+        .footer { margin-top: 40px; padding-top: 20px; border-top: 2px solid #e0e0e0; text-align: center; color: #666; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 基金持仓评估报告</h1>
+        <p style="color: #666; margin-bottom: 25px;">报告日期：2026年6月22日（周一） | 数据截止时间：14:30</p>
+
+        <!-- 账户总览 -->
+        <div class="summary-box">
+            <h2 style="color: white; border: none; padding: 0; margin: 0 0 15px 0;">💰 账户总览</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="label">总资产</div>
+                    <div class="value">107,143 元</div>
+                </div>
+                <div class="summary-item">
+                    <div class="label">昨日收益</div>
+                    <div class="value" style="color: #ff6b6b;">-531 元</div>
+                </div>
+                <div class="summary-item">
+                    <div class="label">持有收益</div>
+                    <div class="value" style="color: #ff6b6b;">-18,747 元</div>
+                </div>
+                <div class="summary-item">
+                    <div class="label">累计收益</div>
+                    <div class="value" style="color: #51cf66;">+10,827 元</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 持仓分布 -->
+        <h2>📈 持仓分布</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>行业/类型</th>
+                    <th>金额</th>
+                    <th>占比</th>
+                    <th>平均盈亏</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>🥇 黄金</td><td>18,370 元</td><td>17.1%</td><td class="down">-3.00%</td></tr>
+                <tr><td>⚖️ 均衡/价值</td><td>25,277 元</td><td>23.6%</td><td>混合</td></tr>
+                <tr><td>🌍 QDII（海外）</td><td>13,638 元</td><td>12.7%</td><td class="up">+24%</td></tr>
+                <tr><td>🔋 新能源/光伏</td><td>16,445 元</td><td>15.3%</td><td class="down">-15%</td></tr>
+                <tr><td>💊 医疗健康</td><td>10,922 元</td><td>10.2%</td><td class="down">-40%</td></tr>
+                <tr><td>🍶 白酒/消费</td><td>11,893 元</td><td>11.1%</td><td class="down">-45%</td></tr>
+                <tr><td>💻 科技（5G/芯片）</td><td>11,510 元</td><td>10.7%</td><td>混合</td></tr>
+                <tr><td>📊 券商</td><td>10,557 元</td><td>9.8%</td><td class="down">-19%</td></tr>
+            </tbody>
+        </table>
+
+        <!-- 今日表现 -->
+        <h2>📊 今日基金表现（实时估值）</h2>
+        
+        <div class="fund-card">
+            <div class="fund-header">
+                <div>
+                    <span class="fund-name">华安黄金 ETF 联接 C</span>
+                    <span class="fund-code">000217</span>
+                </div>
+                <span class="tag">避险资产</span>
+            </div>
+            <div class="fund-metrics">
+                <div class="metric"><div class="metric-value down">-2.33%</div><div class="metric-label">今日涨跌</div></div>
+                <div class="metric"><div class="metric-value">3.0824 元</div><div class="metric-label">实时估值</div></div>
+                <div class="metric"><div class="metric-value">18,370 元</div><div class="metric-label">持有金额</div></div>
+                <div class="metric"><div class="metric-value down">-3.00%</div><div class="metric-label">持有收益</div></div>
+            </div>
+        </div>
+
+        <div class="fund-card">
+            <div class="fund-header">
+                <div>
+                    <span class="fund-name">交银定期支付双息平衡混合</span>
+                    <span class="fund-code">519732</span>
+                </div>
+                <span class="tag tag-ding">定投</span>
+            </div>
+            <div class="fund-metrics">
+                <div class="metric"><div class="metric-value up">+1.01%</div><div class="metric-label">今日涨跌</div></div>
+                <div class="metric"><div class="metric-value">10.5012 元</div><div class="metric-label">实时估值</div></div>
+                <div class="metric"><div class="metric-value">5,360 元</div><div class="metric-label">持有金额</div></div>
+                <div class="metric"><div class="metric-value up">+70.35%</div><div class="metric-label">持有收益</div></div>
+            </div>
+            <p style="margin-top: 10px; color: #27ae60; font-size: 14px;">⭐ 表现最优基金，持续保持领先</p>
+        </div>
+
+        <div class="fund-card">
+            <div class="fund-header">
+                <div>
+                    <span class="fund-name">华夏中证 5G 通信主题 ETF 联接 A</span>
+                    <span class="fund-code">515880</span>
+                </div>
+                <span class="tag tag-jinxuan">金选指数</span>
+            </div>
+            <div class="fund-metrics">
+                <div class="metric"><div class="metric-value up">+1.37%</div><div class="metric-label">今日涨跌</div></div>
+                <div class="metric"><div class="metric-value">1.8450 元</div><div class="metric-label">实时估值</div></div>
+                <div class="metric"><div class="metric-value">4,516 元</div><div class="metric-label">持有金额</div></div>
+                <div class="metric"><div class="metric-value up">+29.03%</div><div class="metric-label">持有收益</div></div>
+            </div>
+        </div>
+
+        <div class="fund-card">
+            <div class="fund-header">
+                <div>
+                    <span class="fund-name">广发全球精选股票 (QDII)A</span>
+                    <span class="fund-code">270023</span>
+                </div>
+                <span class="tag">QDII</span>
+            </div>
+            <div class="fund-metrics">
+                <div class="metric"><div class="metric-value up">+0.08%</div><div class="metric-label">今日涨跌</div></div>
+                <div class="metric"><div class="metric-value">7.0993 元</div><div class="metric-label">实时估值</div></div>
+                <div class="metric"><div class="metric-value">11,682 元</div><div class="metric-label">持有金额</div></div>
+                <div class="metric"><div class="metric-value up">+37.42%</div><div class="metric-label">持有收益</div></div>
+            </div>
+        </div>
+
+        <div class="fund-card">
+            <div class="fund-header">
+                <div>
+                    <span class="fund-name">华夏国证半导体芯片 ETF 联接 C</span>
+                    <span class="fund-code">008889</span>
+                </div>
+                <span class="tag tag-ding">定投</span>
+            </div>
+            <div class="fund-metrics">
+                <div class="metric"><div class="metric-value up">+1.34%</div><div class="metric-label">今日涨跌</div></div>
+                <div class="metric"><div class="metric-value">3.0264 元</div><div class="metric-label">实时估值</div></div>
+                <div class="metric"><div class="metric-value">6,994 元</div><div class="metric-label">持有金额</div></div>
+                <div class="metric"><div class="metric-value down">-19.00%</div><div class="metric-label">持有收益</div></div>
+            </div>
+            <p style="margin-top: 10px; color: #1a73e8; font-size: 14px;">📈 今日反弹 +1,033 元，关注持续性</p>
+        </div>
+
+        <div class="fund-card">
+            <div class="fund-header">
+                <div>
+                    <span class="fund-name">易方达沪深 300ETF 联接 A</span>
+                    <span class="fund-code">110020</span>
+                </div>
+                <span class="tag">宽基指数</span>
+            </div>
+            <div class="fund-metrics">
+                <div class="metric"><div class="metric-value up">+2.18%</div><div class="metric-label">今日涨跌</div></div>
+                <div class="metric"><div class="metric-value">2.0375 元</div><div class="metric-label">实时估值</div></div>
+                <div class="metric"><div class="metric-value">5,592 元</div><div class="metric-label">持有金额</div></div>
+                <div class="metric"><div class="metric-value up">+56.82%</div><div class="metric-label">持有收益</div></div>
+            </div>
+        </div>
+
+        <div class="fund-card">
+            <div class="fund-header">
+                <div>
+                    <span class="fund-name">南方中证全指证券公司 ETF 联接 A</span>
+                    <span class="fund-code">512900</span>
+                </div>
+            </div>
+            <div class="fund-metrics">
+                <div class="metric"><div class="metric-value up" style="font-size: 22px;">+7.10%</div><div class="metric-label">今日涨跌</div></div>
+                <div class="metric"><div class="metric-value">1.1108 元</div><div class="metric-label">实时估值</div></div>
+                <div class="metric"><div class="metric-value">10,557 元</div><div class="metric-label">持有金额</div></div>
+                <div class="metric"><div class="metric-value down">-19.06%</div><div class="metric-label">持有收益</div></div>
+            </div>
+            <p style="margin-top: 10px; color: #e74c3c; font-size: 14px;">🔥 今日大涨 +7.10%，券商板块强势反弹</p>
+        </div>
+
+        <div class="fund-card">
+            <div class="fund-header">
+                <div>
+                    <span class="fund-name">农银新能源混合 A</span>
+                    <span class="fund-code">002190</span>
+                </div>
+            </div>
+            <div class="fund-metrics">
+                <div class="metric"><div class="metric-value up">+2.79%</div><div class="metric-label">今日涨跌</div></div>
+                <div class="metric"><div class="metric-value">3.1691 元</div><div class="metric-label">实时估值</div></div>
+                <div class="metric"><div class="metric-value">10,754 元</div><div class="metric-label">持有金额</div></div>
+                <div class="metric"><div class="metric-value down">-8.48%</div><div class="metric-label">持有收益</div></div>
+            </div>
+        </div>
+
+        <div class="fund-card">
+            <div class="fund-header">
+                <div>
+                    <span class="fund-name">汇添富价值精选混合 A</span>
+                    <span class="fund-code">519069</span>
+                </div>
+            </div>
+            <div class="fund-metrics">
+                <div class="metric"><div class="metric-value up">+1.49%</div><div class="metric-label">今日涨跌</div></div>
+                <div class="metric"><div class="metric-value">3.6183 元</div><div class="metric-label">实时估值</div></div>
+                <div class="metric"><div class="metric-value">14,525 元</div><div class="metric-label">持有金额</div></div>
+                <div class="metric"><div class="metric-value down">-11.73%</div><div class="metric-label">持有收益</div></div>
+            </div>
+        </div>
+
+        <div class="fund-card">
+            <div class="fund-header">
+                <div>
+                    <span class="fund-name">中欧医疗健康混合 C</span>
+                    <span class="fund-code">003096</span>
+                </div>
+                <span class="tag tag-ding">定投</span>
+            </div>
+            <div class="fund-metrics">
+                <div class="metric"><div class="metric-value up">+1.16%</div><div class="metric-label">今日涨跌</div></div>
+                <div class="metric"><div class="metric-value">1.5142 元</div><div class="metric-label">实时估值</div></div>
+                <div class="metric"><div class="metric-value">6,748 元</div><div class="metric-label">持有金额</div></div>
+                <div class="metric"><div class="metric-value down">-43.27%</div><div class="metric-label">持有收益</div></div>
+            </div>
+        </div>
+
+        <div class="fund-card">
+            <div class="fund-header">
+                <div>
+                    <span class="fund-name">景顺长城新兴成长混合 A</span>
+                    <span class="fund-code">260108</span>
+                </div>
+                <span class="tag tag-ding">定投</span>
+            </div>
+            <div class="fund-metrics">
+                <div class="metric"><div class="metric-value up">+0.71%</div><div class="metric-label">今日涨跌</div></div>
+                <div class="metric"><div class="metric-value">1.4251 元</div><div class="metric-label">实时估值</div></div>
+                <div class="metric"><div class="metric-value">7,602 元</div><div class="metric-label">持有金额</div></div>
+                <div class="metric"><div class="metric-value down">-47.93%</div><div class="metric-label">持有收益</div></div>
+            </div>
+        </div>
+
+        <div class="fund-card">
+            <div class="fund-header">
+                <div>
+                    <span class="fund-name">招商中证白酒指数 (LOF)A</span>
+                    <span class="fund-code">161725</span>
+                </div>
+                <span class="tag tag-ding">定投</span>
+            </div>
+            <div class="fund-metrics">
+                <div class="metric"><div class="metric-value up">+0.98%</div><div class="metric-label">今日涨跌</div></div>
+                <div class="metric"><div class="metric-value">0.5285 元</div><div class="metric-label">实时估值</div></div>
+                <div class="metric"><div class="metric-value">3,935 元</div><div class="metric-label">持有金额</div></div>
+                <div class="metric"><div class="metric-value down">-47.63%</div><div class="metric-label">持有收益</div></div>
+            </div>
+        </div>
+
+        <!-- 财经新闻 -->
+        <h2>📰 财经新闻摘要</h2>
+        
+        <h3>🔴 财联社重点事件</h3>
+        <div class="news-item">
+            <div class="news-source">财联社 | 2026-06-22</div>
+            <div class="news-title">本周重要事件密集</div>
+            <p>第四届中国国际供应链促进博览会（6.22-26）、大连夏季达沃斯论坛（6.23-25）、英伟达年度线上会议（6.24）、世界移动通信大会（6.24-26）等重要活动本周举行，关注相关板块机会。</p>
+        </div>
+
+        <h3>📈 东方财富市场观点</h3>
+        <div class="news-item">
+            <div class="news-source">东方财富 | 2026-06-22</div>
+            <div class="news-title">周末利好堆积 中东局势生变</div>
+            <p>中东局势持续变化，美伊谈判进程反复。市场关注地缘政治对原油、黄金等大宗商品的影响。国内方面，周末政策利好频出，关注资本市场改革预期。</p>
+        </div>
+
+        <h3>💹 金十数据全球市场</h3>
+        <div class="news-item">
+            <div class="news-source">金十数据 | 2026-06-19</div>
+            <div class="news-title">美联储降息预期变化</div>
+            <p>高盛调整黄金年末目标价至 4900 美元，美联储年内降息预期有所调整。日本央行行长植田和男康复出院，日本货币正常化进程迎来关键转折。土耳其央行本周购买 100 亿美元外汇。</p>
+        </div>
+
+        <div class="news-item">
+            <div class="news-source">金十数据 | 2026-06-19</div>
+            <div class="news-title">MLF 到期提醒</div>
+            <p>6 月 25 日（周四）将有 3000 亿元 1 年期中期借贷便利（MLF）到期，关注央行续作情况对流动性的影响。</p>
+        </div>
+
+        <!-- 操作建议 -->
+        <h2>💡 具体操作建议</h2>
+
+        <div class="recommendation buy">
+            <h3>✅ 继续持有（表现优异）</h3>
+            <ul>
+                <li><strong>交银双息平衡（519732）</strong>：+70.35%，全组合表现最优，定投持续</li>
+                <li><strong>华夏 5G 通信（515880）</strong>：+29.03%，金选指数基金，科技板块核心配置</li>
+                <li><strong>广发全球精选（270023）</strong>：+37.42%，QDII 分散配置，海外资产对冲</li>
+                <li><strong>易方达沪深 300（110020）</strong>：+56.82%，宽基指数，今日 +2.18% 强势</li>
+            </ul>
+        </div>
+
+        <div class="recommendation hold">
+            <h3>⏸️ 逢反弹减仓（亏损较大）</h3>
+            <ul>
+                <li><strong>中欧医疗健康（003096）</strong>：-43.27%，医疗板块仍在底部，定投摊薄成本，反弹至 -35% 可考虑部分减仓</li>
+                <li><strong>景顺长城新兴成长（260108）</strong>：-47.93%，消费板块承压，定投保持，等待消费复苏</li>
+                <li><strong>招商白酒 A/C（161725/015280）</strong>：-48%/-53%，建议合并为 A 类份额（费率更优），白酒板块估值已低，可继续定投</li>
+            </ul>
+        </div>
+
+        <div class="recommendation">
+            <h3>👀 重点关注机会</h3>
+            <ul>
+                <li><strong>华夏芯片 ETF（008889）</strong>：-19%，今日 +1.34% 反弹，半导体周期底部，关注持续性</li>
+                <li><strong>南方券商 ETF（512900）</strong>：-19%，今日 +7.10% 大涨，资本市场改革预期，持仓较重可逢高部分止盈</li>
+                <li><strong>农银新能源（002190）</strong>：-8.48%，今日 +2.79%，新能源板块估值合理，继续观察</li>
+            </ul>
+        </div>
+
+        <div class="recommendation">
+            <h3>🔧 配置优化建议</h3>
+            <ul>
+                <li><strong>合并白酒份额</strong>：招商白酒 A+C 合计 6,267 元，建议合并为 A 类（费率更优）</li>
+                <li><strong>黄金比例调整</strong>：当前 17.1% 略高，美联储决议后可考虑调整至 10-15%</li>
+                <li><strong>增加债券配置</strong>：建议配置 10% 债券基金（约 10,000 元）降低整体波动</li>
+                <li><strong>光伏/医疗</strong>：亏损超 30%，建议设置止损线或继续定投摊薄</li>
+            </ul>
+        </div>
+
+        <!-- 风险提示 -->
+        <h2>⚠️ 风险提示</h2>
+        <ul>
+            <li>医疗、白酒板块亏损幅度较大（-40% 至 -53%），需耐心等待行业复苏</li>
+            <li>光伏、互联网医疗亏损超 30%，关注行业基本面变化</li>
+            <li>券商板块持仓较重（10,557 元），今日大涨后可考虑部分止盈</li>
+            <li>黄金作为避险资产，关注美联储利率决议后的走势变化</li>
+            <li>QDII 基金受海外市场影响，关注美股科技股波动</li>
+        </ul>
+
+        <div class="footer">
+            <p><strong>📁 完整 HTML 报告保存路径</strong></p>
+            <p style="font-family: monospace; background: #f0f0f0; padding: 10px; border-radius: 5px; display: inline-block;">/home/admin/openclaw/workspace/reports/fund-evaluation-2026-06-22.html</p>
+            <p style="margin-top: 15px; font-size: 13px;">数据来源：天天基金网、财联社、东方财富、金十数据 | 报告生成时间：2026-06-22 14:30</p>
+            <p style="font-size: 12px; color: #999;">免责声明：本报告仅供参考，不构成投资建议。基金有风险，投资需谨慎。</p>
+        </div>
+    </div>
+</body>
+</html>

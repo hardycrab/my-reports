@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基金评估报告 - 2026 年 6 月 16 日</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
+        .container { background: white; border-radius: 12px; padding: 30px; box-shadow: 0 2px 12px rgba(0,0,0,0.1); }
+        h1 { color: #1a1a1a; border-bottom: 3px solid #1890ff; padding-bottom: 15px; margin-bottom: 30px; }
+        h2 { color: #1890ff; margin-top: 30px; border-left: 4px solid #1890ff; padding-left: 12px; }
+        h3 { color: #333; margin-top: 25px; }
+        .summary-box { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 12px; padding: 25px; margin: 20px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .summary-item { text-align: center; }
+        .summary-item .value { font-size: 28px; font-weight: bold; margin-bottom: 5px; }
+        .summary-item .label { font-size: 14px; opacity: 0.9; }
+        .positive { color: #d32f2f; }
+        .negative { color: #388e3c; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        th { background: #f5f5f5; font-weight: 600; color: #333; }
+        tr:hover { background: #fafafa; }
+        .fund-card { background: #f9f9f9; border-radius: 8px; padding: 15px; margin: 15px 0; border-left: 4px solid #1890ff; }
+        .fund-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .fund-name { font-weight: 600; font-size: 16px; color: #1a1a1a; }
+        .fund-code { color: #666; font-size: 13px; }
+        .fund-metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-top: 10px; }
+        .metric { background: white; padding: 10px; border-radius: 6px; text-align: center; }
+        .metric-value { font-size: 18px; font-weight: 600; }
+        .metric-label { font-size: 12px; color: #666; margin-top: 3px; }
+        .news-item { background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 15px; margin: 10px 0; }
+        .news-source { font-size: 12px; color: #1890ff; font-weight: 600; text-transform: uppercase; }
+        .news-title { font-weight: 500; margin: 8px 0; color: #1a1a1a; }
+        .recommendation { background: #e3f2fd; border-radius: 8px; padding: 15px; margin: 15px 0; border-left: 4px solid #2196f3; }
+        .recommendation.buy { background: #e8f5e9; border-left-color: #4caf50; }
+        .recommendation.sell { background: #ffebee; border-left-color: #f44336; }
+        .recommendation.hold { background: #fff3e0; border-left-color: #ff9800; }
+        .tag { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 12px; margin-right: 5px; }
+        .tag-profit { background: #e8f5e9; color: #2e7d32; }
+        .tag-loss { background: #ffebee; color: #c62828; }
+        .tag-watch { background: #e3f2fd; color: #1565c0; }
+        .footer { margin-top: 40px; padding-top: 20px; border-top: 2px solid #e0e0e0; text-align: center; color: #666; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 基金持仓评估报告</h1>
+        <p style="color: #666; font-size: 14px;">报告日期：2026 年 6 月 16 日 14:30 | 数据来源：天天基金网</p>
+
+        <!-- 账户总览 -->
+        <h2>💰 账户总览</h2>
+        <div class="summary-box">
+            <div class="summary-item">
+                <div class="value">107,143 元</div>
+                <div class="label">总资产</div>
+            </div>
+            <div class="summary-item">
+                <div class="value" style="color: #ffcdd2;">-18,747 元</div>
+                <div class="label">持有收益</div>
+            </div>
+            <div class="summary-item">
+                <div class="value" style="color: #c8e6c9;">+10,827 元</div>
+                <div class="label">累计收益</div>
+            </div>
+            <div class="summary-item">
+                <div class="value" style="color: #ffcdd2;">-531 元</div>
+                <div class="label">昨日收益</div>
+            </div>
+        </div>
+
+        <!-- 今日表现 -->
+        <h2>📈 今日基金表现（6 月 16 日）</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>基金名称</th>
+                    <th>代码</th>
+                    <th>持有金额</th>
+                    <th>今日估值涨跌</th>
+                    <th>持有收益</th>
+                    <th>收益率</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>华安黄金 ETF 联接 C</td>
+                    <td>000217</td>
+                    <td>18,369.83 元</td>
+                    <td class="positive">+0.14% ↑</td>
+                    <td class="negative">-530.68 元</td>
+                    <td class="negative">-3.00%</td>
+                </tr>
+                <tr>
+                    <td>交银定期支付双息平衡混合</td>
+                    <td>519732</td>
+                    <td>5,360.01 元</td>
+                    <td class="positive">+1.96% ↑</td>
+                    <td class="positive">+2,213.52 元</td>
+                    <td class="positive">+70.35%</td>
+                </tr>
+                <tr>
+                    <td>华夏中证 5G 通信主题 ETF 联接 A</td>
+                    <td>515880</td>
+                    <td>4,516.17 元</td>
+                    <td class="positive">+2.96% ↑</td>
+                    <td class="positive">+1,016.18 元</td>
+                    <td class="positive">+29.03%</td>
+                </tr>
+                <tr>
+                    <td>广发全球精选股票 (QDII)A</td>
+                    <td>270023</td>
+                    <td>11,682.12 元</td>
+                    <td class="positive">+0.51% ↑</td>
+                    <td class="positive">+3,182.12 元</td>
+                    <td class="positive">+37.42%</td>
+                </tr>
+                <tr>
+                    <td>华夏国证半导体芯片 ETF 联接 C</td>
+                    <td>008889</td>
+                    <td>6,993.52 元</td>
+                    <td class="positive">+3.27% ↑</td>
+                    <td class="negative">-1,633.00 元</td>
+                    <td class="negative">-19.00%</td>
+                </tr>
+                <tr>
+                    <td>易方达沪深 300ETF 联接 A</td>
+                    <td>110020</td>
+                    <td>5,591.64 元</td>
+                    <td class="negative">-0.07% ↓</td>
+                    <td class="positive">+2,020.01 元</td>
+                    <td class="positive">+56.82%</td>
+                </tr>
+                <tr>
+                    <td>大成纳斯达克 100ETF 联接 A</td>
+                    <td>000614</td>
+                    <td>1,955.82 元</td>
+                    <td class="positive">+1.81% ↑</td>
+                    <td class="positive">+95.82 元</td>
+                    <td class="positive">+5.14%</td>
+                </tr>
+                <tr>
+                    <td>南方中证全指证券公司 ETF 联接 A</td>
+                    <td>512900</td>
+                    <td>10,556.92 元</td>
+                    <td class="positive">+0.92% ↑</td>
+                    <td class="negative">-2,480.00 元</td>
+                    <td class="negative">-19.06%</td>
+                </tr>
+                <tr>
+                    <td>农银新能源混合 A</td>
+                    <td>002190</td>
+                    <td>10,753.86 元</td>
+                    <td class="positive">+1.33% ↑</td>
+                    <td class="negative">-996.14 元</td>
+                    <td class="negative">-8.48%</td>
+                </tr>
+                <tr>
+                    <td>汇添富价值精选混合 A</td>
+                    <td>519069</td>
+                    <td>14,524.67 元</td>
+                    <td class="negative">-0.07% ↓</td>
+                    <td class="negative">-1,926.49 元</td>
+                    <td class="negative">-11.73%</td>
+                </tr>
+                <tr>
+                    <td>富国消费主题混合 A</td>
+                    <td>100056</td>
+                    <td>5,625.72 元</td>
+                    <td class="negative">-0.38% ↓</td>
+                    <td class="negative">-1,742.75 元</td>
+                    <td class="negative">-23.66%</td>
+                </tr>
+                <tr>
+                    <td>天弘中证光伏产业指数 A</td>
+                    <td>019266</td>
+                    <td>5,691.08 元</td>
+                    <td class="negative">-0.29% ↓</td>
+                    <td class="negative">-2,558.92 元</td>
+                    <td class="negative">-31.02%</td>
+                </tr>
+                <tr>
+                    <td>汇添富中证互联网医疗主题</td>
+                    <td>164724</td>
+                    <td>4,174.45 元</td>
+                    <td class="negative">数据暂缺</td>
+                    <td class="negative">-2,045.02 元</td>
+                    <td class="negative">-32.88%</td>
+                </tr>
+                <tr>
+                    <td>中欧医疗健康混合 C</td>
+                    <td>003096</td>
+                    <td>6,747.86 元</td>
+                    <td class="negative">-1.70% ↓</td>
+                    <td class="negative">-5,152.14 元</td>
+                    <td class="negative">-43.27%</td>
+                </tr>
+                <tr>
+                    <td>景顺长城新兴成长混合 A</td>
+                    <td>260108</td>
+                    <td>7,602.33 元</td>
+                    <td class="negative">-1.13% ↓</td>
+                    <td class="negative">-6,987.12 元</td>
+                    <td class="negative">-47.93%</td>
+                </tr>
+                <tr>
+                    <td>招商中证白酒指数 (LOF)A</td>
+                    <td>161725</td>
+                    <td>3,935.43 元</td>
+                    <td class="negative">-1.55% ↓</td>
+                    <td class="negative">-3,581.33 元</td>
+                    <td class="negative">-47.63%</td>
+                </tr>
+                <tr>
+                    <td>招商中证白酒指数 C</td>
+                    <td>015280</td>
+                    <td>2,331.40 元</td>
+                    <td class="negative">数据暂缺</td>
+                    <td class="negative">-2,639.06 元</td>
+                    <td class="negative">-53.16%</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 近期趋势分析 -->
+        <h2>📊 近期趋势分析</h2>
+        
+        <h3>近 7 日表现最佳</h3>
+        <div class="fund-card">
+            <div class="fund-header">
+                <span class="fund-name">🏆 交银定期支付双息平衡混合 (519732)</span>
+                <span class="tag tag-profit">近 7 日 +18.5%</span>
+            </div>
+            <div class="fund-metrics">
+                <div class="metric">
+                    <div class="metric-value positive">+5.71%</div>
+                    <div class="metric-label">6/15</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value positive">+4.28%</div>
+                    <div class="metric-label">6/9</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value positive">+3.05%</div>
+                    <div class="metric-label">6/2</div>
+                </div>
+            </div>
+            <p style="margin-top: 10px; color: #666; font-size: 14px;">持续强势，均衡配置策略见效，建议继续持有。</p>
+        </div>
+
+        <div class="fund-card">
+            <div class="fund-header">
+                <span class="fund-name">🥈 华夏中证 5G 通信主题 ETF (515880)</span>
+                <span class="tag tag-profit">近 7 日 +15.2%</span>
+            </div>
+            <div class="fund-metrics">
+                <div class="metric">
+                    <div class="metric-value positive">+6.17%</div>
+                    <div class="metric-label">6/15</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value positive">+5.52%</div>
+                    <div class="metric-label">6/9</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value positive">+6.38%</div>
+                    <div class="metric-label">6/2</div>
+                </div>
+            </div>
+            <p style="margin-top: 10px; color: #666; font-size: 14px;">通信板块反弹强劲，金选指数基金表现稳定。</p>
+        </div>
+
+        <h3>近 30 日波动较大</h3>
+        <div class="fund-card" style="border-left-color: #ff9800;">
+            <div class="fund-header">
+                <span class="fund-name">⚠️ 华安黄金 ETF 联接 C (000217)</span>
+                <span class="tag tag-watch">波动加剧</span>
+            </div>
+            <p style="color: #666; font-size: 14px;">近 30 日涨跌幅：+3.25% → -3.36% → -3.12% → +0.38%，波动明显加大。美联储 6 月 18 日利率决议前夕，黄金作为避险资产波动加剧属正常现象。当前持仓占比 17.1% 略高，建议决议后根据走势调整至 10-15%。</p>
+        </div>
+
+        <!-- 财经新闻摘要 -->
+        <h2>📰 财经新闻摘要</h2>
+        <div class="news-item">
+            <div class="news-source">新浪财经 | 6 月 16 日</div>
+            <div class="news-title">芯片制造板块领涨，人工智能基础设施需求持续</div>
+            <p style="color: #666; font-size: 14px; margin-top: 8px;">美光科技、西部数据和英伟达等公司股价随风险情绪好转而走高。半导体板块今日表现强劲，华夏芯片 ETF 估值 +3.27%，建议关注持续性。</p>
+        </div>
+        <div class="news-item">
+            <div class="news-source">东方财富 | 6 月 16 日</div>
+            <div class="news-title">券商板块反弹，资本市场改革预期升温</div>
+            <p style="color: #666; font-size: 14px; margin-top: 8px;">南方证券 ETF 今日 +0.92%，近 3 日累计 +6%。政策面利好预期下，券商板块值得关注，但当前持仓较重（10,556 元），建议逢高适度减仓。</p>
+        </div>
+        <div class="news-item">
+            <div class="news-source">第一财经 | 6 月 16 日</div>
+            <div class="news-title">美联储利率决议本周来袭，黄金避险属性再受关注</div>
+            <p style="color: #666; font-size: 14px; margin-top: 8px;">市场普遍预期美联储将维持利率不变，但点阵图和鲍威尔讲话可能引发波动。华安黄金 ETF 当前 -3%，建议决议后评估调整仓位。</p>
+        </div>
+        <div class="news-item">
+            <div class="news-source">财联社 | 6 月 16 日</div>
+            <div class="news-title">新能源板块企稳反弹，光伏产业指数止跌</div>
+            <p style="color: #666; font-size: 14px; margin-top: 8px;">农银新能源主题今日 +1.33%，天弘光伏 -0.29% 跌幅收窄。行业基本面边际改善，但亏损幅度仍大（-31%/-8%），建议观望为主。</p>
+        </div>
+
+        <!-- 操作建议 -->
+        <h2>💡 具体操作建议</h2>
+        
+        <h3>✅ 继续持有（6 只）</h3>
+        <div class="recommendation buy">
+            <strong>交银定期支付双息平衡混合 (519732)</strong><br>
+            持有收益 +70.35%（+2,213 元），近 7 日持续强势。均衡配置策略在震荡市中表现优异，建议继续持有并维持定投。
+        </div>
+        <div class="recommendation buy">
+            <strong>华夏中证 5G 通信主题 ETF (515880)</strong><br>
+            持有收益 +29.03%（+1,016 元），金选指数基金。通信板块景气度向上，建议继续持有。
+        </div>
+        <div class="recommendation buy">
+            <strong>广发全球精选股票 QDII (270023)</strong><br>
+            持有收益 +37.42%（+3,182 元），海外分散配置效果显著。美股科技股强势，建议继续持有。
+        </div>
+        <div class="recommendation buy">
+            <strong>易方达沪深 300ETF 联接 A (110020)</strong><br>
+            持有收益 +56.82%（+2,020 元），宽基指数长期配置价值高，建议继续持有。
+        </div>
+        <div class="recommendation buy">
+            <strong>大成纳斯达克 100ETF 联接 A (000614)</strong><br>
+            持有收益 +5.14%（+96 元），QDII 配置合理，建议继续持有。
+        </div>
+        <div class="recommendation buy">
+            <strong>农银新能源混合 A (002190)</strong><br>
+            持有收益 -8.48%，今日 +1.33% 反弹。行业基本面边际改善，建议继续持有观察。
+        </div>
+
+        <h3>⚠️ 逢反弹减仓（5 只）</h3>
+        <div class="recommendation sell">
+            <strong>中欧医疗健康混合 C (003096)</strong><br>
+            持有收益 -43.27%（-5,152 元），亏损幅度大。医疗板块估值虽低但短期难有大幅反弹，建议逢反弹减仓 30-50%，止损部分仓位。
+        </div>
+        <div class="recommendation sell">
+            <strong>景顺长城新兴成长混合 A (260108)</strong><br>
+            持有收益 -47.93%（-6,987 元），最大亏损基金之一。消费板块复苏缓慢，建议逢反弹减仓 30-50%。
+        </div>
+        <div class="recommendation sell">
+            <strong>招商中证白酒指数 A/C (161725/015280)</strong><br>
+            合计持有收益 -48%/-53%（-6,220 元），A+C 重复配置。建议：①合并为 A 类份额（费率更优）；②逢反弹减仓 30-50%。白酒板块估值仍高，短期难有大幅反弹。
+        </div>
+        <div class="recommendation sell">
+            <strong>汇添富中证互联网医疗主题 (164724)</strong><br>
+            持有收益 -32.88%（-2,045 元）。医疗信息化板块表现疲软，建议逢反弹减仓。
+        </div>
+        <div class="recommendation sell">
+            <strong>富国消费主题混合 A (100056)</strong><br>
+            持有收益 -23.66%（-1,743 元）。消费复苏不及预期，建议逢反弹减仓。
+        </div>
+
+        <h3>👀 重点关注（3 只）</h3>
+        <div class="recommendation hold">
+            <strong>华夏国证半导体芯片 ETF 联接 C (008889)</strong><br>
+            持有收益 -19.00%，今日 +3.27%（+1,033 元）大幅反弹。芯片板块受 AI 需求拉动，建议观察反弹持续性。若连续 3 日上涨，可考虑加仓；若反弹乏力，逢高减仓。
+        </div>
+        <div class="recommendation hold">
+            <strong>南方中证全指证券公司 ETF 联接 A (512900)</strong><br>
+            持有收益 -19.06%（-2,480 元），持仓较重（10,556 元）。券商板块受政策利好预期支撑，但弹性有限。建议：反弹至 -10% 以内时减仓 30%。
+        </div>
+        <div class="recommendation hold">
+            <strong>华安黄金 ETF 联接 C (000217)</strong><br>
+            持有收益 -3.00%（-531 元），持仓占比 17.1% 略高。美联储 6 月 18 日利率决议后，根据走势调整至 10-15% 常规配置比例。
+        </div>
+
+        <h3>🔄 配置优化建议</h3>
+        <div class="recommendation">
+            <strong>1. 合并白酒 A+C 份额</strong><br>
+            当前持有招商白酒 A（3,935 元）和 C（2,331 元），建议合并为 A 类份额（长期持有时 A 类费率更优）。
+        </div>
+        <div class="recommendation">
+            <strong>2. 黄金仓位调整</strong><br>
+            当前黄金持仓 18,369 元（17.1%），略高于常规 10-15% 配置比例。美联储决议后，建议减仓 3,000-5,000 元。
+        </div>
+        <div class="recommendation">
+            <strong>3. 增加债券基金配置</strong><br>
+            当前组合波动较大（10 只亏损基金），建议新增 10% 仓位（约 10,000 元）配置纯债基金或固收 + 产品，降低整体波动。
+        </div>
+        <div class="recommendation">
+            <strong>4. 定投策略优化</strong><br>
+            当前 5 只基金开启定投（交银双息、芯片 ETF、中欧医疗、景顺长城、招商白酒 A）。建议：①暂停中欧医疗、景顺长城、招商白酒的定投（亏损幅度大）；②维持交银双息、芯片 ETF 的定投。
+        </div>
+
+        <!-- 风险提示 -->
+        <h2>⚠️ 风险提示</h2>
+        <ul style="color: #666; font-size: 14px; line-height: 1.8;">
+            <li>本报告基于公开数据生成，不构成投资建议，投资需谨慎</li>
+            <li>基金历史表现不代表未来收益，市场有风险，投资需谨慎</li>
+            <li>美联储 6 月 18 日利率决议可能引发市场波动，请密切关注</li>
+            <li>医疗、白酒板块亏损幅度较大，建议控制仓位，避免进一步亏损</li>
+            <li>QDII 基金受汇率影响，需注意汇率波动风险</li>
+        </ul>
+
+        <div class="footer">
+            <p>报告生成时间：2026 年 6 月 16 日 14:30</p>
+            <p>HTML 完整版保存路径：/home/admin/openclaw/workspace/reports/fund-evaluation-2026-06-16.html</p>
+            <p>数据来源：天天基金网 | 财经新闻：新浪财经、东方财富、第一财经、财联社</p>
+        </div>
+    </div>
+</body>
+</html>

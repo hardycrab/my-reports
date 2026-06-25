@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基金持仓评估报告 - 2026 年 6 月 24 日</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
+        .container { background: white; border-radius: 12px; padding: 30px; box-shadow: 0 2px 12px rgba(0,0,0,0.1); }
+        h1 { color: #1a1a1a; border-bottom: 3px solid #1890ff; padding-bottom: 15px; margin-bottom: 30px; }
+        h2 { color: #1890ff; margin-top: 30px; border-left: 4px solid #1890ff; padding-left: 12px; }
+        h3 { color: #333; margin-top: 25px; }
+        .summary-box { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 12px; padding: 25px; margin: 20px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .summary-item { text-align: center; }
+        .summary-item .value { font-size: 32px; font-weight: bold; margin-bottom: 5px; }
+        .summary-item .label { font-size: 14px; opacity: 0.9; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #e8e8e8; }
+        th { background: #fafafa; font-weight: 600; color: #333; }
+        tr:hover { background: #f5f5f5; }
+        .positive { color: #52c41a; font-weight: 600; }
+        .negative { color: #ff4d4f; font-weight: 600; }
+        .neutral { color: #666; }
+        .tag { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 12px; margin-right: 5px; }
+        .tag-ding { background: #e6f7ff; color: #1890ff; }
+        .tag-jinxuan { background: #f6ffed; color: #52c41a; }
+        .news-item { background: #fafafa; border-radius: 8px; padding: 15px; margin: 10px 0; border-left: 4px solid #1890ff; }
+        .news-source { font-size: 12px; color: #999; margin-bottom: 5px; }
+        .news-title { font-weight: 600; color: #333; }
+        .recommendation { background: #fff7e6; border: 1px solid #ffd591; border-radius: 8px; padding: 15px; margin: 10px 0; }
+        .recommendation h4 { margin: 0 0 10px 0; color: #d46b08; }
+        .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #e8e8e8; text-align: center; color: #999; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 基金持仓评估报告</h1>
+        <p style="color: #666; font-size: 14px;">报告日期：2026 年 6 月 24 日 星期三 | 数据截止时间：14:30</p>
+        
+        <div class="summary-box">
+            <div class="summary-item">
+                <div class="value">134,780.96 元</div>
+                <div class="label">总资产</div>
+            </div>
+            <div class="summary-item">
+                <div class="value" style="color: #ffec3d;">+16,519.42 元</div>
+                <div class="label">持有收益</div>
+            </div>
+            <div class="summary-item">
+                <div class="value">+13.95%</div>
+                <div class="label">总收益率</div>
+            </div>
+            <div class="summary-item">
+                <div class="value">16 只</div>
+                <div class="label">持有基金</div>
+            </div>
+        </div>
+
+        <h2>📈 今日持仓表现总览</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>基金代码</th>
+                    <th>基金名称</th>
+                    <th>持有金额</th>
+                    <th>持有收益</th>
+                    <th>收益率</th>
+                    <th>今日涨跌</th>
+                    <th>标记</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>519732</td>
+                    <td>交银定期支付双息平衡混合</td>
+                    <td>6,140.92 元</td>
+                    <td class="positive">+2,994.43 元</td>
+                    <td class="positive">+95.17%</td>
+                    <td class="positive">+2.39%</td>
+                    <td><span class="tag tag-ding">定投</span></td>
+                </tr>
+                <tr>
+                    <td>008889</td>
+                    <td>华夏国证半导体芯片 ETF 联接 C</td>
+                    <td>8,285.40 元</td>
+                    <td class="positive">+2,825.69 元</td>
+                    <td class="positive">+51.76%</td>
+                    <td class="positive">+2.92%</td>
+                    <td><span class="tag tag-ding">定投</span></td>
+                </tr>
+                <tr>
+                    <td>270023</td>
+                    <td>广发全球精选股票 (QDII)A</td>
+                    <td>12,691.73 元</td>
+                    <td class="positive">+4,191.73 元</td>
+                    <td class="positive">+49.31%</td>
+                    <td class="neutral">--</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>515880</td>
+                    <td>华夏中证 5G 通信主题 ETF 联接 A</td>
+                    <td>5,170.14 元</td>
+                    <td class="positive">+1,670.15 元</td>
+                    <td class="positive">+47.72%</td>
+                    <td class="positive">+1.28%</td>
+                    <td><span class="tag tag-jinxuan">金选指数</span></td>
+                </tr>
+                <tr>
+                    <td>007028</td>
+                    <td>易方达中证 500ETF 联接 A</td>
+                    <td>6,021.92 元</td>
+                    <td class="positive">+1,438.92 元</td>
+                    <td class="positive">+31.40%</td>
+                    <td class="positive">+1.78%</td>
+                    <td>已转换</td>
+                </tr>
+                <tr>
+                    <td>000614</td>
+                    <td>大成纳斯达克 100ETF 联接 A</td>
+                    <td>2,047.83 元</td>
+                    <td class="positive">+127.83 元</td>
+                    <td class="positive">+6.79%</td>
+                    <td class="neutral">--</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>512900</td>
+                    <td>南方中证全指证券公司 ETF 联接 A</td>
+                    <td>12,853.38 元</td>
+                    <td class="positive">+28.13 元</td>
+                    <td class="positive">+0.22%</td>
+                    <td class="negative">-1.95%</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>002190</td>
+                    <td>农银新能源混合 A</td>
+                    <td>11,017.95 元</td>
+                    <td class="negative">-732.05 元</td>
+                    <td class="negative">-6.23%</td>
+                    <td class="positive">+0.74%</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>519069</td>
+                    <td>汇添富价值精选混合 A</td>
+                    <td>15,000.13 元</td>
+                    <td class="negative">-1,451.03 元</td>
+                    <td class="negative">-8.82%</td>
+                    <td class="positive">+0.20%</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>100056</td>
+                    <td>富国消费主题混合 A</td>
+                    <td>5,729.85 元</td>
+                    <td class="negative">-1,888.62 元</td>
+                    <td class="negative">-24.79%</td>
+                    <td class="positive">+0.27%</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>011102</td>
+                    <td>天弘中证光伏产业指数 A</td>
+                    <td>5,780.92 元</td>
+                    <td class="negative">-2,469.08 元</td>
+                    <td class="negative">-29.89%</td>
+                    <td class="neutral">+0.04%</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>164724</td>
+                    <td>汇添富中证互联网医疗主题</td>
+                    <td>4,170.28 元</td>
+                    <td class="negative">-2,049.20 元</td>
+                    <td class="negative">-32.90%</td>
+                    <td class="neutral">--</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>003096</td>
+                    <td>中欧医疗健康混合 C</td>
+                    <td>7,175.73 元</td>
+                    <td class="negative">-4,974.27 元</td>
+                    <td class="negative">-40.96%</td>
+                    <td class="positive">+2.54%</td>
+                    <td><span class="tag tag-ding">定投</span></td>
+                </tr>
+                <tr>
+                    <td>260108</td>
+                    <td>景顺长城新兴成长混合 A</td>
+                    <td>7,403.51 元</td>
+                    <td class="negative">-7,185.94 元</td>
+                    <td class="negative">-48.11%</td>
+                    <td class="negative">-0.70%</td>
+                    <td><span class="tag tag-ding">定投</span></td>
+                </tr>
+                <tr>
+                    <td>161725</td>
+                    <td>招商中证白酒指数 (LOF)A</td>
+                    <td>4,484.86 元</td>
+                    <td class="negative">-3,853.03 元</td>
+                    <td class="negative">-46.81%</td>
+                    <td class="neutral">--</td>
+                    <td><span class="tag tag-ding">定投</span></td>
+                </tr>
+                <tr>
+                    <td>000217</td>
+                    <td>华安黄金 ETF 联接 C</td>
+                    <td>18,806.41 元</td>
+                    <td class="negative">-94.10 元</td>
+                    <td class="negative">-0.50%</td>
+                    <td class="negative">-0.58%</td>
+                    <td>黄金</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>📰 今日财经新闻摘要</h2>
+        
+        <div class="news-item">
+            <div class="news-source">财联社 | 2026-06-24</div>
+            <div class="news-title">2026 数字政府智能应用与创新发展大会今日举行，关注政务 AI 应用落地</div>
+            <p style="color: #666; font-size: 14px; margin-top: 8px;">今日有多个重要行业会议召开，包括数字政府大会、英伟达年度线上会议、世界移动通信大会等，科技板块催化剂密集。</p>
+        </div>
+        
+        <div class="news-item">
+            <div class="news-source">财联社 | 2026-06-24</div>
+            <div class="news-title">英伟达将于 6 月 24 日举行线上年度会议，AI 芯片产业链受关注</div>
+            <p style="color: #666; font-size: 14px; margin-top: 8px;">英伟达年度会议可能发布新一代 AI 芯片架构，半导体、算力相关板块有望受益。持仓中的芯片 ETF 可重点关注。</p>
+        </div>
+        
+        <div class="news-item">
+            <div class="news-source">东方财富 | 2026-06-24</div>
+            <div class="news-title">赛力斯机器人"进厂打工"，科创板给具身智能开了扇门</div>
+            <p style="color: #666; font-size: 14px; margin-top: 8px;">赛力斯超级工厂人形机器人正式上岗，专注于汽车底盘质检和整车外观检测，机器人赛道产业化加速。</p>
+        </div>
+        
+        <div class="news-item">
+            <div class="news-source">东方财富 | 2026-06-24</div>
+            <div class="news-title">北向资金加仓商业航天，手握 5 亿订单业绩大涨 57%</div>
+            <p style="color: #666; font-size: 14px; margin-top: 8px;">商业航天板块获北向资金青睐，相关公司业绩大幅增长，军工航天主题可关注。</p>
+        </div>
+        
+        <div class="news-item">
+            <div class="news-source">财联社 | 2026-06-24</div>
+            <div class="news-title">今日有 4203 亿元 7 天期逆回购到期，流动性整体平稳</div>
+            <p style="color: #666; font-size: 14px; margin-top: 8px;">央行公开市场操作保持流动性合理充裕，市场资金面平稳。</p>
+        </div>
+
+        <h2>💡 持仓分析与操作建议</h2>
+        
+        <h3>✅ 继续持有（7 只基金）</h3>
+        <div class="recommendation">
+            <h4>🏆 表现优异，建议继续持有并维持定投</h4>
+            <ul>
+                <li><strong>交银双息平衡 (519732)</strong>：+95.17% 收益最优，今日 +2.39%，基金经理稳定，继续定投 ✅</li>
+                <li><strong>华夏芯片 ETF(008889)</strong>：+51.76%，半导体周期向上，英伟达会议催化，今日 +2.92%，继续定投 ✅</li>
+                <li><strong>华夏 5G 通信 (515880)</strong>：+47.72%，金选指数，世界移动通信大会召开，今日 +1.28% ✅</li>
+                <li><strong>广发全球精选 (270023)</strong>：+49.31%，QDII 海外分散，美股配置，表现稳健 ✅</li>
+                <li><strong>易方达中证 500(007028)</strong>：+31.40%，中小盘指数，成长性较好，今日 +1.78% ✅</li>
+                <li><strong>大成纳斯达克 (000614)</strong>：+6.79%，美股科技配置，长期持有 ✅</li>
+                <li><strong>华安黄金 ETF(000217)</strong>：-0.50%，避险资产配置合理，占比 13.9%，继续持有 ✅</li>
+            </ul>
+        </div>
+
+        <h3>📊 逢反弹减仓（3 只基金）</h3>
+        <div class="recommendation" style="background: #fff1f0; border-color: #ffa39e;">
+            <h4>⚠️ 深度亏损，建议反弹至目标位减仓</h4>
+            <ul>
+                <li><strong>中欧医疗健康 (003096)</strong>：-40.96%，医疗板块持续低迷，今日 +2.54% 反弹，建议反弹至 -30% 可考虑减仓</li>
+                <li><strong>景顺长城新兴成长 (260108)</strong>：-48.11%，消费板块估值仍高，深度套牢，今日 -0.70%，反弹至 -35% 可考虑减仓</li>
+                <li><strong>招商白酒 A(161725)</strong>：-46.81%，白酒行业调整期，反弹至 -35% 可考虑减仓</li>
+            </ul>
+        </div>
+
+        <h3>🔔 重点关注（3 只基金）</h3>
+        <div class="recommendation" style="background: #e6f7ff; border-color: #91d5ff;">
+            <h4>👀 接近回本或关键位置，需密切观察</h4>
+            <ul>
+                <li><strong>南方券商 ETF(512900)</strong>：+0.22% 基本回本，今日 -1.95%，观察是否继续上涨或止盈</li>
+                <li><strong>农银新能源 (002190)</strong>：-6.23%，接近回本，今日 +0.74%，关注新能源政策及行业景气度</li>
+                <li><strong>汇添富价值 (519069)</strong>：-8.82%，价值风格基金，今日 +0.20%，等待市场轮动</li>
+            </ul>
+        </div>
+
+        <h3>🎯 配置优化建议</h3>
+        <div class="recommendation" style="background: #f6ffed; border-color: #b7eb8f;">
+            <h4>📋 整体配置调整建议</h4>
+            <ol>
+                <li><strong>券商板块止盈</strong>：已回本（+0.22%），可考虑部分止盈（30-50%）或继续持有观察</li>
+                <li><strong>黄金持仓</strong>：13.9% 配置比例合理，-0.5% 基本持平，继续持有作为避险资产</li>
+                <li><strong>增加债券基金</strong>：当前无债券配置，建议配置 10-15% 纯债基金降低整体波动</li>
+                <li><strong>科技板块</strong>：芯片、5G 表现强势，可维持现有配置，不建议追高加仓</li>
+                <li><strong>医疗白酒</strong>：深度亏损板块，不建议割肉，等待反弹后优化配置</li>
+            </ol>
+        </div>
+
+        <h2>📊 行业分布概览</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>行业/类型</th>
+                    <th>持有金额</th>
+                    <th>占比</th>
+                    <th>盈亏状态</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>黄金</td><td>18,806.41 元</td><td>13.9%</td><td class="negative">-0.50%</td></tr>
+                <tr><td>均衡/价值</td><td>21,141.05 元</td><td>15.7%</td><td class="neutral">混合</td></tr>
+                <tr><td>QDII（海外）</td><td>14,739.56 元</td><td>10.9%</td><td class="positive">+43%</td></tr>
+                <tr><td>新能源/光伏</td><td>16,798.87 元</td><td>12.5%</td><td class="negative">混合</td></tr>
+                <tr><td>医疗</td><td>11,346.01 元</td><td>8.4%</td><td class="negative">-38%</td></tr>
+                <tr><td>白酒/消费</td><td>10,214.71 元</td><td>7.6%</td><td class="negative">-40%</td></tr>
+                <tr><td>科技（5G/芯片）</td><td>13,455.54 元</td><td>10.0%</td><td class="positive">+50%</td></tr>
+                <tr><td>券商</td><td>12,853.38 元</td><td>9.5%</td><td class="neutral">+0.22%</td></tr>
+                <tr><td>宽基指数</td><td>6,021.92 元</td><td>4.5%</td><td class="positive">+31%</td></tr>
+            </tbody>
+        </table>
+
+        <h2>⚠️ 风险提示</h2>
+        <ul>
+            <li>医疗、白酒板块仍深度亏损，需耐心等待反弹</li>
+            <li>光伏、互联网医疗亏损近 30%，行业景气度有待恢复</li>
+            <li>黄金微亏 -0.50%，关注国际金价波动及美元走势</li>
+            <li>券商板块基本回本，需决策是否止盈</li>
+            <li>本报告仅供参考，不构成投资建议，市场有风险，投资需谨慎</li>
+        </ul>
+
+        <div class="footer">
+            <p>报告生成时间：2026 年 6 月 24 日 14:30 | 数据来源：天天基金网、财联社、东方财富</p>
+            <p>HTML 完整版保存路径：/home/admin/openclaw/workspace/reports/fund-evaluation-2026-06-24.html</p>
+        </div>
+    </div>
+</body>
+</html>
