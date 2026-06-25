@@ -1,0 +1,25 @@
+# Sensitive files
+.env
+*.key
+*.pem
+credentials*
+secrets/
+
+# Temp files
+temp/
+*.tmp
+*.log
+
+# Node modules
+node_modules/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
+
+# Skill configs with secrets
+skills/*/scripts/.env
+skills/*/.env
