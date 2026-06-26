@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 新闻与应用方案日报 — 2026年6月26日</title>
+<style>
+  :root { --accent: #1a73e8; --bg: #f8f9fa; --card: #fff; --text: #202124; --muted: #5f6368; --border: #dadce0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .container { max-width: 780px; margin: 0 auto; padding: 24px 16px; }
+  header { text-align: center; padding: 40px 0 24px; border-bottom: 3px solid var(--accent); margin-bottom: 32px; }
+  header h1 { font-size: 26px; font-weight: 700; letter-spacing: -0.5px; }
+  header .date { color: var(--muted); font-size: 14px; margin-top: 8px; }
+  header .sources { font-size: 12px; color: var(--muted); margin-top: 6px; }
+  .section { margin-bottom: 36px; }
+  .section-title { font-size: 20px; font-weight: 700; color: var(--accent); border-left: 4px solid var(--accent); padding-left: 12px; margin-bottom: 18px; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+  .card .tag { display: inline-block; font-size: 11px; font-weight: 600; color: #fff; background: var(--accent); border-radius: 4px; padding: 2px 8px; margin-bottom: 8px; }
+  .card .tag.orange { background: #e67e22; }
+  .card .tag.green { background: #27ae60; }
+  .card .tag.purple { background: #8e44ad; }
+  .card .tag.red { background: #e74c3c; }
+  .card p { font-size: 14px; color: #444; }
+  .card .source { font-size: 12px; color: var(--muted); margin-top: 8px; }
+  .card ul { margin: 8px 0 0 18px; font-size: 14px; color: #444; }
+  .card ul li { margin-bottom: 4px; }
+  .solution-card { border-left: 4px solid #27ae60; }
+  .trend-box { background: linear-gradient(135deg, #1a73e8 0%, #4285f4 100%); color: #fff; border-radius: 10px; padding: 24px; text-align: center; }
+  .trend-box p { font-size: 16px; font-weight: 500; line-height: 1.8; }
+  .github-box { background: #24292e; color: #fff; border-radius: 10px; padding: 16px 20px; text-align: center; margin-top: 20px; }
+  .github-box a { color: #58a6ff; text-decoration: none; font-size: 14px; }
+  footer { text-align: center; padding: 24px 0; color: var(--muted); font-size: 12px; border-top: 1px solid var(--border); margin-top: 32px; }
+  .toc { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 28px; }
+  .toc h4 { font-size: 14px; color: var(--muted); margin-bottom: 8px; }
+  .toc ul { list-style: none; }
+  .toc ul li { font-size: 14px; margin-bottom: 4px; }
+  .toc ul li a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>🤖 AI 新闻与应用方案日报</h1>
+  <div class="date">2026年6月26日 · 星期五</div>
+  <div class="sources">数据来源：阮一峰周刊 · GitHub Trending · AIBase · The Decoder · AIbase News</div>
+</header>
+
+<div class="toc">
+  <h4>📑 目录</h4>
+  <ul>
+    <li><a href="#news">一、AI 行业动态（3 条）</a></li>
+    <li><a href="#apps">二、AI 应用方案（2 个）</a></li>
+    <li><a href="#trend">三、趋势总结</a></li>
+  </ul>
+</div>
+
+<!-- ============ 行业动态 ============ -->
+<div class="section" id="news">
+  <div class="section-title">一、AI 行业动态</div>
+
+  <div class="card">
+    <span class="tag">模型升级</span>
+    <h3>1. Google 发布 Gemini 3.5 Flash：原生集成 Computer Use，替代 2.5 框架</h3>
+    <p>Google 将"计算机使用"（Computer Use）能力直接集成到 Gemini 3.5 Flash 模型中。该模型现在可以独立查看、理解并与计算机、浏览器和移动设备进行交互，此前这一功能仅作为独立的 Gemini 2.5 模型提供。结合函数调用、搜索和地图等现有工具，开发者现在可以构建跨浏览器、移动端和桌面环境的 AI Agent。</p>
+    <p style="margin-top:8px"><strong>基准表现：</strong>在 OSWorld 基准测试中，Gemini 3.5 Flash 得分 78.4，超过 Gemini 3 Flash（65.1）和 GPT-5.4 mini（72.1），略低于 GPT-5.5（78.7）和 Anthropic Opus 4.8（83.4）。同时 Google 为防范 Prompt 注入攻击引入了对抗训练和企业级安全防护选项。</p>
+    <div class="source">来源：The Decoder · AIbase News · 2026-06-26</div>
+  </div>
+
+  <div class="card">
+    <span class="tag orange">人才流动</span>
+    <h3>2. Google DeepMind 核心研究员大规模出走，Anthropic 成最大赢家</h3>
+    <p>据 Bloomberg 报道，Google DeepMind 正经历严重的人才流失。Gemini 模型的关键研究者 Jonas Adler（AI 编程方向）和 Alexander Pritzel（AI 训练方向）计划加入 Anthropic。此前数日，诺贝尔奖得主 John Jumper 也宣布转投 Anthropic，Gemini 联合负责人 Noam Shazeer 则加入 OpenAI。</p>
+    <p style="margin-top:8px"><strong>深层原因：</strong>Anthropic 和 OpenAI 均在筹备 IPO，能够为员工提供极具吸引力的股权方案。SignalFire 分析显示，DeepMind 工程师流向 Anthropic 的概率是反向流动的 11 倍。投资者信心受挫，Alphabet 股价承压。DeepMind CEO Demis Hassabis 在戛纳活动上回应称，Google 仍拥有所有 AI 实验室中最深厚的研究团队。</p>
+    <div class="source">来源：The Decoder (Bloomberg 报道) · 2026-06-26</div>
+  </div>
+
+  <div class="card">
+    <span class="tag purple">产业投资</span>
+    <h3>3. 高通 40 亿美元收购 AI 初创公司 Modular，进军数据中心 AI 芯片</h3>
+    <p>高通宣布以约 40 亿美元收购 AI 初创公司 Modular。Modular 的核心产品是支持 AI 应用跨不同芯片架构运行的软件平台。同时高通发布新处理器 Dragonfly C1000，专为 AI Agent 优化，主打高性能低功耗，Meta 计划于 2028 年开始部署该芯片。</p>
+    <p style="margin-top:8px"><strong>市场反应：</strong>高通将非智能手机业务的营收预期翻倍至 2029 年 400 亿美元（其中数据中心业务 150 亿美元），股价盘后大涨 15%。这一动作标志着 AI 芯片竞争正式从 GPU 主导扩展到多元架构竞争时代。</p>
+    <div class="source">来源：The Decoder (Reuters) · AIbase News · 2026-06-26</div>
+  </div>
+</div>
+
+<!-- ============ 应用方案 ============ -->
+<div class="section" id="apps">
+  <div class="section-title">二、AI 应用方案</div>
+
+  <div class="card solution-card">
+    <span class="tag green">方案一</span>
+    <h3>🎬 OpenMontage — 首个开源 Agent 视频制作系统</h3>
+    <p>本周 GitHub Trending 榜首项目（周内 Star +15,793），由 calesthio 团队开源。这是一个完全基于 Agent 架构的视频制作系统，包含 <strong>12 条流水线、52 个工具、500+ Agent 技能</strong>，可将 AI 编程助手转变为完整的视频制作工作室。</p>
+    <ul>
+      <li><strong>适用场景：</strong>短视频批量生产、自动化剪辑流水线、AI 辅助影视后期</li>
+      <li><strong>技术亮点：</strong>模块化 Agent 架构，每个技能可独立调用和组合；支持从脚本到成片的全自动化流程</li>
+      <li><strong>落地建议：</strong>适合内容创作者、MCN 机构和视频营销团队评估试用，可显著降低视频制作人力成本</li>
+    </ul>
+    <div class="source">来源：GitHub Trending #1 · 2026-06-26</div>
+  </div>
+
+  <div class="card solution-card">
+    <span class="tag green">方案二</span>
+    <h3>🔍 Agent-Reach — 零 API 费用的全网搜索 Agent 工具</h3>
+    <p>本周 GitHub Trending 热门项目（周内 Star +6,830），为 AI Agent 提供"看见整个互联网"的能力。支持通过单一 CLI 工具搜索和阅读 Twitter、Reddit、YouTube、GitHub、Bilibili、小红书等平台内容，<strong>无需任何 API 费用</strong>。</p>
+    <ul>
+      <li><strong>适用场景：</strong>AI Agent 信息检索、舆情监控、跨平台内容聚合分析</li>
+      <li><strong>技术亮点：</strong>单 CLI 覆盖 6+ 主流平台；零费用架构避免 API 成本；可直接嵌入现有 Agent 工作流</li>
+      <li><strong>落地建议：</strong>适合需要 AI Agent 自主获取外部信息的团队（如投研、市场分析、内容运营），可替代高成本的第三方数据 API</li>
+    </ul>
+    <div class="source">来源：GitHub Trending · 2026-06-26</div>
+  </div>
+</div>
+
+<!-- ============ 趋势总结 ============ -->
+<div class="section" id="trend">
+  <div class="section-title">三、趋势总结</div>
+  <div class="trend-box">
+    <p>🔮 AI 竞争重心正从"模型能力比拼"转向"Agent 落地应用"——Google 将 Computer Use 原生集成进 Flash 模型、高通押注 AI Agent 专用芯片、GitHub 上 Agent 工具连续霸榜，信号明确：<strong>2026 下半年，AI Agent 基础设施将成为新一轮主战场</strong>。</p>
+  </div>
+</div>
+
+<div class="github-box">
+  📎 <a href="https://github.com/hardycrab/my-reports/blob/main/shared-docs/ai-news-apps-2026-06-26.html" target="_blank">在线查看完整报告（GitHub）</a>
+</div>
+
+<footer>
+  <p>AI 新闻与应用方案日报 · 由 AI 自动采集生成 · 2026-06-26</p>
+  <p style="margin-top:4px">来源：阮一峰周刊 · GitHub Trending · AIBase · The Decoder · AIbase News</p>
+</footer>
+
+</div>
+</body>
+</html>
