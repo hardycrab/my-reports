@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS2 饰品价格日报 - 2026-07-20 12:13</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .summary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .summary h2 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        .summary-item {
+            text-align: center;
+        }
+        .summary-item .label {
+            font-size: 12px;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+        .summary-item .value {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .profit { color: #ff6b6b; }
+        .loss { color: #51cf66; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th {
+            background: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        .item-section {
+            margin-bottom: 30px;
+        }
+        .item-section h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .suggestion {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 4px;
+        }
+        .suggestion h3 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+        .suggestion ul {
+            margin-left: 20px;
+            color: #856404;
+        }
+        .suggestion li {
+            margin-bottom: 5px;
+        }
+        .footer {
+            text-align: center;
+            color: #999;
+            font-size: 12px;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #f0f0f0;
+        }
+        .negative { color: #ff6b6b; }
+        .positive { color: #51cf66; }
+        @media (max-width: 600px) {
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎮 CS2 饰品价格日报</h1>
+        <div class="subtitle">
+            更新时间：2026-07-20 12:13 | 数据来源：悠悠有品/CSQAQ API
+        </div>
+
+        <div class="summary">
+            <h2>📊 持仓总览</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="label">总投入</div>
+                    <div class="value">¥5959.47</div>
+                </div>
+                <div class="summary-item">
+                    <div class="label">当前市值</div>
+                    <div class="value">¥3563.82</div>
+                </div>
+                <div class="summary-item">
+                    <div class="label">总盈亏</div>
+                    <div class="value negative">¥-2395.65</div>
+                </div>
+                <div class="summary-item">
+                    <div class="label">收益率</div>
+                    <div class="value negative">-40.1%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="item-section">
+            <h3>🎯 持仓明细</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>饰品名称</th>
+                        <th>持有数量</th>
+                        <th>买入单价</th>
+                        <th>当前价格</th>
+                        <th>市值</th>
+                        <th>盈亏</th>
+                        <th>收益率</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>印花 | Complexity Gaming（全息）|2023 巴黎</td>
+                        <td>100</td>
+                        <td>¥22.00</td>
+                        <td>¥6.05</td>
+                        <td>¥605.00</td>
+                        <td class="negative">¥-1595.00</td>
+                        <td class="negative">-72.5%</td>
+                    </tr>
+                    <tr>
+                        <td>2023 年巴黎锦标赛阿努比斯纪念包</td>
+                        <td>239</td>
+                        <td>¥15.73</td>
+                        <td>¥12.38</td>
+                        <td>¥2958.82</td>
+                        <td class="negative">¥-800.65</td>
+                        <td class="negative">-21.2%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="item-section">
+            <h3>📈 回本分析</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>饰品</th>
+                        <th>买入价</th>
+                        <th>当前价</th>
+                        <th>需上涨</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>印花 Complexity Gaming（全息）</td>
+                        <td>¥22.00</td>
+                        <td>¥6.05</td>
+                        <td class="negative">+263.6%</td>
+                    </tr>
+                    <tr>
+                        <td>巴黎锦标赛纪念包</td>
+                        <td>¥15.73</td>
+                        <td>¥12.38</td>
+                        <td class="negative">+26.2%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="suggestion">
+            <h3>💡 操作建议</h3>
+            <ul>
+                <li><strong>当前状态</strong>：浮亏 40.1%</li>
+                <li><strong>建议</strong>：继续持有，关注 CS2 赛事动态和 Major 锦标赛日程</li>
+                <li><strong>印花目标价</strong>：¥22.00（回本）</li>
+                <li><strong>纪念包目标价</strong>：¥15.73（回本）</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>数据来源：CSQAQ API（悠悠有品实时数据）</p>
+            <p>下次更新：明日 11:00</p>
+            <p>GitHub: <a href="https://github.com/hardycrab/my-reports/blob/main/reports/cs2-daily-20260720.html" style="color: #667eea;">hardycrab/my-reports</a></p>
+        </div>
+    </div>
+</body>
+</html>
