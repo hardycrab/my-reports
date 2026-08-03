@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>基金评估报告 - 2026-08-03</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #f5f7fa; color: #333; line-height: 1.6; padding: 20px; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  h1 { text-align: center; color: #2c3e50; margin-bottom: 8px; font-size: 28px; }
+  .subtitle { text-align: center; color: #7f8c8d; margin-bottom: 30px; font-size: 14px; }
+  
+  .card { background: #fff; border-radius: 12px; padding: 24px; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .card-title { font-size: 20px; font-weight: 600; color: #2c3e50; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #3498db; }
+  
+  .overview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 20px; }
+  .stat-box { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; border-radius: 10px; padding: 16px; text-align: center; }
+  .stat-box.green { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); }
+  .stat-box.red { background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%); }
+  .stat-box.blue { background: linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%); }
+  .stat-box.gold { background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%); }
+  .stat-value { font-size: 28px; font-weight: 700; }
+  .stat-label { font-size: 13px; opacity: 0.9; margin-top: 4px; }
+  
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { background: #f8f9fa; color: #495057; font-weight: 600; text-align: left; padding: 10px 8px; border-bottom: 2px solid #dee2e6; }
+  td { padding: 10px 8px; border-bottom: 1px solid #eee; }
+  tr:hover { background: #f8f9fa; }
+  
+  .up { color: #e74c3c; }
+  .down { color: #27ae60; }
+  .flat { color: #95a5a6; }
+  
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; color: #fff; }
+  .tag-bullish { background: #27ae60; }
+  .tag-bearish { background: #e74c3c; }
+  .tag-neutral { background: #f39c12; }
+  .tag-buy { background: #27ae60; }
+  .tag-hold { background: #2980b9; }
+  .tag-sell { background: #f39c12; }
+  .tag-reduce { background: #e74c3c; }
+  
+  .recommendation { margin-top: 8px; }
+  .reason { font-size: 12px; color: #666; margin: 2px 0; }
+  
+  .news-item { padding: 8px 0; border-bottom: 1px solid #eee; font-size: 13px; }
+  .news-item:last-child { border-bottom: none; }
+  .news-source { color: #3498db; font-weight: 500; margin-right: 8px; }
+  .news-time { color: #999; font-size: 11px; }
+  
+  .pair-box { padding: 12px; margin: 8px 0; background: #f8f9fa; border-radius: 8px; }
+  .pair-label { font-weight: 600; color: #2c3e50; }
+  
+  .arbitrage-opportunity { background: #fff3cd; border-left: 4px solid #f39c12; padding: 12px; margin: 8px 0; border-radius: 0 8px 8px 0; }
+  
+  .footer { text-align: center; color: #999; font-size: 12px; margin-top: 30px; padding: 20px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>📊 基金持仓评估报告</h1>
+<p class="subtitle">生成时间：2026-08-03 14:34 | 数据来源：东方财富 | 共 16 只基金</p>
+
+<!-- 总览 -->
+<div class="card">
+  <div class="card-title">💰 账户总览</div>
+  <div class="overview-grid">
+    <div class="stat-box blue">
+      <div class="stat-value">¥140,154.26</div>
+      <div class="stat-label">总持仓金额</div>
+    </div>
+    <div class="stat-box red">
+      <div class="stat-value">¥-9,965.95</div>
+      <div class="stat-label">累计持有收益</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-value">-7.11%</div>
+      <div class="stat-label">收益率</div>
+    </div>
+    <div class="stat-box green">
+      <div class="stat-value">7 只</div>
+      <div class="stat-label">盈利基金</div>
+    </div>
+    <div class="stat-box red">
+      <div class="stat-value">9 只</div>
+      <div class="stat-label">亏损基金</div>
+    </div>
+  </div>
+</div>
+
+<!-- 行业分布 -->
+<div class="card">
+  <div class="card-title">📈 行业分布</div>
+  <table>
+    <tr><th>行业</th><th>持仓金额</th><th>占比</th><th>持有收益</th></tr>
+    <tr><td>黄金</td><td>¥17,797.59</td><td>12.7%</td>
+        <td class="down">¥-1,102.92</td></tr>
+    <tr><td>海外/QDII</td><td>¥15,217.62</td><td>10.9%</td>
+        <td class="up">¥+3,947.62</td></tr>
+    <tr><td>均衡/价值</td><td>¥14,347.95</td><td>10.2%</td>
+        <td class="down">¥-2,103.21</td></tr>
+    <tr><td>半导体/芯片</td><td>¥13,638.79</td><td>9.7%</td>
+        <td class="up">¥+2,543.12</td></tr>
+    <tr><td>券商</td><td>¥13,447.68</td><td>9.6%</td>
+        <td class="up">¥+622.43</td></tr>
+    <tr><td>消费/白酒</td><td>¥10,967.51</td><td>7.8%</td>
+        <td class="down">¥-4,621.09</td></tr>
+    <tr><td>科技/5G</td><td>¥10,873.29</td><td>7.8%</td>
+        <td class="up">¥+211.99</td></tr>
+    <tr><td>新能源</td><td>¥9,527.73</td><td>6.8%</td>
+        <td class="down">¥-2,222.27</td></tr>
+    <tr><td>医药/医疗</td><td>¥8,993.17</td><td>6.4%</td>
+        <td class="down">¥-3,356.83</td></tr>
+    <tr><td>均衡配置</td><td>¥8,727.59</td><td>6.2%</td>
+        <td class="up">¥+2,394.87</td></tr>
+    <tr><td>宽基指数</td><td>¥5,688.52</td><td>4.1%</td>
+        <td class="up">¥+1,105.52</td></tr>
+    <tr><td>光伏</td><td>¥4,865.13</td><td>3.5%</td>
+        <td class="down">¥-3,384.87</td></tr>
+    <tr><td>互联网医疗</td><td>¥4,038.82</td><td>2.9%</td>
+        <td class="down">¥-2,180.66</td></tr>
+    <tr><td>成长混合</td><td>¥2,022.87</td><td>1.4%</td>
+        <td class="down">¥-1,819.65</td></tr>
+  </table>
+</div>
+
+<!-- 基金详情 -->
+<div class="card">
+  <div class="card-title">📋 基金详细评估</div>
+  <table>
+    <tr>
+      <th>基金</th><th>最新净值</th><th>日涨跌</th><th>趋势信号</th>
+      <th>偏离MA20</th><th>持有收益</th><th>操作建议</th>
+    </tr>
+    <tr>
+      <td><strong>广发全球精选股票(QDII)A</strong><br><span style="color:#999;font-size:11px">270023 | QDII</span></td>
+      <td>5.8780</td>
+      <td class="up">+3.13%</td>
+      <td><span class="tag tag-bearish">🔴 空头</span></td>
+      <td>-8.9%</td>
+      <td class="up">¥+3,810.23</td>
+      <td>
+        <span class="tag tag-sell">观望/减仓</span>
+        <div class="recommendation"><div class="reason">• 趋势空头排列，价格低于MA20和MA60</div><div class="reason">• 近期出现死叉信号</div><div class="reason">• 偏离MA20达-8.9%，短期超跌</div></div>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>大成纳斯达克100ETF联接(QDII)C</strong><br><span style="color:#999;font-size:11px">008972 | QDII</span></td>
+      <td>-</td>
+      <td class="flat">+0.00%</td>
+      <td><span class="tag tag-neutral">🟡 震荡</span></td>
+      <td>-1.1%</td>
+      <td class="up">¥+137.39</td>
+      <td>
+        <span class="tag tag-hold">持有</span>
+        <div class="recommendation"><div class="reason">• 震荡整理，MA20与MA60交叉</div><div class="reason">• 持有收益 +6.2%</div></div>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>交银定期支付双息平衡混合</strong><br><span style="color:#999;font-size:11px">519732 | 均衡</span></td>
+      <td>8.0860</td>
+      <td class="up">+3.24%</td>
+      <td><span class="tag tag-bearish">🔴 空头</span></td>
+      <td>-11.6%</td>
+      <td class="up">¥+2,394.87</td>
+      <td>
+        <span class="tag tag-sell">观望/减仓</span>
+        <div class="recommendation"><div class="reason">• 趋势空头排列，价格低于MA20和MA60</div><div class="reason">• 近期出现死叉信号</div><div class="reason">• 偏离MA20达-11.6%，短期超跌</div></div>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>招商中证白酒指数(LOF)A</strong><br><span style="color:#999;font-size:11px">161725 | 消费</span></td>
+      <td>0.5842</td>
+      <td class="up">+0.05%</td>
+      <td><span class="tag tag-neutral">🟡 震荡</span></td>
+      <td>+8.7%</td>
+      <td class="down">¥-2,621.70</td>
+      <td>
+        <span class="tag tag-reduce">减仓/卖出</span>
+        <div class="recommendation"><div class="reason">• 震荡整理，MA20与MA60交叉</div><div class="reason">• 偏离MA20达+8.7%，短期超涨</div><div class="reason">• 持有收益 -51.9%</div></div>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>景顺长城新兴成长混合A</strong><br><span style="color:#999;font-size:11px">260108 | 成长</span></td>
+      <td>1.5760</td>
+      <td class="flat">+0.00%</td>
+      <td><span class="tag tag-bullish">🟢 多头</span></td>
+      <td>+4.9%</td>
+      <td class="down">¥-1,819.65</td>
+      <td>
+        <span class="tag tag-hold">持有</span>
+        <div class="recommendation"><div class="reason">• 趋势多头排列，MA5>MA20>MA60</div><div class="reason">• 近期出现金叉信号</div><div class="reason">• 偏离MA20达+4.9%，短期超涨</div></div>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>华夏中证5G通信主题ETF联接A</strong><br><span style="color:#999;font-size:11px">515880 | 科技</span></td>
+      <td>-</td>
+      <td class="flat">+0.00%</td>
+      <td><span class="tag tag-bearish">🔴 空头</span></td>
+      <td>-16.2%</td>
+      <td class="up">¥+211.99</td>
+      <td>
+        <span class="tag tag-sell">观望/减仓</span>
+        <div class="recommendation"><div class="reason">• 趋势空头排列，价格低于MA20和MA60</div><div class="reason">• 偏离MA20达-16.2%，短期超跌</div><div class="reason">• 持有收益 +1.9%</div></div>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>华夏国证半导体芯片ETF联接C</strong><br><span style="color:#999;font-size:11px">008889 | 芯片</span></td>
+      <td>2.0552</td>
+      <td class="up">+4.24%</td>
+      <td><span class="tag tag-bearish">🔴 空头</span></td>
+      <td>-14.8%</td>
+      <td class="up">¥+2,543.12</td>
+      <td>
+        <span class="tag tag-hold">持有</span>
+        <div class="recommendation"><div class="reason">• 趋势空头排列，价格低于MA20和MA60</div><div class="reason">• 偏离MA20达-14.8%，短期超跌</div><div class="reason">• 持有收益 +18.6%</div></div>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>富国消费主题混合A</strong><br><span style="color:#999;font-size:11px">100056 | 消费</span></td>
+      <td>2.2440</td>
+      <td class="up">+3.89%</td>
+      <td><span class="tag tag-bearish">🔴 空头</span></td>
+      <td>-6.7%</td>
+      <td class="down">¥-1,999.39</td>
+      <td>
+        <span class="tag tag-reduce">减仓/卖出</span>
+        <div class="recommendation"><div class="reason">• 趋势空头排列，价格低于MA20和MA60</div><div class="reason">• 偏离MA20达-6.7%，短期超跌</div><div class="reason">• 持有收益 -33.8%</div></div>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>中欧医疗健康混合C</strong><br><span style="color:#999;font-size:11px">003096 | 医药</span></td>
+      <td>1.8036</td>
+      <td class="up">+1.13%</td>
+      <td><span class="tag tag-neutral">🟡 震荡</span></td>
+      <td>-3.2%</td>
+      <td class="down">¥-3,356.83</td>
+      <td>
+        <span class="tag tag-hold">持有</span>
+        <div class="recommendation"><div class="reason">• 震荡整理，MA20与MA60交叉</div><div class="reason">• 偏离MA20达-3.2%，短期超跌</div><div class="reason">• 持有收益 -37.3%</div></div>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>南方中证全指证券公司ETF联接A</strong><br><span style="color:#999;font-size:11px">512900 | 券商</span></td>
+      <td>-</td>
+      <td class="flat">+0.00%</td>
+      <td><span class="tag tag-neutral">🟡 震荡</span></td>
+      <td>-0.7%</td>
+      <td class="up">¥+622.43</td>
+      <td>
+        <span class="tag tag-hold">持有</span>
+        <div class="recommendation"><div class="reason">• 震荡整理，MA20与MA60交叉</div><div class="reason">• 持有收益 +4.6%</div></div>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>华安黄金ETF联接C</strong><br><span style="color:#999;font-size:11px">000217 | 黄金</span></td>
+      <td>2.9800</td>
+      <td class="up">+0.49%</td>
+      <td><span class="tag tag-bearish">🔴 空头</span></td>
+      <td>-0.4%</td>
+      <td class="down">¥-1,102.92</td>
+      <td>
+        <span class="tag tag-reduce">减仓/卖出</span>
+        <div class="recommendation"><div class="reason">• 趋势空头排列，价格低于MA20和MA60</div><div class="reason">• 持有收益 -6.2%</div></div>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>易方达中证500ETF联接A</strong><br><span style="color:#999;font-size:11px">007028 | 宽基</span></td>
+      <td>1.8179</td>
+      <td class="up">+2.34%</td>
+      <td><span class="tag tag-bearish">🔴 空头</span></td>
+      <td>-4.8%</td>
+      <td class="up">¥+1,105.52</td>
+      <td>
+        <span class="tag tag-hold">持有</span>
+        <div class="recommendation"><div class="reason">• 趋势空头排列，价格低于MA20和MA60</div><div class="reason">• 偏离MA20达-4.8%，短期超跌</div><div class="reason">• 持有收益 +19.4%</div></div>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>汇添富中证互联网医疗(LOF)A</strong><br><span style="color:#999;font-size:11px">501007 | 医疗</span></td>
+      <td>0.8336</td>
+      <td class="up">+2.60%</td>
+      <td><span class="tag tag-neutral">🟡 震荡</span></td>
+      <td>+4.6%</td>
+      <td class="down">¥-2,180.66</td>
+      <td>
+        <span class="tag tag-reduce">减仓/卖出</span>
+        <div class="recommendation"><div class="reason">• 震荡整理，MA20与MA60交叉</div><div class="reason">• 偏离MA20达+4.6%，短期超涨</div><div class="reason">• 持有收益 -54.0%</div></div>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>汇添富价值精选混合A</strong><br><span style="color:#999;font-size:11px">519069 | 价值</span></td>
+      <td>3.4310</td>
+      <td class="down">-0.20%</td>
+      <td><span class="tag tag-bearish">🔴 空头</span></td>
+      <td>-0.6%</td>
+      <td class="down">¥-2,103.21</td>
+      <td>
+        <span class="tag tag-reduce">减仓/卖出</span>
+        <div class="recommendation"><div class="reason">• 趋势空头排列，价格低于MA20和MA60</div><div class="reason">• 持有收益 -14.7%</div></div>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>农银新能源混合A</strong><br><span style="color:#999;font-size:11px">002190 | 新能源</span></td>
+      <td>2.6932</td>
+      <td class="up">+0.66%</td>
+      <td><span class="tag tag-bearish">🔴 空头</span></td>
+      <td>-0.5%</td>
+      <td class="down">¥-2,222.27</td>
+      <td>
+        <span class="tag tag-reduce">减仓/卖出</span>
+        <div class="recommendation"><div class="reason">• 趋势空头排列，价格低于MA20和MA60</div><div class="reason">• 持有收益 -23.3%</div></div>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>天弘中证光伏产业指数A</strong><br><span style="color:#999;font-size:11px">011102 | 光伏</span></td>
+      <td>0.7017</td>
+      <td class="up">+1.52%</td>
+      <td><span class="tag tag-bearish">🔴 空头</span></td>
+      <td>-3.4%</td>
+      <td class="down">¥-3,384.87</td>
+      <td>
+        <span class="tag tag-reduce">减仓/卖出</span>
+        <div class="recommendation"><div class="reason">• 趋势空头排列，价格低于MA20和MA60</div><div class="reason">• 偏离MA20达-3.4%，短期超跌</div><div class="reason">• 持有收益 -69.6%</div></div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<!-- 趋势跟踪汇总 -->
+<div class="card">
+  <div class="card-title">📐 趋势跟踪汇总</div>
+  <table>
+    <tr><th>基金</th><th>MA5</th><th>MA20</th><th>MA60</th><th>趋势</th><th>金叉/死叉</th></tr>
+    <tr>
+      <td><strong>广发全球精选股票(QDII)A</strong></td>
+      <td>5.9667</td>
+      <td>6.4528</td>
+      <td>6.6677</td>
+      <td>🔴 空头排列</td>
+      <td>🔴 死叉</td>
+    </tr>
+    <tr>
+      <td><strong>大成纳斯达克100ETF联接(QDII)C</strong></td>
+      <td>0.9026</td>
+      <td>0.9120</td>
+      <td>0.8858</td>
+      <td>🟡 震荡整理</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td><strong>交银定期支付双息平衡混合</strong></td>
+      <td>8.3124</td>
+      <td>9.1479</td>
+      <td>9.3050</td>
+      <td>🔴 空头排列</td>
+      <td>🔴 死叉</td>
+    </tr>
+    <tr>
+      <td><strong>招商中证白酒指数(LOF)A</strong></td>
+      <td>0.5663</td>
+      <td>0.5376</td>
+      <td>0.5498</td>
+      <td>🟡 震荡整理</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td><strong>景顺长城新兴成长混合A</strong></td>
+      <td>1.5528</td>
+      <td>1.5029</td>
+      <td>1.4838</td>
+      <td>🟢 多头排列</td>
+      <td>🟢 金叉</td>
+    </tr>
+    <tr>
+      <td><strong>华夏中证5G通信主题ETF联接A</strong></td>
+      <td>0.6014</td>
+      <td>0.6936</td>
+      <td>1.3044</td>
+      <td>🔴 空头排列</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td><strong>华夏国证半导体芯片ETF联接C</strong></td>
+      <td>2.1228</td>
+      <td>2.4114</td>
+      <td>2.5852</td>
+      <td>🔴 空头排列</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td><strong>富国消费主题混合A</strong></td>
+      <td>2.2688</td>
+      <td>2.4061</td>
+      <td>2.6654</td>
+      <td>🔴 空头排列</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td><strong>中欧医疗健康混合C</strong></td>
+      <td>1.8235</td>
+      <td>1.8636</td>
+      <td>1.6721</td>
+      <td>🟡 震荡整理</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td><strong>南方中证全指证券公司ETF联接A</strong></td>
+      <td>1.0910</td>
+      <td>1.1016</td>
+      <td>1.0720</td>
+      <td>🟡 震荡整理</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td><strong>华安黄金ETF联接C</strong></td>
+      <td>2.9796</td>
+      <td>2.9917</td>
+      <td>3.1433</td>
+      <td>🔴 空头排列</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td><strong>易方达中证500ETF联接A</strong></td>
+      <td>1.8185</td>
+      <td>1.9086</td>
+      <td>1.9937</td>
+      <td>🔴 空头排列</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td><strong>汇添富中证互联网医疗(LOF)A</strong></td>
+      <td>0.8125</td>
+      <td>0.7969</td>
+      <td>0.8260</td>
+      <td>🟡 震荡整理</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td><strong>汇添富价值精选混合A</strong></td>
+      <td>3.4432</td>
+      <td>3.4529</td>
+      <td>3.4877</td>
+      <td>🔴 空头排列</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td><strong>农银新能源混合A</strong></td>
+      <td>2.6852</td>
+      <td>2.7076</td>
+      <td>3.0031</td>
+      <td>🔴 空头排列</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td><strong>天弘中证光伏产业指数A</strong></td>
+      <td>0.7017</td>
+      <td>0.7266</td>
+      <td>0.8426</td>
+      <td>🔴 空头排列</td>
+      <td>—</td>
+    </tr>
+  </table>
+</div>
+
+<!-- 统计套利 -->
+<div class="card">
+  <div class="card-title">🔄 统计套利分析（配对交易）</div>
+  <div class="pair-box">
+    <div class="pair-label">📊 易方达中证500ETF联接A vs 农银新能源混合A</div>
+    <div style="margin-top:6px; font-size:13px;">
+      相关系数: <span style="color:green;font-weight:600">0.884</span> |
+      历史均值比: 0.6438 |
+      当前比值: 0.6750 |
+      Z-Score: <span style="color:green;font-weight:600">0.77</span>
+    </div>
+    <div style="margin-top:4px;">✅ 价差正常 (Z=0.77)</div>
+  </div>
+  <div class="pair-box">
+    <div class="pair-label">📊 招商中证白酒指数(LOF)A vs 富国消费主题混合A</div>
+    <div style="margin-top:6px; font-size:13px;">
+      相关系数: <span style="color:red;font-weight:600">-0.781</span> |
+      历史均值比: 0.2393 |
+      当前比值: 0.2603 |
+      Z-Score: <span style="color:green;font-weight:600">0.55</span>
+    </div>
+    <div style="margin-top:4px;">✅ 价差正常 (Z=0.55)</div>
+  </div>
+  <div class="pair-box">
+    <div class="pair-label">📊 中欧医疗健康混合C vs 汇添富中证互联网医疗(LOF)A</div>
+    <div style="margin-top:6px; font-size:13px;">
+      相关系数: <span style="color:red;font-weight:600">0.385</span> |
+      历史均值比: 1.9079 |
+      当前比值: 2.1636 |
+      Z-Score: <span style="color:red;font-weight:600">1.07</span>
+    </div>
+    <div style="margin-top:4px;">⚡ A相对B超涨 (Z=1.07)，建议关注B（相对低估）</div>
+  </div>
+  <div class="pair-box">
+    <div class="pair-label">📊 华夏国证半导体芯片ETF联接C vs 华夏中证5G通信主题ETF联接A</div>
+    <div style="margin-top:6px; font-size:13px;">
+      相关系数: <span style="color:green;font-weight:600">0.844</span> |
+      历史均值比: 1.9483 |
+      当前比值: 3.5367 |
+      Z-Score: <span style="color:red;font-weight:600">2.22</span>
+    </div>
+    <div style="margin-top:4px;">⚡ A相对B超涨 (Z=2.22)，建议关注B（相对低估）</div>
+  </div>
+  <div class="pair-box">
+    <div class="pair-label">📊 农银新能源混合A vs 天弘中证光伏产业指数A</div>
+    <div style="margin-top:6px; font-size:13px;">
+      相关系数: <span style="color:green;font-weight:600">0.958</span> |
+      历史均值比: 3.4601 |
+      当前比值: 3.8381 |
+      Z-Score: <span style="color:red;font-weight:600">1.98</span>
+    </div>
+    <div style="margin-top:4px;">⚡ A相对B超涨 (Z=1.98)，建议关注B（相对低估）</div>
+  </div>
+  <div class="pair-box">
+    <div class="pair-label">📊 交银定期支付双息平衡混合 vs 汇添富价值精选混合A</div>
+    <div style="margin-top:6px; font-size:13px;">
+      相关系数: <span style="color:orange;font-weight:600">0.696</span> |
+      历史均值比: 2.4778 |
+      当前比值: 2.3567 |
+      Z-Score: <span style="color:green;font-weight:600">-0.52</span>
+    </div>
+    <div style="margin-top:4px;">✅ 价差正常 (Z=-0.52)</div>
+  </div>
+</div>
+
+<!-- 财经新闻 -->
+<div class="card">
+  <div class="card-title">📰 财经要闻</div>
+  
+  <div class="news-item">
+    <span class="news-source">[东方财富]</span>
+    中共中央政治局会议：及时谋划出台务实管用的增量政策，加快财政支出和债券资金使用进度
+    <span class="news-time">2026-07-30</span>
+  </div>
+  <div class="news-item">
+    <span class="news-source">[每日经济新闻]</span>
+    政治局会议提法深意：提升资本市场韧性和信心，增加韧性表述
+    <span class="news-time">2026-07-30</span>
+  </div>
+  <div class="news-item">
+    <span class="news-source">[华泰证券]</span>
+    华泰证券：广义财政支出下半年有望温和回升
+    <span class="news-time">2026-08-01</span>
+  </div>
+  <div class="news-item">
+    <span class="news-source">[光大证券]</span>
+    光大证券：北美科技巨头CDS走阔，市场关注信用风险定价
+    <span class="news-time">2026-08-01</span>
+  </div>
+  <div class="news-item">
+    <span class="news-source">[银河证券]</span>
+    银河证券：美国内需仍有韧性，但消费反弹未必持续
+    <span class="news-time">2026-08-02</span>
+  </div>
+  <div class="news-item">
+    <span class="news-source">[经济日报]</span>
+    经济日报：深化资本市场投融资综合改革
+    <span class="news-time">2026-08-02</span>
+  </div>
+</div>
+
+<!-- 综合操作建议汇总 -->
+<div class="card">
+  <div class="card-title">🎯 综合操作建议</div>
+  <table>
+    <tr><th>操作</th><th>基金</th><th>综合评分</th><th>核心理由</th></tr>
+    <tr>
+      <td><span class="tag tag-hold">持有</span></td>
+      <td><strong>大成纳斯达克100ETF联接(QDII)C</strong><br><span style="color:#999;font-size:11px">008972</span></td>
+      <td>+0</td>
+      <td style="font-size:12px">震荡整理，MA20与MA60交叉</td>
+    </tr>
+    <tr>
+      <td><span class="tag tag-hold">持有</span></td>
+      <td><strong>景顺长城新兴成长混合A</strong><br><span style="color:#999;font-size:11px">260108</span></td>
+      <td>+1</td>
+      <td style="font-size:12px">趋势多头排列，MA5>MA20>MA60</td>
+    </tr>
+    <tr>
+      <td><span class="tag tag-hold">持有</span></td>
+      <td><strong>华夏国证半导体芯片ETF联接C</strong><br><span style="color:#999;font-size:11px">008889</span></td>
+      <td>+0</td>
+      <td style="font-size:12px">趋势空头排列，价格低于MA20和MA60</td>
+    </tr>
+    <tr>
+      <td><span class="tag tag-hold">持有</span></td>
+      <td><strong>中欧医疗健康混合C</strong><br><span style="color:#999;font-size:11px">003096</span></td>
+      <td>+0</td>
+      <td style="font-size:12px">震荡整理，MA20与MA60交叉</td>
+    </tr>
+    <tr>
+      <td><span class="tag tag-hold">持有</span></td>
+      <td><strong>南方中证全指证券公司ETF联接A</strong><br><span style="color:#999;font-size:11px">512900</span></td>
+      <td>+0</td>
+      <td style="font-size:12px">震荡整理，MA20与MA60交叉</td>
+    </tr>
+    <tr>
+      <td><span class="tag tag-hold">持有</span></td>
+      <td><strong>易方达中证500ETF联接A</strong><br><span style="color:#999;font-size:11px">007028</span></td>
+      <td>+0</td>
+      <td style="font-size:12px">趋势空头排列，价格低于MA20和MA60</td>
+    </tr>
+    <tr>
+      <td><span class="tag tag-sell">观望/减仓</span></td>
+      <td><strong>广发全球精选股票(QDII)A</strong><br><span style="color:#999;font-size:11px">270023</span></td>
+      <td>-1</td>
+      <td style="font-size:12px">趋势空头排列，价格低于MA20和MA60</td>
+    </tr>
+    <tr>
+      <td><span class="tag tag-sell">观望/减仓</span></td>
+      <td><strong>交银定期支付双息平衡混合</strong><br><span style="color:#999;font-size:11px">519732</span></td>
+      <td>-1</td>
+      <td style="font-size:12px">趋势空头排列，价格低于MA20和MA60</td>
+    </tr>
+    <tr>
+      <td><span class="tag tag-sell">观望/减仓</span></td>
+      <td><strong>华夏中证5G通信主题ETF联接A</strong><br><span style="color:#999;font-size:11px">515880</span></td>
+      <td>-1</td>
+      <td style="font-size:12px">趋势空头排列，价格低于MA20和MA60</td>
+    </tr>
+    <tr>
+      <td><span class="tag tag-reduce">减仓/卖出</span></td>
+      <td><strong>招商中证白酒指数(LOF)A</strong><br><span style="color:#999;font-size:11px">161725</span></td>
+      <td>-2</td>
+      <td style="font-size:12px">震荡整理，MA20与MA60交叉</td>
+    </tr>
+    <tr>
+      <td><span class="tag tag-reduce">减仓/卖出</span></td>
+      <td><strong>富国消费主题混合A</strong><br><span style="color:#999;font-size:11px">100056</span></td>
+      <td>-2</td>
+      <td style="font-size:12px">趋势空头排列，价格低于MA20和MA60</td>
+    </tr>
+    <tr>
+      <td><span class="tag tag-reduce">减仓/卖出</span></td>
+      <td><strong>华安黄金ETF联接C</strong><br><span style="color:#999;font-size:11px">000217</span></td>
+      <td>-2</td>
+      <td style="font-size:12px">趋势空头排列，价格低于MA20和MA60</td>
+    </tr>
+    <tr>
+      <td><span class="tag tag-reduce">减仓/卖出</span></td>
+      <td><strong>汇添富中证互联网医疗(LOF)A</strong><br><span style="color:#999;font-size:11px">501007</span></td>
+      <td>-2</td>
+      <td style="font-size:12px">震荡整理，MA20与MA60交叉</td>
+    </tr>
+    <tr>
+      <td><span class="tag tag-reduce">减仓/卖出</span></td>
+      <td><strong>汇添富价值精选混合A</strong><br><span style="color:#999;font-size:11px">519069</span></td>
+      <td>-2</td>
+      <td style="font-size:12px">趋势空头排列，价格低于MA20和MA60</td>
+    </tr>
+    <tr>
+      <td><span class="tag tag-reduce">减仓/卖出</span></td>
+      <td><strong>农银新能源混合A</strong><br><span style="color:#999;font-size:11px">002190</span></td>
+      <td>-3</td>
+      <td style="font-size:12px">趋势空头排列，价格低于MA20和MA60</td>
+    </tr>
+    <tr>
+      <td><span class="tag tag-reduce">减仓/卖出</span></td>
+      <td><strong>天弘中证光伏产业指数A</strong><br><span style="color:#999;font-size:11px">011102</span></td>
+      <td>-2</td>
+      <td style="font-size:12px">趋势空头排列，价格低于MA20和MA60</td>
+    </tr>
+  </table>
+</div>
+
+<div class="footer">
+  <p>⚠️ 本报告仅供参考，不构成投资建议。市场有风险，投资需谨慎。</p>
+  <p>报告生成时间：2026-08-03 14:34:36 | 数据来源：东方财富</p>
+</div>
+
+</div>
+</body>
+</html>
