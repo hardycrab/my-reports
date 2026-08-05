@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📅 本周剩余训练计划（科学调整版）</title>
+    <style>
+        :root {
+            --primary-color: #07c160; /* 微信绿 */
+            --text-color: #333;
+            --text-secondary: #666;
+            --bg-color: #f5f5f5;
+            --card-bg: #ffffff;
+            --border-color: #e5e5e5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            padding: 20px;
+            max-width: 100%;
+        }
+        
+        .container {
+            max-width: 768px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 28px 0 16px;
+        }
+        
+        h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 24px 0 12px;
+        }
+        
+        h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin: 16px 0;
+            text-align: justify;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+            overflow-x: auto;
+            display: block;
+        }
+        
+        th, td {
+            padding: 12px 10px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        th {
+            background-color: #f8f8f8;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+        
+        tr:hover {
+            background-color: #f0f7ff;
+        }
+        
+        code {
+            background-color: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 13px;
+            color: #e83e8c;
+        }
+        
+        pre {
+            background-color: #f6f8fa;
+            padding: 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 16px 0;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 16px;
+            margin: 20px 0;
+            color: var(--text-secondary);
+            background: #f8f9fa;
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        ul, ol {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            word-break: break-all;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .meta {
+            color: var(--text-secondary);
+            font-size: 13px;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+        }
+        
+        /* 表格响应式 */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            table {
+                font-size: 12px;
+            }
+            
+            th, td {
+                padding: 8px 6px;
+            }
+        }
+        
+        /* 代码块高亮 */
+        .keyword { color: #d73a49; }
+        .string { color: #032f62; }
+        .comment { color: #6a737d; }
+        .function { color: #6f42c1; }
+        .number { color: #005cc5; }
+        
+        /* 提示框 */
+        .tip {
+            background: #e7f4e4;
+            border-left: 4px solid var(--primary-color);
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📅 本周剩余训练计划（科学调整版）</h1>
+        <div class="meta">
+            <span class="emoji">📄</span> 生成时间：2026-05-12
+            <span> | 分类：📚 学习培训</span>
+        </div>
+        <div class="content">
+<h1>📅 本周剩余训练计划（科学调整版）</h1>
+<p><strong>周期</strong>：2026 年 5 月 12 日（周二）至 5 月 17 日（周日）
+<strong>制定时间</strong>：2026-05-12
+<strong>训练水平</strong>：中级跑者（周跑量 25-30 公里）
+<strong>数据来源</strong>：COROS 高驰 + 科学训练研究</p>
+<hr />
+<h2>📊 你的训练画像分析</h2>
+<h3>近 14 天数据（4/29-5/12）</h3>
+<p>| 指标 | 数据 | 评估 |
+|------|------|------|
+| 训练次数 | 7 次 | 每周 3.5 次 ✅ |
+| 总跑量 | 51.72 公里 | 周均 25.86 公里 ✅ |
+| 平均每次 | 7.39 公里 | 中等距离 ✅ |
+| 最长距离 | 10.26 公里 | 有长距离训练 ✅ |
+| 训练频率 | 每 2 天一次 | 恢复充分 ✅ |</p>
+<h3>训练水平评估</h3>
+<ul>
+<li><strong>跑步水平</strong>：中级跑者（周跑量 25-30 公里）</li>
+<li><strong>训练习惯</strong>：规律，每 2 天一次</li>
+<li><strong>恢复能力</strong>：良好，能连续训练</li>
+<li><strong>需要改进</strong>：
+<ul>
+<li>增加力量训练（你已开始前臂/肩/臀腿/胸背）</li>
+<li>增加有氧多样性（划船机、跳绳）</li>
+<li>加入低冲击训练防损伤</li>
+</ul>
+</li>
+</ul>
+<h3>你的训练偏好</h3>
+<ul>
+<li>✅ 早上力量训练（10:00）</li>
+<li>✅ 晚上有氧/羽毛球（19:00）</li>
+<li>✅ 一天两练</li>
+<li>✅ 周二/四晚上羽毛球</li>
+</ul>
+<hr />
+<h2>⚠️ 重要调整说明</h2>
+<p><strong>鉴于你前几天已经进行了</strong>：</p>
+<ul>
+<li>肩臂训练</li>
+<li>臀腿训练</li>
+<li>胸背训练</li>
+</ul>
+<p><strong>本周剩余力量训练调整</strong>：</p>
+<ul>
+<li>❌ 不再安排大重量力量训练</li>
+<li>✅ 改为功能性训练、核心、灵活性</li>
+<li>✅ 让已训练肌群充分恢复（48-72 小时）</li>
+</ul>
+<p><strong>科学依据</strong>：</p>
+<ul>
+<li>大肌群恢复时间：48-72 小时</li>
+<li>小肌群恢复时间：24-48 小时</li>
+<li>过度训练会导致：表现下降、受伤风险增加</li>
+</ul>
+<hr />
+<h2>📋 训练安排（5/12-5/17）</h2>
+<h3>第 1 天：5 月 12 日（周二）✅</h3>
+<p>| 时间 | 训练内容 | 时长 | 强度 |
+|------|---------|------|------|
+| 10:00 | <strong>胸背 + 肩臂力量</strong> | 60 分钟 | ⭐⭐⭐⭐ |
+| 19:00 | <strong>羽毛球</strong> | 90 分钟 | ⭐⭐⭐ |</p>
+<p><strong>状态</strong>：已完成</p>
+<hr />
+<h3>第 2 天：5 月 13 日（周三）</h3>
+<p>| 时间 | 训练内容 | 时长 | 强度 |
+|------|---------|------|------|
+| 10:00 | <strong>核心 + 灵活性训练</strong> | 30 分钟 | ⭐⭐ |
+| 19:00 | <strong>轻松跑</strong> | 40 分钟 | ⭐⭐ |</p>
+<p><strong>上午 - 核心 + 灵活性</strong>：
+| 动作 | 组数×时间 | 组间休息 | 目标 |
+|------|----------|---------|------|
+| 平板支撑 | 3×60 秒 | 60 秒 | 核心稳定 |
+| 侧平板支撑 | 3×45 秒/侧 | 45 秒 | 腹斜肌 |
+| 死虫式 | 3×12/侧 | 45 秒 | 深层核心 |
+| 猫牛式 | 3×10 次 | 30 秒 | 脊柱活动度 |
+| 髋关节活动度 | 5 分钟 | - | 髋部灵活性 |
+| 肩关节活动度 | 5 分钟 | - | 肩部灵活性 |</p>
+<p><strong>晚上 - 轻松跑</strong>：</p>
+<ul>
+<li>距离：5-6km</li>
+<li>配速：7:00-7:30 分钟/公里</li>
+<li>心率：区间 2（60-70% 最大心率）</li>
+<li><strong>目的</strong>：促进恢复，不是训练强度</li>
+</ul>
+<hr />
+<h3>第 3 天：5 月 14 日（周四）</h3>
+<p>| 时间 | 训练内容 | 时长 | 强度 |
+|------|---------|------|------|
+| 10:00 | <strong>跳绳 + 平衡训练</strong> | 25 分钟 | ⭐⭐⭐ |
+| 19:00 | <strong>羽毛球</strong> | 90 分钟 | ⭐⭐⭐ |</p>
+<p><strong>上午 - 跳绳 + 平衡</strong>：
+| 动作 | 时间/次数 | 组数 | 组间休息 |
+|------|----------|------|---------|
+| 基础跳 | 1 分钟 | 3 组 | 30 秒 |
+| 交替脚跳 | 1 分钟 | 3 组 | 30 秒 |
+| 单腿站立 | 30 秒/腿 | 3 组 | 30 秒 |
+| 单腿硬拉（徒手） | 10 次/腿 | 3 组 | 45 秒 |</p>
+<p><strong>总训练时间</strong>：25 分钟</p>
+<p><strong>晚上 - 羽毛球</strong>：</p>
+<ul>
+<li>时长：90 分钟</li>
+<li><strong>注意</strong>：连续两天羽毛球，注意肩部恢复</li>
+</ul>
+<hr />
+<h3>第 4 天：5 月 15 日（周五）⭐ 重点训练日</h3>
+<p>| 时间 | 训练内容 | 时长 | 强度 |
+|------|---------|------|------|
+| 10:00 | <strong>下肢功能性训练</strong> | 45 分钟 | ⭐⭐⭐⭐ |
+| 19:00 | <strong>间歇跑</strong> | 35 分钟 | ⭐⭐⭐⭐⭐ |</p>
+<p><strong>上午 - 下肢功能性训练</strong>：
+| 动作 | 组数×次数 | 组间休息 | 目标 |
+|------|----------|---------|------|
+| 深蹲（徒手/轻重量） | 3×15 | 60 秒 | 腿部力量 |
+| 单腿硬拉 | 3×10/腿 | 60 秒 | 平衡 + 后链 |
+| 侧向弓步 | 3×12/侧 | 45 秒 | 内收肌 |
+| 提踵 | 3×20 | 30 秒 | 小腿力量 |
+| 弹力带侧步走 | 3×15/侧 | 45 秒 | 臀中肌 |</p>
+<p><strong>目的</strong>：增强跑步经济性，预防跑步损伤</p>
+<p><strong>晚上 - 间歇跑</strong>：</p>
+<ul>
+<li>热身：2km 轻松跑 + 动态拉伸</li>
+<li>主训练：6×400 米（快跑 2 分 30 秒 + 慢跑 400 米恢复）</li>
+<li>冷身：2km 轻松跑 + 静态拉伸</li>
+<li>总距离：约 6-7km</li>
+<li><strong>目的</strong>：提升最大摄氧量和跑步速度</li>
+</ul>
+<hr />
+<h3>第 5 天：5 月 16 日（周六）</h3>
+<p>| 时间 | 训练内容 | 时长 | 强度 |
+|------|---------|------|------|
+| 10:00 | <strong>划船机有氧</strong> | 30 分钟 | ⭐⭐⭐ |
+| 19:00 | <strong>LSD 长距离慢跑</strong> | 60 分钟 | ⭐⭐⭐ |</p>
+<p><strong>上午 - 划船机有氧</strong>：</p>
+<ul>
+<li>热身：5 分钟轻松划</li>
+<li>主训练：20 分钟中等强度（心率区间 2）</li>
+<li>冷身：5 分钟轻松划</li>
+<li><strong>好处</strong>：低冲击，全身参与，促进恢复</li>
+</ul>
+<p><strong>晚上 - LSD 长距离</strong>：</p>
+<ul>
+<li>距离：10-12km</li>
+<li>配速：7:00-7:30 分钟/公里（能说话）</li>
+<li>心率：区间 2（65-75% 最大心率）</li>
+<li>补给：每 5km 补充 100-150ml 电解质水</li>
+<li><strong>目的</strong>：建立有氧耐力基础</li>
+</ul>
+<hr />
+<h3>第 6 天：5 月 17 日（周日）⭐ 完全休息日</h3>
+<p>| 时间 | 训练内容 | 时长 | 强度 |
+|------|---------|------|------|
+| 10:00 | <strong>主动恢复</strong>（可选） | 20 分钟 | ⭐ |
+| 19:00 | <strong>完全休息</strong> | - | - |</p>
+<p><strong>上午 - 主动恢复</strong>（可选）：
+| 项目 | 时间 | 说明 |
+|------|------|------|
+| 泡沫轴放松 | 10 分钟 | 重点：大腿、背部、臀部 |
+| 静态拉伸 | 10 分钟 | 全身主要肌群 |</p>
+<p><strong>晚上 - 完全休息</strong>：</p>
+<ul>
+<li>不安排任何训练</li>
+<li>重点：促进恢复，准备下周训练</li>
+</ul>
+<hr />
+<h2>📊 训练量统计</h2>
+<p>| 训练类型 | 次数 | 总时长 |
+|---------|------|--------|
+| 力量/功能性 | 3 次 | 约 2.5 小时 |
+| 跑步训练 | 3 次 | 约 2.5 小时 |
+| 划船机 | 1 次 | 30 分钟 |
+| 跳绳 | 1 次 | 25 分钟 |
+| 羽毛球 | 2 次 | 约 3 小时 |
+| 主动恢复 | 1 次 | 20 分钟 |
+| <strong>总计</strong> | <strong>11 次</strong> | <strong>约 9 小时</strong> |</p>
+<hr />
+<h2>🏃 有氧训练配速参考</h2>
+<h3>跑步</h3>
+<p>| 类型 | 配速 | 心率区间 | 感觉 |
+|------|------|---------|------|
+| 轻松跑 | 7:00-7:30 | 区间 2（60-70%） | 能轻松聊天 |
+| 间歇跑 | 2'30&quot;/400m | 区间 4-5（85-95%） | 很吃力 |
+| LSD 长距离 | 7:00-7:30 | 区间 2（65-75%） | 能说话，后段累 |</p>
+<h3>划船机</h3>
+<p>| 类型 | 阻力 | 桨频 | 心率区间 |
+|------|------|------|---------|
+| 轻松划 | 3-4 | 18-20 | 区间 2（60-70%） |</p>
+<h3>跳绳</h3>
+<p>| 类型 | 节奏 | 心率区间 |
+|------|------|---------|
+| 基础跳 | 中等 | 区间 2-3（65-75%） |
+| 交替脚跳 | 快速 | 区间 3（70-80%） |</p>
+<hr />
+<h2>⚠️ 科学训练原则</h2>
+<h3>1. 恢复优先</h3>
+<ul>
+<li>大肌群（胸/背/腿）：休息 48-72 小时 ✅</li>
+<li>小肌群（肩/臂）：休息 24-48 小时 ✅</li>
+<li>连续高强度：间隔至少 48 小时 ✅</li>
+</ul>
+<h3>2. 80/20 法则</h3>
+<ul>
+<li>80% 低强度（区间 1-2）：6 次</li>
+<li>20% 高强度（区间 4-5）：2 次</li>
+<li>符合科学配比 ✅</li>
+</ul>
+<h3>3. 渐进超负荷</h3>
+<ul>
+<li>每周跑量增幅不超过 10%</li>
+<li>当前周跑量：26 公里 → 下周目标：28-29 公里</li>
+</ul>
+<h3>4. 多样性训练</h3>
+<ul>
+<li>有氧：跑步 + 划船机 + 跳绳 + 羽毛球</li>
+<li>功能性：核心 + 平衡 + 灵活性</li>
+<li>避免单一训练模式</li>
+</ul>
+<h3>5. 防损伤要点</h3>
+<ul>
+<li>训练前热身 5-10 分钟</li>
+<li>训练后拉伸 10 分钟</li>
+<li>每周泡沫轴放松 3-4 次</li>
+<li>出现疼痛立即停止</li>
+</ul>
+<hr />
+<h2>💡 训练技巧</h2>
+<h3>跑步</h3>
+<ol>
+<li><strong>步频</strong>：保持 170-180 步/分钟</li>
+<li><strong>姿势</strong>：挺胸抬头，核心收紧</li>
+<li><strong>落地</strong>：中前脚掌先着地</li>
+<li><strong>呼吸</strong>：2 步吸气 + 2 步呼气</li>
+</ol>
+<h3>划船机</h3>
+<ol>
+<li><strong>动作顺序</strong>：腿→背→手臂（拉），手臂→背→腿（回）</li>
+<li><strong>背部</strong>：保持挺直，不要弓背</li>
+<li><strong>腿部</strong>：充分发力，不是只用手臂</li>
+</ol>
+<h3>跳绳</h3>
+<ol>
+<li><strong>姿势</strong>：核心收紧，手腕转动绳子</li>
+<li><strong>落地</strong>：前脚掌着地，膝盖微弯</li>
+<li><strong>高度</strong>：绳子能过即可，不要跳太高</li>
+</ol>
+<h3>羽毛球</h3>
+<ol>
+<li><strong>热身</strong>：肩、腕、膝、踝充分活动</li>
+<li><strong>步伐</strong>：小步快频，不要大步跨</li>
+<li><strong>击球</strong>：用腰腹发力，不是只用手臂</li>
+</ol>
+<hr />
+<h2>📈 进度追踪</h2>
+<h3>每日打卡</h3>
+<p>| 日期 | 上午训练 | 晚上训练 | 完成度 | 感受 |
+|------|---------|---------|--------|------|
+| 5/12 (二) | 胸背 + 肩臂 | 羽毛球 | ✅/✅ | |
+| 5/13 (三) | 核心 + 灵活性 | 轻松跑 | □□ | |
+| 5/14 (四) | 跳绳 + 平衡 | 羽毛球 | □□ | |
+| 5/15 (五) | 下肢功能性 | 间歇跑 | □□ | |
+| 5/16 (六) | 划船机 | LSD 长距离 | □□ | |
+| 5/17 (日) | 主动恢复 | 休息 | □□ | |</p>
+<h3>周末总结</h3>
+<p><strong>完成情况</strong>：</p>
+<ul>
+<li>力量/功能性：___/3 次</li>
+<li>有氧训练：___/4 次</li>
+<li>羽毛球：___/2 次</li>
+<li>总训练时长：___ 小时</li>
+</ul>
+<p><strong>身体状态</strong>：</p>
+<ul>
+<li>体重：___ kg</li>
+<li>静息心率：___ 次/分钟</li>
+<li>睡眠质量：好/一般/差</li>
+</ul>
+<p><strong>下周调整</strong>：</p>
+<ul>
+<li>需要增加强度：___</li>
+<li>需要降低强度：___</li>
+<li>需要注意：___</li>
+</ul>
+<hr />
+<h2>🍽️ 营养建议</h2>
+<h3>每日摄入</h3>
+<p>| 营养素 | 摄入量 | 来源 |
+|--------|--------|------|
+| 蛋白质 | 1.6-2.0g/kg | 鸡胸肉、鱼、蛋、乳清蛋白 |
+| 碳水 | 5-7g/kg | 米饭、燕麦、红薯、水果 |
+| 脂肪 | 0.8-1.0g/kg | 坚果、橄榄油、鱼油 |
+| 水分 | 2.5-3L | 水、电解质饮料 |</p>
+<h3>训练前后</h3>
+<p>| 时间 | 内容 | 目的 |
+|------|------|------|
+| 训练前 1h | 香蕉 + 面包 | 提供能量 |
+| 训练后 30min | 蛋白质 20-30g | 肌肉修复 |
+| 训练后 2h | 正餐（碳水 + 蛋白质） | 全面恢复 |</p>
+<hr />
+<h2>⚠️ 注意事项</h2>
+<h3>力量训练恢复</h3>
+<ul>
+<li><strong>胸背</strong>：周二练 → 下周一再练（间隔 6 天）✅</li>
+<li><strong>肩臂</strong>：周二练 → 下周四再练（间隔 5 天）✅</li>
+<li><strong>臀腿</strong>：前几天练 → 周五功能性训练（间隔 3-4 天）✅</li>
+</ul>
+<h3>羽毛球</h3>
+<ul>
+<li>连续两天（周二/四），注意肩部恢复</li>
+<li>运动前充分热身（肩、腕、膝、踝）</li>
+<li>运动后拉伸肩部和腿部</li>
+</ul>
+<h3>跑步</h3>
+<ul>
+<li>间歇跑在周五，状态最好时进行</li>
+<li>LSD 在周六，建立耐力基础</li>
+<li>跑后拉伸 10 分钟</li>
+</ul>
+<hr />
+<p><strong>祝你本周训练顺利！科学训练，稳步提升！💪</strong></p>
+<p><em>下次更新：2026-05-19（周二）自动生成新计划</em>
+<em>数据来源：COROS 高驰运动手表 | 训练时间：上午 10:00 / 晚上 19:00</em></p>
+
+        </div>
+        <div class="footer">
+            <p>由 OpenClaw AI Agent 自动生成</p>
+            <p>查看更多精彩报告 → <a href="index.html">报告列表</a></p>
+        </div>
+    </div>
+</body>
+</html>

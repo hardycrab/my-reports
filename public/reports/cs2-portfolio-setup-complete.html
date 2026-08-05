@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS2 饰品持仓记录完成</title>
+    <style>
+        :root {
+            --primary-color: #07c160; /* 微信绿 */
+            --text-color: #333;
+            --text-secondary: #666;
+            --bg-color: #f5f5f5;
+            --card-bg: #ffffff;
+            --border-color: #e5e5e5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            padding: 20px;
+            max-width: 100%;
+        }
+        
+        .container {
+            max-width: 768px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 28px 0 16px;
+        }
+        
+        h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 24px 0 12px;
+        }
+        
+        h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin: 16px 0;
+            text-align: justify;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+            overflow-x: auto;
+            display: block;
+        }
+        
+        th, td {
+            padding: 12px 10px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        th {
+            background-color: #f8f8f8;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+        
+        tr:hover {
+            background-color: #f0f7ff;
+        }
+        
+        code {
+            background-color: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 13px;
+            color: #e83e8c;
+        }
+        
+        pre {
+            background-color: #f6f8fa;
+            padding: 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 16px 0;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 16px;
+            margin: 20px 0;
+            color: var(--text-secondary);
+            background: #f8f9fa;
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        ul, ol {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            word-break: break-all;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .meta {
+            color: var(--text-secondary);
+            font-size: 13px;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+        }
+        
+        /* 表格响应式 */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            table {
+                font-size: 12px;
+            }
+            
+            th, td {
+                padding: 8px 6px;
+            }
+        }
+        
+        /* 代码块高亮 */
+        .keyword { color: #d73a49; }
+        .string { color: #032f62; }
+        .comment { color: #6a737d; }
+        .function { color: #6f42c1; }
+        .number { color: #005cc5; }
+        
+        /* 提示框 */
+        .tip {
+            background: #e7f4e4;
+            border-left: 4px solid var(--primary-color);
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CS2 饰品持仓记录完成</h1>
+        <div class="meta">
+            <span class="emoji">📄</span> 生成时间：2026-07-28
+            <span> | 分类：📄 其他报告</span>
+        </div>
+        <div class="content">
+<h1>CS2 饰品持仓记录完成</h1>
+<p><strong>记录时间</strong>: 2026-07-10 15:25<br />
+<strong>数据源</strong>: 悠悠有品 (youpin898.com)<br />
+<strong>查询频率</strong>: 每日 11:00 自动查询</p>
+<hr />
+<h2>✅ 已完成配置</h2>
+<h3>1. 持仓信息记录</h3>
+<p>已记录到以下文件：</p>
+<ul>
+<li>✅ <code>MEMORY.md</code> - 长期记忆（CS2 饰品持仓部分）</li>
+<li>✅ <code>skills/fund-query/config/cs2-holdings.md</code> - 详细持仓配置</li>
+</ul>
+<h3>2. 每日价格查询脚本</h3>
+<ul>
+<li>✅ 脚本位置：<code>scripts/cs2-daily-price-checker.py</code></li>
+<li>✅ 数据源：cs2.sh API（覆盖悠悠有品价格）</li>
+<li>✅ 自动计算盈亏和收益率</li>
+</ul>
+<h3>3. 定时任务配置</h3>
+<ul>
+<li>✅ 任务名称：CS2 饰品每日价格查询</li>
+<li>✅ 执行时间：每天 11:00 (Asia/Shanghai)</li>
+<li>✅ 通知方式：微信推送</li>
+<li>✅ 报告保存：<code>reports/cs2-daily-price-YYYYMMDD.md</code></li>
+</ul>
+<hr />
+<h2>📊 当前持仓状态</h2>
+<h3>持仓总览</h3>
+<p>| 指标 | 数值 |
+|------|------|
+| <strong>总投入</strong> | ¥5,959.47 |
+| <strong>当前市值</strong> | ¥3,564.58 |
+| <strong>总盈亏</strong> | <strong>-¥2,394.89</strong> |
+| <strong>收益率</strong> | <strong>-40.19%</strong> |</p>
+<h3>持仓明细</h3>
+<p>| 饰品 | 数量 | 买入价 | 当前价 | 市值 | 盈亏 | 收益率 |
+|------|------|-------|-------|------|------|--------|
+| <strong>印花</strong> (Complexity Gaming Holo) | 100 个 | ¥22.00 | ¥6.05 | ¥604.80 | -¥1,595.20 | <strong>-72.51%</strong> |
+| <strong>纪念包</strong> (Paris 2023 Anubis) | 239 个 | ¥15.73 | ¥12.38 | ¥2,959.78 | -¥799.69 | <strong>-21.27%</strong> |</p>
+<hr />
+<h2>📈 回本分析</h2>
+<h3>印花 (Complexity Gaming Holo | Paris 2023)</h3>
+<ul>
+<li><strong>当前价格</strong>: ¥6.05</li>
+<li><strong>买入价格</strong>: ¥22.00</li>
+<li><strong>距离回本</strong>: 需上涨 <strong>263.8%</strong> ⚠️</li>
+<li><strong>回本价格</strong>: ¥22.00</li>
+</ul>
+<h3>纪念包 (Paris 2023 Anubis Souvenir)</h3>
+<ul>
+<li><strong>当前价格</strong>: ¥12.38</li>
+<li><strong>买入价格</strong>: ¥15.73</li>
+<li><strong>距离回本</strong>: 需上涨 <strong>27.0%</strong> ⚠️</li>
+<li><strong>回本价格</strong>: ¥15.73</li>
+</ul>
+<hr />
+<h2>💡 投资建议</h2>
+<h3>当前状态分析</h3>
+<ol>
+<li><strong>整体浮亏 40.19%</strong> - 处于深度浮亏状态</li>
+<li><strong>印花亏损严重</strong> (-72.51%) - 战队印花价格波动大</li>
+<li><strong>纪念包相对较好</strong> (-21.27%) - 地图纪念包相对稳定</li>
+</ol>
+<h3>操作建议</h3>
+<h4>短期策略</h4>
+<ul>
+<li>✅ <strong>继续持有</strong> - 已深度浮亏，不建议割肉</li>
+<li>✅ <strong>关注赛事</strong> - CS2 Major 期间可能迎来价格高点</li>
+<li>⚠️ <strong>不要加仓</strong> - 等待价格反弹</li>
+</ul>
+<h4>长期策略</h4>
+<ul>
+<li>📅 <strong>持有周期</strong>: 建议 1-2 年</li>
+<li>🎯 <strong>目标价位</strong>:
+<ul>
+<li>印花：¥15.00 (部分减仓)</li>
+<li>纪念包：¥18.00 (部分减仓)</li>
+</ul>
+</li>
+<li>📊 <strong>定期跟踪</strong>: 每日价格报告自动推送</li>
+</ul>
+<h3>风险提示</h3>
+<p>⚠️ <strong>高风险投资</strong></p>
+<ul>
+<li>CS2 饰品价格波动大</li>
+<li>V 社政策变化可能影响市场</li>
+<li>锦标赛纪念品产量大，升值空间有限</li>
+</ul>
+<p>⚠️ <strong>流动性风险</strong></p>
+<ul>
+<li>大额卖出可能影响价格</li>
+<li>建议分批卖出</li>
+</ul>
+<hr />
+<h2>📅 每日报告内容</h2>
+<p>每天 11:00 自动推送以下内容：</p>
+<ol>
+<li><strong>持仓总览</strong> - 总市值、总盈亏、收益率</li>
+<li><strong>单品价格</strong> - 印花和纪念包的悠悠有品价格</li>
+<li><strong>日涨跌</strong> - 相比前一日的价格变化</li>
+<li><strong>操作建议</strong> - 基于价格趋势的简要建议</li>
+</ol>
+<hr />
+<h2>📁 相关文件</h2>
+<p>| 文件 | 用途 |
+|------|------|
+| <code>MEMORY.md</code> | 持仓信息记录（长期记忆） |
+| <code>skills/fund-query/config/cs2-holdings.md</code> | 详细持仓配置 |
+| <code>scripts/cs2-daily-price-checker.py</code> | 每日价格查询脚本 |
+| <code>reports/cs2-daily-price-YYYYMMDD.md</code> | 每日价格报告 |</p>
+<hr />
+<h2>🔧 定时任务信息</h2>
+<p>| 项目 | 详情 |
+|------|------|
+| <strong>任务 ID</strong> | 8c1d54a4-2532-42d6-9fc2-a335d2ec82a0 |
+| <strong>任务名称</strong> | CS2 饰品每日价格查询 |
+| <strong>执行时间</strong> | 每天 11:00 (Asia/Shanghai) |
+| <strong>下次执行</strong> | 2026-07-11 11:00 |
+| <strong>通知渠道</strong> | 微信 |
+| <strong>状态</strong> | ✅ 已启用 |</p>
+<hr />
+<h2>📞 问题反馈</h2>
+<p>如有任何问题或需要调整：</p>
+<ul>
+<li>查询时间调整</li>
+<li>通知方式变更</li>
+<li>添加新的饰品跟踪</li>
+</ul>
+<p>请随时告诉我！</p>
+<hr />
+<p><strong>记录完成时间</strong>: 2026-07-10 15:26<br />
+<strong>下次价格更新</strong>: 2026-07-11 11:00<br />
+<strong>数据源</strong>: 悠悠有品 (via cs2.sh API)</p>
+
+        </div>
+        <div class="footer">
+            <p>由 OpenClaw AI Agent 自动生成</p>
+            <p>查看更多精彩报告 → <a href="index.html">报告列表</a></p>
+        </div>
+    </div>
+</body>
+</html>

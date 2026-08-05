@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📊 今日黄金与基金评估报告</title>
+    <style>
+        :root {
+            --primary-color: #07c160; /* 微信绿 */
+            --text-color: #333;
+            --text-secondary: #666;
+            --bg-color: #f5f5f5;
+            --card-bg: #ffffff;
+            --border-color: #e5e5e5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            padding: 20px;
+            max-width: 100%;
+        }
+        
+        .container {
+            max-width: 768px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 28px 0 16px;
+        }
+        
+        h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 24px 0 12px;
+        }
+        
+        h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin: 16px 0;
+            text-align: justify;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+            overflow-x: auto;
+            display: block;
+        }
+        
+        th, td {
+            padding: 12px 10px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        th {
+            background-color: #f8f8f8;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+        
+        tr:hover {
+            background-color: #f0f7ff;
+        }
+        
+        code {
+            background-color: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 13px;
+            color: #e83e8c;
+        }
+        
+        pre {
+            background-color: #f6f8fa;
+            padding: 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 16px 0;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 16px;
+            margin: 20px 0;
+            color: var(--text-secondary);
+            background: #f8f9fa;
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        ul, ol {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            word-break: break-all;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .meta {
+            color: var(--text-secondary);
+            font-size: 13px;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+        }
+        
+        /* 表格响应式 */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            table {
+                font-size: 12px;
+            }
+            
+            th, td {
+                padding: 8px 6px;
+            }
+        }
+        
+        /* 代码块高亮 */
+        .keyword { color: #d73a49; }
+        .string { color: #032f62; }
+        .comment { color: #6a737d; }
+        .function { color: #6f42c1; }
+        .number { color: #005cc5; }
+        
+        /* 提示框 */
+        .tip {
+            background: #e7f4e4;
+            border-left: 4px solid var(--primary-color);
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 今日黄金与基金评估报告</h1>
+        <div class="meta">
+            <span class="emoji">📄</span> 生成时间：2026-07-28
+            <span> | 分类：💰 投资理财</span>
+        </div>
+        <div class="content">
+<h1>📊 今日黄金与基金评估报告</h1>
+<p><strong>报告日期</strong>：2026-06-10<br />
+<strong>数据来源</strong>：用户持仓配置（最后更新：2026-05-29）</p>
+<hr />
+<h2>🥇 黄金理财评估</h2>
+<h3>持仓概况</h3>
+<p>| 项目 | 数值 |
+|------|------|
+| <strong>基金名称</strong> | 华安黄金 ETF 联接 C (000217) |
+| <strong>持有金额</strong> | 11,807.33 元 |
+| <strong>昨日收益</strong> | -254.73 元 ⬇️ |
+| <strong>持有收益</strong> | +206.82 元 |
+| <strong>持有收益率</strong> | +1.78% |
+| <strong>累计收益</strong> | +716.26 元 |</p>
+<h3>黄金市场点评</h3>
+<ul>
+<li><strong>短期波动</strong>：昨日黄金出现较大幅度回调（-254.73 元，约 -2.1%），可能与美元指数走强或美债收益率上升有关</li>
+<li><strong>配置价值</strong>：作为避险资产，黄金与股票/债券基金形成有效对冲，建议继续持有</li>
+<li><strong>建议操作</strong>：当前仍处盈利状态，无需恐慌性卖出；若金价继续下跌可考虑适度补仓</li>
+</ul>
+<hr />
+<h2>📈 基金持仓整体评估</h2>
+<h3>账户总览</h3>
+<p>| 项目 | 金额 |
+|------|------|
+| <strong>总金额</strong> | 138,323.49 元（含黄金） |
+| <strong>昨日收益</strong> | -196.02 元（基金 +58.71 - 黄金 -254.73） |
+| <strong>持有收益</strong> | -6,773.52 元 |
+| <strong>累计收益</strong> | +17,186.63 元 |</p>
+<h3>持仓结构分析</h3>
+<ul>
+<li><strong>基金总数</strong>：16 只</li>
+<li><strong>盈利基金</strong>：9 只（56.25%）</li>
+<li><strong>亏损基金</strong>：7 只（43.75%）</li>
+</ul>
+<h3>🔴 重点关注（亏损较大基金）</h3>
+<p>| 基金代码 | 基金名称 | 持有收益率 | 建议 |
+|----------|----------|------------|------|
+| 015280 | 招商中证白酒指数 C | -50.78% | 消费板块持续低迷，建议定投摊薄成本 |
+| 161725 | 招商中证白酒指数 (LOF)A | -49.63% | 同上，两只白酒基金可考虑合并 |
+| 260108 | 景顺长城新兴成长混合 A | -46.29% | 消费 + 医疗混合，等待市场回暖 |
+| 003096 | 中欧医疗健康混合 C | -43.27% | 医疗板块估值已低，建议继续持有 |</p>
+<h3>🟢 表现优异基金</h3>
+<p>| 基金代码 | 基金名称 | 持有收益率 | 点评 |
+|----------|----------|------------|------|
+| 519732 | 交银定期支付双息平衡混合 | +75.06% | 表现最佳，建议继续持有 |
+| 515880 | 华夏中证 5G 通信主题 ETF 联接 A | +70.51% | 科技板块强势，可考虑部分止盈 |
+| 008889 | 华夏国证半导体芯片 ETF 联接 C | +50.32% | 芯片国产替代逻辑持续 |</p>
+<hr />
+<h2>💡 综合建议</h2>
+<h3>1. 资产配置优化</h3>
+<ul>
+<li><strong>黄金占比</strong>：8.5%（11,807/138,323），配置合理，继续持有</li>
+<li><strong>行业集中度</strong>：科技（芯片/5G）、消费（白酒）、医疗占比较高，注意分散风险</li>
+</ul>
+<h3>2. 操作建议</h3>
+<ul>
+<li><strong>白酒基金</strong>：两只白酒基金（161725 + 015280）合计约 5,514 元，亏损近 50%，建议：
+<ul>
+<li>选项 A：继续定投，摊薄成本</li>
+<li>选项 B：合并为一只，简化管理</li>
+</ul>
+</li>
+<li><strong>科技基金</strong>：5G、芯片盈利超过 50%，可考虑止盈 20-30% 锁定收益</li>
+<li><strong>医疗基金</strong>：板块估值处于历史低位，建议耐心等待反弹</li>
+</ul>
+<h3>3. 风险提示</h3>
+<ul>
+<li>消费板块（白酒、医疗）复苏仍需时间</li>
+<li>科技板块注意估值回调风险</li>
+<li>黄金短期波动加大，但长期配置价值不变</li>
+</ul>
+<hr />
+<h2>📅 下次评估时间</h2>
+<p><strong>基金净值更新</strong>：每个交易日 15:00 后<br />
+<strong>下次定期报告</strong>：2026-06-13（周五）</p>
+<hr />
+<p><strong>免责声明</strong>：本报告仅供参考，不构成投资建议。市场有风险，投资需谨慎。</p>
+
+        </div>
+        <div class="footer">
+            <p>由 OpenClaw AI Agent 自动生成</p>
+            <p>查看更多精彩报告 → <a href="index.html">报告列表</a></p>
+        </div>
+    </div>
+</body>
+</html>

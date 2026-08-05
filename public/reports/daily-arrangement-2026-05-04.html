@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日安排报告</title>
+    <style>
+        :root {
+            --primary-color: #07c160; /* 微信绿 */
+            --text-color: #333;
+            --text-secondary: #666;
+            --bg-color: #f5f5f5;
+            --card-bg: #ffffff;
+            --border-color: #e5e5e5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            padding: 20px;
+            max-width: 100%;
+        }
+        
+        .container {
+            max-width: 768px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 28px 0 16px;
+        }
+        
+        h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 24px 0 12px;
+        }
+        
+        h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin: 16px 0;
+            text-align: justify;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+            overflow-x: auto;
+            display: block;
+        }
+        
+        th, td {
+            padding: 12px 10px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        th {
+            background-color: #f8f8f8;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+        
+        tr:hover {
+            background-color: #f0f7ff;
+        }
+        
+        code {
+            background-color: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 13px;
+            color: #e83e8c;
+        }
+        
+        pre {
+            background-color: #f6f8fa;
+            padding: 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 16px 0;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 16px;
+            margin: 20px 0;
+            color: var(--text-secondary);
+            background: #f8f9fa;
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        ul, ol {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            word-break: break-all;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .meta {
+            color: var(--text-secondary);
+            font-size: 13px;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+        }
+        
+        /* 表格响应式 */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            table {
+                font-size: 12px;
+            }
+            
+            th, td {
+                padding: 8px 6px;
+            }
+        }
+        
+        /* 代码块高亮 */
+        .keyword { color: #d73a49; }
+        .string { color: #032f62; }
+        .comment { color: #6a737d; }
+        .function { color: #6f42c1; }
+        .number { color: #005cc5; }
+        
+        /* 提示框 */
+        .tip {
+            background: #e7f4e4;
+            border-left: 4px solid var(--primary-color);
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>每日安排报告</h1>
+        <div class="meta">
+            <span class="emoji">📄</span> 生成时间：2026-05-04
+            <span> | 分类：🤖 AI 资讯</span>
+        </div>
+        <div class="content">
+<h1>每日安排报告</h1>
+<p><strong>日期</strong>：2026 年 5 月 4 日（星期一）</p>
+<hr />
+<h2>🌤️ 天气概况（北京）</h2>
+<p>| 项目 | 详情 |
+|------|------|
+| 天气状况 | 晴 |
+| 温度 | 26°C / 12°C |
+| 风力 | &lt;3 级 |
+| 紫外线 | 很强（建议涂擦 SPF20+ 护肤品） |
+| 运动指数 | 适宜（天气较好，尽情感受运动的快乐） |
+| 穿衣建议 | 建议穿长袖衬衫单裤等服装 |</p>
+<hr />
+<h2>📚 学习计划进度</h2>
+<p><strong>当前进度</strong>：第 3 周 - 意图表达能力专项训练</p>
+<p><strong>第一阶段（第 1-4 周）</strong>：适应恢复与效率工具搭建</p>
+<ul>
+<li>~~第 1 周：大模型基础认知入门~~ ✅</li>
+<li>~~第 2 周：VPS 远程部署 OpenClaw+ 大模型~~ ✅</li>
+<li><strong>第 3 周：意图表达能力专项训练</strong> 🎯 进行中</li>
+<li>第 4 周：Polymarket 提前启动</li>
+</ul>
+<p><strong>本周核心目标</strong>：</p>
+<ul>
+<li>掌握清晰表达需求的核心原则</li>
+<li>学会结构化描述任务背景、目标、约束</li>
+<li>提升与 AI 协作的沟通效率</li>
+</ul>
+<hr />
+<h2>🎯 今日学习重点和实操任务</h2>
+<h3>上午（9:00-12:00）</h3>
+<p><strong>理论学习和练习</strong>：</p>
+<ol>
+<li>
+<p><strong>意图表达核心原则</strong>（30 分钟）</p>
+<ul>
+<li>明确任务目标（要什么）</li>
+<li>提供充分背景（为什么）</li>
+<li>设定清晰约束（边界在哪）</li>
+<li>指定输出格式（长什么样）</li>
+</ul>
+</li>
+<li>
+<p><strong>Prompt 结构拆解练习</strong>（60 分钟）</p>
+<ul>
+<li>分析 3 个优秀 Prompt 案例</li>
+<li>识别其中的：角色设定 + 任务描述 + 约束条件 + 输出格式</li>
+<li>记录关键模式和可复用框架</li>
+</ul>
+</li>
+<li>
+<p><strong>实操：重写模糊需求</strong>（60 分钟）</p>
+<ul>
+<li>找出过去 3 天自己发出的 3 条模糊指令</li>
+<li>用今日所学重新改写，使其更清晰、可执行</li>
+<li>对比改写前后的效果差异</li>
+</ul>
+</li>
+</ol>
+<h3>下午（14:00-17:00）</h3>
+<p><strong>实战应用</strong>：</p>
+<ol>
+<li>
+<p><strong>场景化 Prompt 设计</strong>（90 分钟）</p>
+<ul>
+<li>设计 3 个不同场景的 Prompt 模板：
+<ul>
+<li>代码审查场景</li>
+<li>文档写作场景</li>
+<li>数据分析场景</li>
+</ul>
+</li>
+<li>每个模板包含：角色 + 任务 + 输入 + 输出 + 约束</li>
+</ul>
+</li>
+<li>
+<p><strong>迭代优化练习</strong>（60 分钟）</p>
+<ul>
+<li>选择一个复杂任务（如：生成一份市场分析报告）</li>
+<li>进行 3 轮 Prompt 迭代</li>
+<li>记录每轮改进点和效果提升</li>
+</ul>
+</li>
+</ol>
+<h3>晚上（19:30-21:00）</h3>
+<p><strong>复盘与沉淀</strong>：</p>
+<ol>
+<li>
+<p><strong>今日收获总结</strong>（30 分钟）</p>
+<ul>
+<li>记录 3 个最重要的学习点</li>
+<li>记录 2 个可以立即应用的技巧</li>
+<li>记录 1 个需要进一步探索的问题</li>
+</ul>
+</li>
+<li>
+<p><strong>更新个人 Prompt 库</strong>（30 分钟）</p>
+<ul>
+<li>将今日设计的模板保存到个人知识库</li>
+<li>标注适用场景和使用注意事项</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2>🔗 推荐学习资料</h2>
+<ol>
+<li>
+<p><strong><a href="https://www.promptingguide.ai/zh">提示工程指南（中文版）</a></strong></p>
+<ul>
+<li>系统性学习 Prompt Engineering 的完整指南</li>
+<li>涵盖基础概念、技巧和最佳实践</li>
+</ul>
+</li>
+<li>
+<p><strong><a href="https://github.com/datawhalechina/llm-cookbook">面向开发者的 LLM 入门教程 - Datawhale</a></strong></p>
+<ul>
+<li>吴恩达大模型系列课程中文版</li>
+<li>包含 Prompt Engineering 完整教程和代码实践</li>
+<li>在线阅读：https://datawhalechina.github.io/llm-cookbook/</li>
+</ul>
+</li>
+<li>
+<p><strong><a href="https://www.bilibili.com/video/BV1Bo4y1A7FU/">Prompt Engineering for Developers（双语字幕）</a></strong></p>
+<ul>
+<li>吴恩达 x OpenAI 官方课程专业翻译版</li>
+<li>适合开发者入门的经典教程</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2>📅 日程安排建议</h2>
+<p>| 时间段 | 活动 | 备注 |
+|--------|------|------|
+| 07:00-08:00 | 起床 + 早餐 | 预留充足时间，避免匆忙 |
+| 08:00-09:00 | 通勤/准备 | 可听相关播客或音频课程 |
+| <strong>09:00-12:00</strong> | <strong>上午学习时段</strong> | 专注理论学习 + 练习 |
+| 12:00-14:00 | 午餐 + 休息 | 建议小憩 20-30 分钟 |
+| <strong>14:00-17:00</strong> | <strong>下午学习时段</strong> | 实战应用 + 迭代练习 |
+| 17:00-18:00 | 自由时间 | 放松、处理杂事 |
+| 18:00-19:30 | 晚餐 + 休息 | 远离屏幕，让眼睛休息 |
+| <strong>19:30-21:00</strong> | <strong>晚间复盘时段</strong> | 总结沉淀 + 知识整理 |
+| 21:00-22:30 | 自由时间 | 阅读、娱乐、社交 |
+| 22:30-23:00 | 睡前准备 | 远离电子设备，准备入睡 |</p>
+<p><strong>今日训练时间</strong>：16:30（COROS 运动目标：本周 35-45 公里）</p>
+<hr />
+<h2>⚠️ 重要提醒</h2>
+<h3>健康管理</h3>
+<ul>
+<li>💧 <strong>水分补充</strong>：今日天气晴朗，紫外线强，注意多喝水（建议 2000ml+）</li>
+<li>🧴 <strong>防晒措施</strong>：外出时做好防晒，避免长时间暴露在强光下</li>
+<li>👀 <strong>用眼休息</strong>：每学习 45 分钟，远眺 5 分钟，保护视力</li>
+</ul>
+<h3>执行力恢复</h3>
+<ul>
+<li>🎯 <strong>专注当下</strong>：一次只做一件事，避免多任务切换</li>
+<li>✅ <strong>小步快跑</strong>：将大任务拆解为可执行的小步骤，逐个完成</li>
+<li>📝 <strong>记录进度</strong>：每完成一个任务就打勾，获得正向反馈</li>
+</ul>
+<h3>休息与恢复</h3>
+<ul>
+<li>😴 <strong>午休质量</strong>：建议 20-30 分钟小憩，不要超过 45 分钟</li>
+<li>🚶 <strong>活动身体</strong>：每小时起身活动 2-3 分钟，促进血液循环</li>
+<li>🧘 <strong>晚间放松</strong>：睡前进行 5 分钟深呼吸或冥想，帮助入睡</li>
+</ul>
+<h3>今日特别提示</h3>
+<ul>
+<li>今天是五一假期后第一个工作日，可能需要调整状态</li>
+<li>不要给自己太大压力，循序渐进恢复节奏</li>
+<li>如果感到疲惫，适当降低学习强度，保证休息</li>
+</ul>
+<hr />
+<h2>📊 今日完成度追踪</h2>
+<p>请在晚间复盘时填写：</p>
+<ul>
+<li>[ ] 上午学习时段完成度：___%</li>
+<li>[ ] 下午实战时段完成度：___%</li>
+<li>[ ] 晚间复盘完成度：___%</li>
+<li>[ ] 运动训练完成度：___%</li>
+</ul>
+<p><strong>今日自评</strong>（1-5 分）：___</p>
+<p><strong>明日改进点</strong>：_______________________</p>
+<hr />
+<p><em>报告生成时间：2026-05-04 08:30 | 下次报告：2026-05-05 08:30</em></p>
+
+        </div>
+        <div class="footer">
+            <p>由 OpenClaw AI Agent 自动生成</p>
+            <p>查看更多精彩报告 → <a href="index.html">报告列表</a></p>
+        </div>
+    </div>
+</body>
+</html>

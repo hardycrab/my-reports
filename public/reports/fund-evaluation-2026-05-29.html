@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基金评估报告 - 2026-05-29</title>
+    <style>
+        :root {
+            --primary-color: #07c160; /* 微信绿 */
+            --text-color: #333;
+            --text-secondary: #666;
+            --bg-color: #f5f5f5;
+            --card-bg: #ffffff;
+            --border-color: #e5e5e5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            padding: 20px;
+            max-width: 100%;
+        }
+        
+        .container {
+            max-width: 768px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 28px 0 16px;
+        }
+        
+        h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 24px 0 12px;
+        }
+        
+        h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin: 16px 0;
+            text-align: justify;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+            overflow-x: auto;
+            display: block;
+        }
+        
+        th, td {
+            padding: 12px 10px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        th {
+            background-color: #f8f8f8;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+        
+        tr:hover {
+            background-color: #f0f7ff;
+        }
+        
+        code {
+            background-color: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 13px;
+            color: #e83e8c;
+        }
+        
+        pre {
+            background-color: #f6f8fa;
+            padding: 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 16px 0;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 16px;
+            margin: 20px 0;
+            color: var(--text-secondary);
+            background: #f8f9fa;
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        ul, ol {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            word-break: break-all;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .meta {
+            color: var(--text-secondary);
+            font-size: 13px;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+        }
+        
+        /* 表格响应式 */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            table {
+                font-size: 12px;
+            }
+            
+            th, td {
+                padding: 8px 6px;
+            }
+        }
+        
+        /* 代码块高亮 */
+        .keyword { color: #d73a49; }
+        .string { color: #032f62; }
+        .comment { color: #6a737d; }
+        .function { color: #6f42c1; }
+        .number { color: #005cc5; }
+        
+        /* 提示框 */
+        .tip {
+            background: #e7f4e4;
+            border-left: 4px solid var(--primary-color);
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>基金评估报告 - 2026-05-29</h1>
+        <div class="meta">
+            <span class="emoji">📄</span> 生成时间：2026-05-29
+            <span> | 分类：💰 投资理财</span>
+        </div>
+        <div class="content">
+<h1>基金评估报告 - 2026-05-29</h1>
+<blockquote>
+<p><strong>生成时间</strong>：2026-05-29 12:00 | <strong>净值来源</strong>：天天基金网<br />
+<strong>数据说明</strong>：实时估值仅在交易时段更新（9:30-15:00），QDII 基金显示最近一次净值</p>
+</blockquote>
+<hr />
+<h2>📊 市场概况</h2>
+<p><strong>今日市场表现</strong>（2026-05-29 11:30 数据）：</p>
+<ul>
+<li><strong>白酒板块</strong>：大幅反弹 +4.64%，招商白酒领涨</li>
+<li><strong>证券板块</strong>：上涨 +1.20%，券商 ETF 表现稳健</li>
+<li><strong>医药医疗</strong>：分化明显，中欧医疗 +1.72%，互联网医疗 -0.25%</li>
+<li><strong>科技成长</strong>：光伏 -3.67% 领跌，5G 通信 -1.15%</li>
+<li><strong>海外市场</strong>：纳斯达克 +0.79%，表现平稳</li>
+<li><strong>新能源</strong>：农银新能源 -1.29%，延续调整</li>
+</ul>
+<p><strong>宏观动态</strong>：</p>
+<ul>
+<li>国内市场情绪回暖，消费板块领涨</li>
+<li>光伏产业受产能过剩担忧影响继续调整</li>
+<li>QDII 基金受隔夜美股影响小幅波动</li>
+</ul>
+<hr />
+<h2>💰 持仓总览</h2>
+<p>| 指标 | 金额 |
+|------|------|
+| 总金额 | 124,053.08 元 |
+| 持有收益 | -10,953.37 元 |
+| 持有收益率 | -8.83% |
+| 累计收益 | +11,716.99 元 |</p>
+<p><strong>持仓状态</strong>：当前浮亏约 8.83%，但累计收益仍为正，说明前期止盈较多，目前持仓为近期布局。</p>
+<hr />
+<h2>📈 基金明细</h2>
+<p>| 基金代码 | 基金名称 | 持有金额 | 实时估值 | 涨跌幅 | 持有收益估算 |
+|----------|----------|----------|----------|--------|--------------|
+| 260108 | 景顺长城新兴成长混合 A | 8,345.30 | 1.5091 | +2.87% ↑ | +239.51 |
+| 161725 | 招商中证白酒指数 (LOF)A | 3,390.15 | 0.5953 | +4.64% ↑ | +157.30 |
+| 015280 | 招商中证白酒指数 C | 2,674.58 | 0.5953* | +4.64% ↑ | +124.10 |
+| 110020 | 易方达沪深 300ETF 联接 A | 11,512.60 | 1.9795 | +0.06% ↑ | +6.91 |
+| 320001 | 诺安平衡混合 A | 3,648.42 | 2.1197 | -1.91% ↓ | -69.68 |
+| 270023 | 广发全球精选股票 (QDII)A | 10,176.21 | 6.7593 | +0.02% ↑ | +2.04 |
+| 000834 | 大成纳斯达克 100ETF 联接 | 1,058.14 | 6.5407 | +0.79% ↑ | +8.36 |
+| 512900 | 南方中证全指证券 ETF 联接 | 12,070.85 | 1.0217 | +1.20% ↑ | +144.85 |
+| 501007 | 汇添富中证互联网医疗指数 | 4,772.81 | 0.8546 | -0.25% ↓ | -11.93 |
+| 012679 | 华泰柏瑞光伏 ETF 联接 A | 6,020.52 | 0.6627 | -3.67% ↓ | -220.95 |
+| 100056 | 富国低碳环保混合 | 2,975.81 | 2.8413 | -1.38% ↓ | -41.07 |
+| 003096 | 中欧医疗健康混合 C | 6,584.81 | 1.5403 | +1.72% ↑ | +113.26 |
+| 008889 | 银华中证 5G 通信主题 ETF 联接 | 6,433.26 | 2.6324 | -1.15% ↓ | -73.98 |
+| 519732 | 交银定期支付双息平衡混合 | 9,513.25 | 9.2689 | -0.60% ↓ | -57.08 |
+| 515880 | 华夏中证 5G 通信主题 ETF 联接 | 4,153.75 | 1.6054 | -0.63% ↓ | -26.17 |
+| 160625 | 鹏华中证证券保险指数 (LOF)A | 4,680.92 | 0.8033 | +1.25% ↑ | +58.51 |
+| 002190 | 农银新能源主题 A | 11,862.05 | 3.2296 | -1.29% ↓ | -153.02 |
+| 519069 | 汇添富价值精选混合 A | 14,179.65 | 3.5499 | +0.45% ↑ | +63.81 |</p>
+<blockquote>
+<p>*注：015280 使用 161725 数据近似；部分基金代码与名称存在差异，以实际持仓为准</p>
+</blockquote>
+<p><strong>今日盈亏估算</strong>：</p>
+<ul>
+<li>上涨基金：10 只（白酒、证券、医药领涨）</li>
+<li>下跌基金：8 只（光伏、科技、新能源调整）</li>
+<li><strong>今日预估收益</strong>：约 +425 元</li>
+</ul>
+<hr />
+<h2>🎯 操作建议</h2>
+<h3>✅ 加仓建议</h3>
+<p>| 基金 | 理由 | 建议仓位 |
+|------|------|----------|
+| 招商中证白酒 (161725/015280) | 今日 +4.64% 领涨，消费复苏逻辑明确，但短期涨幅较大，建议逢回调加仓 | 等待 -2% 以上回调 |
+| 中欧医疗健康 (003096) | 医药板块估值处于低位，+1.72% 显示资金回流，可逐步布局 | 分批加仓 5-10% |
+| 汇添富价值精选 (519069) | 价值风格稳健，+0.45% 表现平稳，适合作为底仓 | 持有为主 |</p>
+<h3>⚠️ 减仓建议</h3>
+<p>| 基金 | 理由 | 建议操作 |
+|------|------|----------|
+| 光伏产业 (012679) | -3.67% 领跌，产能过剩问题未解，建议反弹减仓 | 反弹至 -1% 附近减仓 20% |
+| 农银新能源 (002190) | 连续调整，-1.29%，新能源板块承压 | 持有观察，破位止损 |
+| 5G 通信 (008889/515880) | 两只 5G 基金均下跌，板块轮动中 | 保留一只即可，减仓重复配置 |</p>
+<h3>🔄 配置优化</h3>
+<p><strong>当前持仓问题</strong>：</p>
+<ol>
+<li><strong>重复配置</strong>：5G 通信持有两只 ETF 联接（008889 + 515880），建议合并</li>
+<li><strong>白酒重复</strong>：招商白酒 A+C 同时持有，建议统一为 A 类（费率更优）</li>
+<li><strong>行业集中</strong>：证券 + 新能源 + 光伏占比约 27%，行业集中度较高</li>
+</ol>
+<p><strong>优化建议</strong>：</p>
+<ul>
+<li>合并 5G 通信持仓，保留规模较大的一只</li>
+<li>白酒基金统一为 A 类份额，降低费率</li>
+<li>增加债券基金或货币基金配置，降低整体波动（当前 100% 权益仓位）</li>
+</ul>
+<hr />
+<h2>⚠️ 风险提示</h2>
+<ol>
+<li>
+<p><strong>市场风险</strong>：当前持仓 100% 为权益类基金，波动较大，建议配置 10-20% 债券基金平衡风险</p>
+</li>
+<li>
+<p><strong>行业集中风险</strong>：</p>
+<ul>
+<li>证券板块持仓约 13.5%（512900 + 160625）</li>
+<li>新能源 + 光伏约 14.4%</li>
+<li>单一行业波动可能对整体组合产生较大影响</li>
+</ul>
+</li>
+<li>
+<p><strong>QDII 汇率风险</strong>：广发全球精选 (270023) + 大成纳斯达克 (000834) 受汇率波动影响</p>
+</li>
+<li>
+<p><strong>数据说明</strong>：</p>
+<ul>
+<li>部分基金代码无法查询实时估值，使用替代代码或昨日净值</li>
+<li>实时估值仅供参考，实际净值以基金公司公布为准</li>
+<li>本报告不构成投资建议，投资需谨慎</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2>📋 总结</h2>
+<p><strong>今日表现</strong>：市场分化，白酒 +4.64% 领涨，光伏 -3.67% 领跌，持仓预估收益 +425 元</p>
+<p><strong>核心建议</strong>：</p>
+<ol>
+<li>白酒反弹强劲，但追高风险大，等待回调机会</li>
+<li>光伏继续承压，建议反弹减仓</li>
+<li>合并重复配置（5G、白酒 A/C），优化持仓结构</li>
+<li>考虑增加 10-20% 债券仓位，降低组合波动</li>
+</ol>
+<p><strong>后续关注</strong>：</p>
+<ul>
+<li>消费板块复苏持续性</li>
+<li>新能源产能出清进展</li>
+<li>美联储政策对 QDII 影响</li>
+</ul>
+<hr />
+<p><em>报告生成：boi 基金分析系统 | 数据截止时间：2026-05-29 11:30</em></p>
+
+        </div>
+        <div class="footer">
+            <p>由 OpenClaw AI Agent 自动生成</p>
+            <p>查看更多精彩报告 → <a href="index.html">报告列表</a></p>
+        </div>
+    </div>
+</body>
+</html>

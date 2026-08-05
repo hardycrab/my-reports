@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📊 上周运动记录报告</title>
+    <style>
+        :root {
+            --primary-color: #07c160; /* 微信绿 */
+            --text-color: #333;
+            --text-secondary: #666;
+            --bg-color: #f5f5f5;
+            --card-bg: #ffffff;
+            --border-color: #e5e5e5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            padding: 20px;
+            max-width: 100%;
+        }
+        
+        .container {
+            max-width: 768px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 28px 0 16px;
+        }
+        
+        h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 24px 0 12px;
+        }
+        
+        h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin: 16px 0;
+            text-align: justify;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+            overflow-x: auto;
+            display: block;
+        }
+        
+        th, td {
+            padding: 12px 10px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        th {
+            background-color: #f8f8f8;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+        
+        tr:hover {
+            background-color: #f0f7ff;
+        }
+        
+        code {
+            background-color: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 13px;
+            color: #e83e8c;
+        }
+        
+        pre {
+            background-color: #f6f8fa;
+            padding: 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 16px 0;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 16px;
+            margin: 20px 0;
+            color: var(--text-secondary);
+            background: #f8f9fa;
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        ul, ol {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            word-break: break-all;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .meta {
+            color: var(--text-secondary);
+            font-size: 13px;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+        }
+        
+        /* 表格响应式 */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            table {
+                font-size: 12px;
+            }
+            
+            th, td {
+                padding: 8px 6px;
+            }
+        }
+        
+        /* 代码块高亮 */
+        .keyword { color: #d73a49; }
+        .string { color: #032f62; }
+        .comment { color: #6a737d; }
+        .function { color: #6f42c1; }
+        .number { color: #005cc5; }
+        
+        /* 提示框 */
+        .tip {
+            background: #e7f4e4;
+            border-left: 4px solid var(--primary-color);
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 上周运动记录报告</h1>
+        <div class="meta">
+            <span class="emoji">📄</span> 生成时间：2026-04-26
+            <span> | 分类：📄 其他报告</span>
+        </div>
+        <div class="content">
+<h1>📊 上周运动记录报告</h1>
+<p><strong>统计周期</strong>：2026-04-26（周一）至 2026-05-02（周日）
+<strong>数据来源</strong>：COROS 高驰运动手表
+<strong>账号</strong>：134****0721</p>
+<hr />
+<h2>📈 上周总览</h2>
+<p>| 指标 | 数据 |
+|------|------|
+| 跑步次数 | <strong>3 次</strong> |
+| 总跑量 | <strong>26.08 公里</strong> |
+| 平均跑量 | <strong>8.69 公里/次</strong> |
+| 平均配速 | 暂无数据 |</p>
+<hr />
+<h2>📋 详细运动记录</h2>
+<h3>第 1 次：5 月 1 日（周五）🏃</h3>
+<p>| 项目 | 数据 |
+|------|------|
+| 距离 | 3.10 公里 |
+| 类型 | 户外跑步 |
+| 备注 | 短距离恢复跑 |</p>
+<hr />
+<h3>第 2 次：4 月 29 日（周三）🏃</h3>
+<p>| 项目 | 数据 |
+|------|------|
+| 距离 | 8.53 公里 |
+| 类型 | 户外跑步 |
+| 备注 | 中距离节奏跑 |</p>
+<hr />
+<h3>第 3 次：4 月 27 日（周一）🏃</h3>
+<p>| 项目 | 数据 |
+|------|------|
+| 距离 | 14.45 公里 |
+| 类型 | 户外跑步 |
+| 备注 | 长距离 LSD 训练 |</p>
+<hr />
+<h2>📊 数据分析</h2>
+<h3>跑量分布</h3>
+<pre><code>长距离 (≥10km)：████████████████████ 1 次 (33%)
+中距离 (6-10km)：████████████████████ 1 次 (33%)
+短距离 (&lt;6km)：  ████████████████████ 1 次 (33%)
+</code></pre>
+<h3>训练节奏</h3>
+<ul>
+<li><strong>训练频率</strong>：约每 2 天一次 ✅</li>
+<li><strong>距离搭配</strong>：长短结合合理 ✅</li>
+<li><strong>恢复间隔</strong>：充分 ✅</li>
+</ul>
+<hr />
+<h2>📅 上周日历视图</h2>
+<p>| 周一 | 周二 | 周三 | 周四 | 周五 | 周六 | 周日 |
+|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
+| 27日 | 28日 | 29 日 | 30 日 | 1 日 | 2 日 | 3 日 |
+| 🏃 | 休息 | 🏃 | 休息 | 🏃 | 休息 | 今日 |
+| 14.45km | - | 8.53km | - | 3.10km | - | ? |</p>
+<hr />
+<h2>💡 训练评价</h2>
+<h3>✅ 优点</h3>
+<ol>
+<li><strong>训练频率稳定</strong>：保持每 2 天一次的节奏</li>
+<li><strong>距离搭配合理</strong>：长、中、短距离都有安排</li>
+<li><strong>循序渐进</strong>：从长距离→中距离→短距离，符合恢复逻辑</li>
+</ol>
+<h3>⚠️ 改进建议</h3>
+<ol>
+<li><strong>增加跑量</strong>：上周 26 公里，可逐步提升至 35-40 公里/周</li>
+<li><strong>加入速度训练</strong>：可安排 1 次间歇跑或节奏跑</li>
+<li><strong>交叉训练</strong>：休息日可加入力量训练或游泳</li>
+</ol>
+<hr />
+<h2>🎯 本周训练建议（5/3-5/9）</h2>
+<p>基于上周数据，建议本周：</p>
+<p>| 日期 | 训练内容 | 目标跑量 |
+|------|---------|---------|
+| 5/3 (今日) | 短距离恢复跑 | 5-7km |
+| 5/4 (周一) | 休息/核心力量 | - |
+| 5/5 (周二) | 间歇跑训练 | 8-10km |
+| 5/6 (周三) | 休息/拉伸 | - |
+| 5/7 (周四) | 轻松有氧跑 | 6-8km |
+| 5/8 (周五) | 休息 | - |
+| 5/9 (周六) | 长距离 LSD | 12-15km |</p>
+<p><strong>本周目标跑量</strong>：35-45 公里</p>
+<hr />
+<h2>📈 月度累计（4 月 26 日 -5 月 2 日）</h2>
+<p>| 周次 | 跑步次数 | 总跑量 | 平均配速 |
+|------|---------|--------|---------|
+| 上周 | 3 次 | 26.08 km | 待定 |</p>
+<hr />
+<p><strong>继续保持！你的训练节奏很棒！👍</strong></p>
+<p><em>报告生成时间：2026-05-03 12:21</em>
+<em>下次更新：完成今日训练后</em></p>
+
+        </div>
+        <div class="footer">
+            <p>由 OpenClaw AI Agent 自动生成</p>
+            <p>查看更多精彩报告 → <a href="index.html">报告列表</a></p>
+        </div>
+    </div>
+</body>
+</html>

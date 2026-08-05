@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日安排报告</title>
+    <style>
+        :root {
+            --primary-color: #07c160; /* 微信绿 */
+            --text-color: #333;
+            --text-secondary: #666;
+            --bg-color: #f5f5f5;
+            --card-bg: #ffffff;
+            --border-color: #e5e5e5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            padding: 20px;
+            max-width: 100%;
+        }
+        
+        .container {
+            max-width: 768px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 28px 0 16px;
+        }
+        
+        h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 24px 0 12px;
+        }
+        
+        h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin: 16px 0;
+            text-align: justify;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+            overflow-x: auto;
+            display: block;
+        }
+        
+        th, td {
+            padding: 12px 10px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        th {
+            background-color: #f8f8f8;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+        
+        tr:hover {
+            background-color: #f0f7ff;
+        }
+        
+        code {
+            background-color: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 13px;
+            color: #e83e8c;
+        }
+        
+        pre {
+            background-color: #f6f8fa;
+            padding: 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 16px 0;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 16px;
+            margin: 20px 0;
+            color: var(--text-secondary);
+            background: #f8f9fa;
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        ul, ol {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            word-break: break-all;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .meta {
+            color: var(--text-secondary);
+            font-size: 13px;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+        }
+        
+        /* 表格响应式 */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            table {
+                font-size: 12px;
+            }
+            
+            th, td {
+                padding: 8px 6px;
+            }
+        }
+        
+        /* 代码块高亮 */
+        .keyword { color: #d73a49; }
+        .string { color: #032f62; }
+        .comment { color: #6a737d; }
+        .function { color: #6f42c1; }
+        .number { color: #005cc5; }
+        
+        /* 提示框 */
+        .tip {
+            background: #e7f4e4;
+            border-left: 4px solid var(--primary-color);
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>每日安排报告</h1>
+        <div class="meta">
+            <span class="emoji">📄</span> 生成时间：2026-05-05
+            <span> | 分类：🤖 AI 资讯</span>
+        </div>
+        <div class="content">
+<h1>每日安排报告</h1>
+<p><strong>日期</strong>：2026 年 5 月 5 日 星期二</p>
+<hr />
+<h2>🌤️ 天气概况</h2>
+<p><strong>北京</strong>：晴朗 ☀️ | 气温 15°C | 湿度 77% | 西南风 4km/h</p>
+<p>今日天气适宜户外活动，建议训练时穿着透气运动服。</p>
+<hr />
+<h2>📚 学习计划进度</h2>
+<p><strong>当前阶段</strong>：第一阶段（第 1-4 周）- 适应恢复与效率工具搭建</p>
+<p><strong>本周进度</strong>：第 3 周 · 意图表达能力专项训练</p>
+<p><strong>本周主题</strong>：精准描述需求与结构化表达框架</p>
+<hr />
+<h2>🎯 今日学习重点</h2>
+<h3>核心知识点</h3>
+<ul>
+<li>四要素框架：背景→目标→约束→示例</li>
+<li>识别并消除需求中的模糊词（&quot;好一点&quot;、&quot;差不多&quot;、&quot;尽快&quot;）</li>
+<li>用量化标准替代主观描述</li>
+</ul>
+<h3>实操任务</h3>
+<p>| 任务 | 内容 | 时长 |
+|------|------|------|
+| 任务 1 | 模糊词识别练习：回顾最近 5 次对话，圈出模糊表述并替换为量化标准 | 25 分钟 |
+| 任务 2 | 四要素框架应用：选择实际工作任务，按框架写出 250-350 字完整需求 | 35 分钟 |
+| 任务 3 | 实战验证：将需求发送给 AI 执行，对比输出与预期差距 | 20 分钟 |</p>
+<p><strong>今日金句</strong>：精准表达不是限制创造力，而是为创造力铺设轨道</p>
+<hr />
+<h2>🔗 推荐学习资料</h2>
+<ol>
+<li>
+<p><strong>Prompt Engineering Guide（中文版）</strong></p>
+<ul>
+<li>链接：https://www.promptingguide.ai/zh</li>
+<li>内容：系统的提示工程方法论与最佳实践</li>
+</ul>
+</li>
+<li>
+<p><strong>ChatGPT Prompt Engineering for Developers</strong></p>
+<ul>
+<li>链接：https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/</li>
+<li>讲师：Andrew Ng &amp; Isa Fulford（OpenAI）</li>
+<li>时长：1.5 小时，9 节视频课，7 个代码示例</li>
+</ul>
+</li>
+<li>
+<p><strong>知乎专栏：提示词工程入门指南</strong></p>
+<ul>
+<li>链接：https://zhuanlan.zhihu.com/p/642551563</li>
+<li>内容：中文社区的实战案例与技巧总结</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2>📅 日程安排建议</h2>
+<p>| 时间段 | 安排 | 备注 |
+|--------|------|------|
+| 09:00-09:30 | 学习任务 1：模糊词识别练习 | 晨间头脑清醒，适合分析类任务 |
+| 14:00-14:35 | 学习任务 2：四要素框架应用 | 午后专注力恢复期 |
+| 16:30-17:30 | <strong>COROS 跑步训练</strong> | 今日建议：轻松跑 5-6 公里，配速 6:30-7:00 |
+| 19:30-19:50 | 学习任务 3：实战验证 | 晚间复盘时间 |
+| 22:00-22:30 | 自由阅读/资料学习 | 任选上方推荐资料 |</p>
+<hr />
+<h2>⚠️ 重要提醒</h2>
+<h3>健康与休息</h3>
+<ul>
+<li>✅ 训练时间：16:30 准时开始，跑前充分热身 10 分钟</li>
+<li>✅ 补水提醒：训练前后各补充 300-500ml 电解质水</li>
+<li>✅ 睡眠目标：今晚 23:00 前入睡，保证 7.5 小时睡眠</li>
+</ul>
+<h3>执行力恢复</h3>
+<ul>
+<li>第 3 周是习惯养成的关键期，今日完成任务后请记录成就感</li>
+<li>如遇状态波动，采用「5 分钟启动法」：先做 5 分钟，通常能自然进入状态</li>
+<li>记住：完成比完美重要，先行动再迭代</li>
+</ul>
+<h3>本周里程碑</h3>
+<ul>
+<li>第 3 周结束前（5 月 10 日）：完成意图表达能力自评</li>
+<li>目标：能够用 200 字内清晰描述任意复杂任务需求</li>
+</ul>
+<hr />
+<p><strong>报告生成时间</strong>：2026-05-05 08:30（Asia/Shanghai）</p>
+<p><em>祝你今日高效、专注、有收获！</em></p>
+
+        </div>
+        <div class="footer">
+            <p>由 OpenClaw AI Agent 自动生成</p>
+            <p>查看更多精彩报告 → <a href="index.html">报告列表</a></p>
+        </div>
+    </div>
+</body>
+</html>

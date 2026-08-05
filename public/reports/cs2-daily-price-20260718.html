@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS2 饰品每日价格简报</title>
+    <style>
+        :root {
+            --primary-color: #07c160; /* 微信绿 */
+            --text-color: #333;
+            --text-secondary: #666;
+            --bg-color: #f5f5f5;
+            --card-bg: #ffffff;
+            --border-color: #e5e5e5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            padding: 20px;
+            max-width: 100%;
+        }
+        
+        .container {
+            max-width: 768px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 28px 0 16px;
+        }
+        
+        h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 24px 0 12px;
+        }
+        
+        h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin: 16px 0;
+            text-align: justify;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+            overflow-x: auto;
+            display: block;
+        }
+        
+        th, td {
+            padding: 12px 10px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        th {
+            background-color: #f8f8f8;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+        
+        tr:hover {
+            background-color: #f0f7ff;
+        }
+        
+        code {
+            background-color: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 13px;
+            color: #e83e8c;
+        }
+        
+        pre {
+            background-color: #f6f8fa;
+            padding: 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 16px 0;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 16px;
+            margin: 20px 0;
+            color: var(--text-secondary);
+            background: #f8f9fa;
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        ul, ol {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            word-break: break-all;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .meta {
+            color: var(--text-secondary);
+            font-size: 13px;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+        }
+        
+        /* 表格响应式 */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            table {
+                font-size: 12px;
+            }
+            
+            th, td {
+                padding: 8px 6px;
+            }
+        }
+        
+        /* 代码块高亮 */
+        .keyword { color: #d73a49; }
+        .string { color: #032f62; }
+        .comment { color: #6a737d; }
+        .function { color: #6f42c1; }
+        .number { color: #005cc5; }
+        
+        /* 提示框 */
+        .tip {
+            background: #e7f4e4;
+            border-left: 4px solid var(--primary-color);
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CS2 饰品每日价格简报</h1>
+        <div class="meta">
+            <span class="emoji">📄</span> 生成时间：2026-07-28
+            <span> | 分类：🤖 AI 资讯</span>
+        </div>
+        <div class="content">
+<h1>CS2 饰品每日价格简报</h1>
+<p><strong>查询时间</strong>: 2026-07-18 11:00<br />
+<strong>数据源</strong>: 悠悠有品<br />
+<strong>报告日期</strong>: 20260718</p>
+<hr />
+<h2>📊 持仓总览</h2>
+<p>| 指标 | 数值 |
+|------|------|
+| <strong>总投入</strong> | ¥5,959.47 |
+| <strong>当前市值</strong> | ¥3,582.94 |
+| <strong>总盈亏</strong> | ¥-2,376.53 |
+| <strong>收益率</strong> | -39.88% |</p>
+<hr />
+<h2>🎯 持仓明细</h2>
+<h3>印花 - Sticker | Complexity Gaming (Holo) | Paris 2023</h3>
+<p>| 项目 | 数值 |
+|------|------|
+| <strong>持有数量</strong> | 100 个 |
+| <strong>买入单价</strong> | ¥22.00 |
+| <strong>当前价格</strong> | ¥6.05 |
+| <strong>悠悠有品在售</strong> | 1775 个 |
+| <strong>悠悠有品求购</strong> | ¥5.76 (32个) |
+| <strong>总成本</strong> | ¥2,200.00 |
+| <strong>当前市值</strong> | ¥605.00 |
+| <strong>盈亏</strong> | ¥-1,595.00 |
+| <strong>收益率</strong> | -72.50% |</p>
+<h3>纪念包 - Paris 2023 Anubis Souvenir Package</h3>
+<p>| 项目 | 数值 |
+|------|------|
+| <strong>持有数量</strong> | 239 个 |
+| <strong>买入单价</strong> | ¥15.73 |
+| <strong>当前价格</strong> | ¥12.46 |
+| <strong>悠悠有品在售</strong> | 5095 个 |
+| <strong>悠悠有品求购</strong> | ¥12.24 (26个) |
+| <strong>总成本</strong> | ¥3,759.47 |
+| <strong>当前市值</strong> | ¥2,977.94 |
+| <strong>盈亏</strong> | ¥-781.53 |
+| <strong>收益率</strong> | -20.79% |</p>
+<hr />
+<h2>📈 价格趋势</h2>
+<p><strong>Complexity 巴黎 2023 全息</strong>:</p>
+<ul>
+<li>买入价：¥22.00</li>
+<li>当前价：¥6.05</li>
+<li>距离回本：需上涨 263.6%</li>
+</ul>
+<p><strong>巴黎 2023 阿努比斯</strong>:</p>
+<ul>
+<li>买入价：¥15.73</li>
+<li>当前价：¥12.46</li>
+<li>距离回本：需上涨 26.2%</li>
+</ul>
+<hr />
+<h2>💡 操作建议</h2>
+<ul>
+<li><strong>当前状态</strong>: 浮亏 39.9%</li>
+<li><strong>建议</strong>: 继续持有，关注 CS2 赛事动态</li>
+<li><strong>目标价位</strong>:
+<ul>
+<li>印花：¥22.00 (回本)</li>
+<li>纪念包：¥15.73 (回本)</li>
+</ul>
+</li>
+</ul>
+<hr />
+<p><strong>数据来源</strong>: 悠悠有品<br />
+<strong>下次更新</strong>: 明日 11:00</p>
+
+        </div>
+        <div class="footer">
+            <p>由 OpenClaw AI Agent 自动生成</p>
+            <p>查看更多精彩报告 → <a href="index.html">报告列表</a></p>
+        </div>
+    </div>
+</body>
+</html>

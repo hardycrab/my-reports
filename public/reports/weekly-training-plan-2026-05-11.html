@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📅 本周训练计划（5 月 11 日 - 5 月 17 日）</title>
+    <style>
+        :root {
+            --primary-color: #07c160; /* 微信绿 */
+            --text-color: #333;
+            --text-secondary: #666;
+            --bg-color: #f5f5f5;
+            --card-bg: #ffffff;
+            --border-color: #e5e5e5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            padding: 20px;
+            max-width: 100%;
+        }
+        
+        .container {
+            max-width: 768px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 28px 0 16px;
+        }
+        
+        h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 24px 0 12px;
+        }
+        
+        h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin: 16px 0;
+            text-align: justify;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+            overflow-x: auto;
+            display: block;
+        }
+        
+        th, td {
+            padding: 12px 10px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        th {
+            background-color: #f8f8f8;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+        
+        tr:hover {
+            background-color: #f0f7ff;
+        }
+        
+        code {
+            background-color: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 13px;
+            color: #e83e8c;
+        }
+        
+        pre {
+            background-color: #f6f8fa;
+            padding: 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 16px 0;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 16px;
+            margin: 20px 0;
+            color: var(--text-secondary);
+            background: #f8f9fa;
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        ul, ol {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            word-break: break-all;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .meta {
+            color: var(--text-secondary);
+            font-size: 13px;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+        }
+        
+        /* 表格响应式 */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            table {
+                font-size: 12px;
+            }
+            
+            th, td {
+                padding: 8px 6px;
+            }
+        }
+        
+        /* 代码块高亮 */
+        .keyword { color: #d73a49; }
+        .string { color: #032f62; }
+        .comment { color: #6a737d; }
+        .function { color: #6f42c1; }
+        .number { color: #005cc5; }
+        
+        /* 提示框 */
+        .tip {
+            background: #e7f4e4;
+            border-left: 4px solid var(--primary-color);
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📅 本周训练计划（5 月 11 日 - 5 月 17 日）</h1>
+        <div class="meta">
+            <span class="emoji">📄</span> 生成时间：2026-05-11
+            <span> | 分类：🤖 AI 资讯</span>
+        </div>
+        <div class="content">
+<h1>📅 本周训练计划（5 月 11 日 - 5 月 17 日）</h1>
+<p><em>生成时间：2026-05-11 08:00 | 数据来源：COROS 高驰</em></p>
+<hr />
+<h2>📊 上周训练总结</h2>
+<h3>训练数据</h3>
+<p>| 指标 | 数值 |
+|------|------|
+| 跑步次数 | 3 次 |
+| 总跑量 | 24.63 公里 |
+| 平均每次 | 8.21 公里 |</p>
+<h3>详细记录</h3>
+<p>| 日期 | 训练类型 | 距离 | 时长 | 配速 |
+|------|---------|------|------|------|
+| 5 月 5 日 (周二) | 半程马拉松配速 | 9.86km | 59 分钟 | 5:59/km |
+| 5 月 7 日 (周四) | 有氧跑步 | 8.27km | 48 分钟 | 5:49/km |
+| 5 月 9 日 (周六) | 户外跑步 | 6.50km | 50 分钟 | 7:45/km |</p>
+<h3>训练评价</h3>
+<p><strong>✅ 优点：</strong></p>
+<ul>
+<li>训练频率稳定，保持每周 3 次的良好节奏</li>
+<li>训练类型多样化，包含配速跑、有氧跑和轻松跑</li>
+<li>平均配速在 5:50-6:00/km 区间，有氧基础扎实</li>
+</ul>
+<p><strong>⚠️ 改进建议：</strong></p>
+<ul>
+<li>周六的 6.5km 配速明显偏慢（7:45/km），可能是疲劳累积或状态不佳</li>
+<li>缺少长距离 LSD 训练，建议周日增加一次 12-15km 的长距离慢跑</li>
+<li>周间休息间隔合理，但可考虑增加一次间歇跑提升速度能力</li>
+</ul>
+<hr />
+<h2>🎯 本周训练目标</h2>
+<p>基于上周 24.63km 的跑量，本周采用<strong>渐进式负荷</strong>策略：</p>
+<p>| 目标项 | 数值 |
+|--------|------|
+| 目标跑量 | 28-32 公里 |
+| 训练次数 | 4 次 |
+| 重点训练 | 耐力 + 速度 |
+| 跑量增幅 | +15% |</p>
+<hr />
+<h2>📋 每日训练安排</h2>
+<p>| 日期 | 训练内容 | 目标距离 | 配速建议 | 说明 |
+|------|---------|---------|----------|------|
+| <strong>周一 (5/11)</strong> | 休息/核心力量 | - | - | 重点加强核心肌群，为本周训练做准备 |
+| <strong>周二 (5/12)</strong> | 间歇跑 | 8km | 快慢交替 | 热身 2km + 400m×8 组 (配速 5:00/km) + 冷身 2km |
+| <strong>周三 (5/13)</strong> | 轻松跑 | 6km | 6:30-7:00/km | 保持轻松，心率控制在有氧区间 |
+| <strong>周四 (5/14)</strong> | 休息 | - | - | 充分恢复，可进行拉伸或瑜伽 |
+| <strong>周五 (5/15)</strong> | 节奏跑 | 10km | 5:45-6:00/km | 模拟半马配速，保持稳定的节奏感 |
+| <strong>周六 (5/16)</strong> | 休息/交叉训练 | - | - | 可选择游泳、骑行等低冲击运动 |
+| <strong>周日 (5/17)</strong> | LSD 长距离 | 14km | 6:30-7:00/km | 本周重点，轻松配速完成长距离 |</p>
+<hr />
+<h2>🏃 训练课表详解</h2>
+<h3>周二：间歇跑 (8km)</h3>
+<pre><code>- 热身：2km 轻松跑 (配速 6:30/km)
+- 主课表：400m × 8 组
+  * 每组目标：2 分钟 (配速 5:00/km)
+  * 组间休息：200m 慢跑或原地休息 90 秒
+- 冷身：2km 轻松跑 (配速 6:30/km)
+</code></pre>
+<h3>周三：轻松跑 (6km)</h3>
+<pre><code>- 全程保持轻松配速 6:30-7:00/km
+- 心率控制在最大心率的 60-70%
+- 重点是主动恢复，为周五和周日的训练储备能量
+</code></pre>
+<h3>周五：节奏跑 (10km)</h3>
+<pre><code>- 热身：2km 轻松跑
+- 主课表：6km 节奏跑 (配速 5:45-6:00/km)
+- 冷身：2km 轻松跑
+- 目标：保持稳定的配速，模拟比赛节奏
+</code></pre>
+<h3>周日：LSD 长距离 (14km)</h3>
+<pre><code>- 全程轻松配速 6:30-7:00/km
+- 不追求速度，重点是累积时间和距离
+- 每 5km 补充一次水分和电解质
+- 这是本周最重要的训练，务必保证完成
+</code></pre>
+<hr />
+<h2>⚠️ 注意事项</h2>
+<h3>训练时间</h3>
+<ul>
+<li>建议训练时间：<strong>每日 16:30-18:00</strong></li>
+<li>此时段体温较高，肌肉柔韧性好，受伤风险低</li>
+</ul>
+<h3>跑前准备</h3>
+<ul>
+<li><strong>热身</strong>：5-10 分钟动态拉伸
+<ul>
+<li>高抬腿 × 30 秒</li>
+<li>后踢腿 × 30 秒</li>
+<li>弓步压腿 × 10 次/侧</li>
+<li>开合跳 × 30 秒</li>
+</ul>
+</li>
+</ul>
+<h3>跑后恢复</h3>
+<ul>
+<li><strong>拉伸</strong>：10 分钟静态拉伸
+<ul>
+<li>大腿前侧、后侧、小腿、臀部各 30 秒</li>
+<li>重点放松股四头肌和腘绳肌</li>
+</ul>
+</li>
+<li><strong>补充</strong>：训练后 30 分钟内补充蛋白质和碳水</li>
+</ul>
+<h3>补水策略</h3>
+<ul>
+<li>训练前 2 小时：500ml 水</li>
+<li>训练中：每 15-20 分钟补充 150-200ml</li>
+<li>训练后：补充 500-750ml 水或运动饮料</li>
+</ul>
+<h3>其他提醒</h3>
+<ul>
+<li>保证每晚 7-8 小时睡眠</li>
+<li>训练日增加蛋白质摄入 (1.2-1.6g/kg 体重)</li>
+<li>如感疲劳或不适，及时调整或休息</li>
+</ul>
+<hr />
+<h2>📈 预期效果</h2>
+<p>完成本周训练后，预期达成：</p>
+<ol>
+<li><strong>耐力提升</strong>：LSD 长距离增强有氧基础</li>
+<li><strong>速度改善</strong>：间歇跑提升最大摄氧量和跑步经济性</li>
+<li><strong>节奏感强化</strong>：节奏跑帮助建立比赛配速感</li>
+<li><strong>跑量累积</strong>：周跑量达到 28-32km，为后续训练打下基础</li>
+</ol>
+<hr />
+<p><strong>加油！坚持训练，你会看到进步！🏃‍♂️💪</strong></p>
+
+        </div>
+        <div class="footer">
+            <p>由 OpenClaw AI Agent 自动生成</p>
+            <p>查看更多精彩报告 → <a href="index.html">报告列表</a></p>
+        </div>
+    </div>
+</body>
+</html>

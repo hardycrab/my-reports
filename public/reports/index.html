@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agent 报告中心</title>
+    <style>
+        :root {
+            --primary-color: #07c160;
+            --text-color: #333;
+            --text-secondary: #666;
+            --bg-color: #f5f5f5;
+            --card-bg: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            background: var(--bg-color);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+        
+        .header p {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 20px;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+        
+        .category {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        
+        .category-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .report-list {
+            list-style: none;
+        }
+        
+        .report-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #f5f5f5;
+        }
+        
+        .report-item:last-child {
+            border-bottom: none;
+        }
+        
+        .report-link {
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+            flex: 1;
+        }
+        
+        .report-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .report-date {
+            color: var(--text-secondary);
+            font-size: 12px;
+            margin-left: 16px;
+        }
+        
+        .report-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            background: #f0f7ff;
+            color: #1890ff;
+            border-radius: 4px;
+            font-size: 11px;
+            margin-left: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 AI Agent 报告中心</h1>
+            <p>由 OpenClaw 自动生成的各类分析报告</p>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">108</div>
+                    <div class="stat-label">总报告数</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">分类数</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">07-28</div>
+                    <div class="stat-label">最新报告</div>
+                </div>
+            </div>
+        </div>
+        
+        
+            <div class="category">
+                <h2 class="category-title">🏃 运动健康 (4)</h2>
+                <ul class="report-list">
+                    
+                <li class="report-item">
+                    <a href="today-workout-completed-2026-05-14.html" class="report-link">今日训练完成！✅</a>
+                    <span class="report-date">2026-05-14</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="today-workout-completed-2026-05-14-corrected.html" class="report-link">今日训练完成！✅（已更正）</a>
+                    <span class="report-date">2026-05-14</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="fitness-supplements-recommendation.html" class="report-link">健身后肌肉酸痛缓解补剂推荐</a>
+                    <span class="report-date">2026-07-28</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="7day-workout-history-2026-05-12-to-05-18.html" class="report-link">近 7 天运动历史记录</a>
+                    <span class="report-date">2026-05-12</span>
+                </li>
+            
+                </ul>
+            </div>
+        
+            <div class="category">
+                <h2 class="category-title">💰 投资理财 (24)</h2>
+                <ul class="report-list">
+                    
+                <li class="report-item">
+                    <a href="黄金基金评估报告_20260610.html" class="report-link">📊 今日黄金与基金评估报告</a>
+                    <span class="report-date">2026-07-28</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="基金评估报告_2026-07-14.html" class="report-link">📊 基金评估报告</a>
+                    <span class="report-date">2026-07-14</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="基金评估报告_2026-07-13.html" class="report-link">📊 基金评估报告</a>
+                    <span class="report-date">2026-07-13</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="基金评估报告-2026-06-22.html" class="report-link">📊 今日基金评估报告</a>
+                    <span class="report-date">2026-06-22</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="基金评估报告 -2026-06-23.html" class="report-link">📊 今日基金评估报告</a>
+                    <span class="report-date">2026-06-23</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="基金理财日报_2026-07-15.html" class="report-link">基金理财日报 - 2026 年 7 月 15 日（周三）</a>
+                    <span class="report-date">2026-07-15</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="fund-trading-strategy.html" class="report-link">基金交易策略 · 趋势跟踪 + 统计套利</a>
+                    <span class="report-date">2026-07-28</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="fund-report-2026-07-08.html" class="report-link">📊 基金评估报告</a>
+                    <span class="report-date">2026-07-08</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="fund-report-2026-07-06.html" class="report-link">📊 基金评估报告</a>
+                    <span class="report-date">2026-07-06</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="fund-report-2026-07-03.html" class="report-link">📊 基金评估报告</a>
+                    <span class="report-date">2026-07-03</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="fund-report-2026-07-02.html" class="report-link">📊 基金评估报告</a>
+                    <span class="report-date">2026-07-02</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="fund-report-2026-06-30.html" class="report-link">📊 基金评估报告</a>
+                    <span class="report-date">2026-06-30</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="fund-report-2026-06-29.html" class="report-link">📊 基金评估报告</a>
+                    <span class="report-date">2026-06-29</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="fund-evaluation-2026-05-29.html" class="report-link">基金评估报告 - 2026-05-29</a>
+                    <span class="report-date">2026-05-29</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="fund-evaluation-2026-05-12.html" class="report-link">基金评估报告 - 2026-05-12</a>
+                    <span class="report-date">2026-05-12</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="fund-evaluation-2026-05-08.html" class="report-link">基金评估报告 - 2026-05-08</a>
+                    <span class="report-date">2026-05-08</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="fund-evaluation-2026-05-05.html" class="report-link">基金评估报告 - 2026-05-05</a>
+                    <span class="report-date">2026-05-05</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="fund-evaluation-2026-05-02.html" class="report-link">基金评估报告 - 2026-05-02</a>
+                    <span class="report-date">2026-05-02</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="fund-daily-20260728.html" class="report-link">📈 基金市场日报</a>
+                    <span class="report-date">2026-07-28</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="fund-daily-20260728-updated.html" class="report-link">📈 基金市场日报（最新净值版）</a>
+                    <span class="report-date">2026-07-28</span>
+                </li>
+            
+                </ul>
+            </div>
+        
+            <div class="category">
+                <h2 class="category-title">📄 其他报告 (9)</h2>
+                <ul class="report-list">
+                    
+                <li class="report-item">
+                    <a href="warmup-and-cooldown-guide.html" class="report-link">热身与冷身拉伸指南</a>
+                    <span class="report-date">2026-07-28</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="learning-resources-summary-2026-05-11.html" class="report-link">📚 学习资料链接汇总</a>
+                    <span class="report-date">2026-05-11</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="last-week-coros-report-2026-04-26-05-02.html" class="report-link">📊 上周运动记录报告</a>
+                    <span class="report-date">2026-04-26</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="fitt8-protein-bar-review.html" class="report-link">FITT8 蛋白棒口味推荐</a>
+                    <span class="report-date">2026-07-28</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="csqaq-api-test-report.html" class="report-link">CSQAQ API 测试报告</a>
+                    <span class="report-date">2026-07-28</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="csqaq-api-issues.html" class="report-link">CSQAQ API 问题总结</a>
+                    <span class="report-date">2026-07-28</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="csqaq-api-final-report.html" class="report-link">CSQAQ API 问题分析报告</a>
+                    <span class="report-date">2026-07-28</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="cs2-portfolio-setup-complete.html" class="report-link">CS2 饰品持仓记录完成</a>
+                    <span class="report-date">2026-07-28</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="apifox-install-guide-complete.html" class="report-link">Apifox 安装指南</a>
+                    <span class="report-date">2026-07-28</span>
+                </li>
+            
+                </ul>
+            </div>
+        
+            <div class="category">
+                <h2 class="category-title">📋 系统报告 (1)</h2>
+                <ul class="report-list">
+                    
+                <li class="report-item">
+                    <a href="claw-agent-capability-summary-2026-06-24.html" class="report-link">📊 Claw/AI Agent 能力总结报告</a>
+                    <span class="report-date">2026-06-24</span>
+                </li>
+            
+                </ul>
+            </div>
+        
+            <div class="category">
+                <h2 class="category-title">📚 学习培训 (15)</h2>
+                <ul class="report-list">
+                    
+                <li class="report-item">
+                    <a href="weekly-plan-week8.html" class="report-link">学习计划每日提醒 - 第 8 周</a>
+                    <span class="report-date">2026-07-28</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="weekly-plan-week4.html" class="report-link">学习计划每日提醒 - 第 4 周</a>
+                    <span class="report-date">2026-07-28</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="weekly-fitness-plan-scientific-2026-05-12.html" class="report-link">📅 本周剩余训练计划（科学调整版）</a>
+                    <span class="report-date">2026-05-12</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="weekly-fitness-plan-running-only-2026-05-09.html" class="report-link">📅 一周健身计划（跑步版·调整后）</a>
+                    <span class="report-date">2026-05-09</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="weekly-fitness-plan-adjusted-2026-05-09.html" class="report-link">📅 一周健身计划（调整后）</a>
+                    <span class="report-date">2026-05-09</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="weekly-fitness-plan-2026-05-10.html" class="report-link">📅 一周健身计划</a>
+                    <span class="report-date">2026-05-10</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="tomorrow-workout-plan-2026-05-14.html" class="report-link">明日训练计划（2026-05-14 周四）</a>
+                    <span class="report-date">2026-05-14</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="today-sport-plan-2026-05-03.html" class="report-link">📅 今日运动安排建议</a>
+                    <span class="report-date">2026-05-03</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="study-plan-2026-05-07.html" class="report-link">学习计划每日提醒 - 第 4 周</a>
+                    <span class="report-date">2026-05-07</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="study-plan-2026-05-06.html" class="report-link">学习计划每日提醒 - 第 4 周</a>
+                    <span class="report-date">2026-05-06</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="study-plan-2026-05-05.html" class="report-link">学习计划每日提醒 - 第 3 周</a>
+                    <span class="report-date">2026-05-05</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="study-plan-2026-05-02.html" class="report-link">学习计划每日提醒 - 第 3 周</a>
+                    <span class="report-date">2026-05-02</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="study-plan-2026-05-01.html" class="report-link">学习计划每日提醒 - 第 3 周</a>
+                    <span class="report-date">2026-05-01</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="study-plan-2026-04-30.html" class="report-link">学习计划每日提醒 - 第 3 周</a>
+                    <span class="report-date">2026-04-30</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="recovery-run-plan-2026-05-03.html" class="report-link">🏃 今日排酸跑训练建议</a>
+                    <span class="report-date">2026-05-03</span>
+                </li>
+            
+                </ul>
+            </div>
+        
+            <div class="category">
+                <h2 class="category-title">🛒 购物比价 (7)</h2>
+                <ul class="report-list">
+                    
+                <li class="report-item">
+                    <a href="price-comparison-skills.html" class="report-link">自动比价 Skill 推荐</a>
+                    <span class="report-date">2026-07-28</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="glycerin-flex-buying-guide.html" class="report-link">甘油 flex 护具 40 码 购买指南</a>
+                    <span class="report-date">2026-07-28</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="cs2-price-report-20260710.html" class="report-link">CS2 饰品价格报告</a>
+                    <span class="report-date">2026-07-28</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="cs2-price-complete-report-20260710.html" class="report-link">CS2 饰品价格完整报告</a>
+                    <span class="report-date">2026-07-28</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="cs2-price-20260720.html" class="report-link">🎮 CS2 饰品价格日报</a>
+                    <span class="report-date">2026-07-28</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="brooks-price-comparison-2026-05-08.html" class="report-link">🔍 全网比价报告</a>
+                    <span class="report-date">2026-05-08</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="brooks-glycerin-flex-buying-guide.html" class="report-link">布鲁克斯甘油 Flex 护膝 40 码 购买指南</a>
+                    <span class="report-date">2026-07-28</span>
+                </li>
+            
+                </ul>
+            </div>
+        
+            <div class="category">
+                <h2 class="category-title">🤖 AI 资讯 (48)</h2>
+                <ul class="report-list">
+                    
+                <li class="report-item">
+                    <a href="weekly-training-plan-2026-06-08.html" class="report-link">📅 本周训练计划（6月8日 - 6月14日）</a>
+                    <span class="report-date">2026-06-08</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="weekly-training-plan-2026-05-11.html" class="report-link">📅 本周训练计划（5 月 11 日 - 5 月 17 日）</a>
+                    <span class="report-date">2026-05-11</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="weekly-training-plan-2026-05-07.html" class="report-link">📅 本周训练计划</a>
+                    <span class="report-date">2026-05-07</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="weekly-training-plan-2026-05-03.html" class="report-link">📅 本周训练计划</a>
+                    <span class="report-date">2026-05-03</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="weekly-fitness-plan-remaining-2026-05-12.html" class="report-link">📅 本周剩余训练计划（科学训练版）</a>
+                    <span class="report-date">2026-05-12</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="training-monster-glutamine-buying-guide.html" class="report-link">训练怪兽谷氨酰胺 - 最实惠购买指南</a>
+                    <span class="report-date">2026-07-28</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="kai-sheng-wang-three-day-split-plan.html" class="report-link">凯圣王-谭成义 三分化训练计划</a>
+                    <span class="report-date">2026-07-28</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="fatigue-vs-overtraining-advice-2026-05-15.html" class="report-link">训练疲劳 vs 过度训练 - 科学建议</a>
+                    <span class="report-date">2026-05-15</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="daily-arrangement-2026-06-09.html" class="report-link">每日安排报告</a>
+                    <span class="report-date">2026-06-09</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="daily-arrangement-2026-06-08.html" class="report-link">每日安排报告</a>
+                    <span class="report-date">2026-06-08</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="daily-arrangement-2026-05-11.html" class="report-link">每日安排报告</a>
+                    <span class="report-date">2026-05-11</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="daily-arrangement-2026-05-10.html" class="report-link">每日安排报告</a>
+                    <span class="report-date">2026-05-10</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="daily-arrangement-2026-05-09.html" class="report-link">每日安排报告</a>
+                    <span class="report-date">2026-05-09</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="daily-arrangement-2026-05-08.html" class="report-link">每日安排报告</a>
+                    <span class="report-date">2026-05-08</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="daily-arrangement-2026-05-07.html" class="report-link">📅 每日安排报告</a>
+                    <span class="report-date">2026-05-07</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="daily-arrangement-2026-05-06.html" class="report-link">每日安排报告</a>
+                    <span class="report-date">2026-05-06</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="daily-arrangement-2026-05-06-v2.html" class="report-link">每日安排报告 - 2026 年 5 月 6 日（星期三）</a>
+                    <span class="report-date">2026-05-06</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="daily-arrangement-2026-05-05.html" class="report-link">每日安排报告</a>
+                    <span class="report-date">2026-05-05</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="daily-arrangement-2026-05-04.html" class="report-link">每日安排报告</a>
+                    <span class="report-date">2026-05-04</span>
+                </li>
+            
+                <li class="report-item">
+                    <a href="daily-arrangement-2026-05-03.html" class="report-link">每日安排报告</a>
+                    <span class="report-date">2026-05-03</span>
+                </li>
+            
+                </ul>
+            </div>
+        
+    </div>
+</body>
+</html>

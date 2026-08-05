@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📅 本周训练计划</title>
+    <style>
+        :root {
+            --primary-color: #07c160; /* 微信绿 */
+            --text-color: #333;
+            --text-secondary: #666;
+            --bg-color: #f5f5f5;
+            --card-bg: #ffffff;
+            --border-color: #e5e5e5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            padding: 20px;
+            max-width: 100%;
+        }
+        
+        .container {
+            max-width: 768px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 28px 0 16px;
+        }
+        
+        h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 24px 0 12px;
+        }
+        
+        h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin: 16px 0;
+            text-align: justify;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+            overflow-x: auto;
+            display: block;
+        }
+        
+        th, td {
+            padding: 12px 10px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        th {
+            background-color: #f8f8f8;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+        
+        tr:hover {
+            background-color: #f0f7ff;
+        }
+        
+        code {
+            background-color: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 13px;
+            color: #e83e8c;
+        }
+        
+        pre {
+            background-color: #f6f8fa;
+            padding: 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 16px 0;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 16px;
+            margin: 20px 0;
+            color: var(--text-secondary);
+            background: #f8f9fa;
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        ul, ol {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            word-break: break-all;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .meta {
+            color: var(--text-secondary);
+            font-size: 13px;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+        }
+        
+        /* 表格响应式 */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            table {
+                font-size: 12px;
+            }
+            
+            th, td {
+                padding: 8px 6px;
+            }
+        }
+        
+        /* 代码块高亮 */
+        .keyword { color: #d73a49; }
+        .string { color: #032f62; }
+        .comment { color: #6a737d; }
+        .function { color: #6f42c1; }
+        .number { color: #005cc5; }
+        
+        /* 提示框 */
+        .tip {
+            background: #e7f4e4;
+            border-left: 4px solid var(--primary-color);
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📅 本周训练计划</h1>
+        <div class="meta">
+            <span class="emoji">📄</span> 生成时间：2026-05-07
+            <span> | 分类：🤖 AI 资讯</span>
+        </div>
+        <div class="content">
+<h1>📅 本周训练计划</h1>
+<p><strong>周期</strong>：2026 年 5 月 7 日（周四）至 2026 年 5 月 13 日（周三）
+<strong>生成时间</strong>：2026-05-07
+<strong>数据来源</strong>：COROS 高驰运动手表</p>
+<hr />
+<h2>📊 上周训练总结（4/28-5/4）</h2>
+<p>| 指标 | 数据 |
+|------|------|
+| 跑步次数 | 3 次 |
+| 总跑量 | 16.83 公里 |
+| 平均每次 | 5.61 公里 |
+| 训练频率 | 每 2 天一次 |</p>
+<h3>训练评价</h3>
+<p><strong>✅ 优点</strong>：</p>
+<ul>
+<li>保持稳定的训练频率</li>
+<li>跑量逐步恢复中</li>
+<li>有排酸跑意识（5 月 3 日 5.2km 慢跑）</li>
+</ul>
+<p><strong>⚠️ 改进建议</strong>：</p>
+<ul>
+<li>周跑量偏低，可逐步提升至 25-30 公里</li>
+<li>需要加入力量训练，提升跑步经济性</li>
+<li>增加核心训练，预防跑步损伤</li>
+</ul>
+<hr />
+<h2>🎯 本周训练目标</h2>
+<p>| 目标 | 数值 |
+|------|------|
+| 目标跑量 | 25-30 公里 |
+| 训练次数 | 5-6 次（含羽毛球） |
+| 力量训练 | 2-3 次 |
+| 核心训练 | 2 次 |</p>
+<hr />
+<h2>📋 每日训练安排</h2>
+<p>| 日期 | 时间 | 训练内容 | 强度 | 备注 |
+|------|------|---------|------|------|
+| 5/7 (周四) | 晚上 | 🏸 羽毛球 | 中 | 不安排其他训练 |
+| 5/8 (周五) | 16:30 | 🏃 间歇跑 + 上肢力量 | 高 | 重点训练日 |
+| 5/9 (周六) | 白天 | 🏸 羽毛球（轻微） | 低 | 可安排核心训练 |
+| 5/10 (周日) | 白天 | 🏸 羽毛球（轻微） | 低 | 休息或拉伸 |
+| 5/11 (周一) | 16:30 | 🏃  LSD 长距离慢跑 | 中 | 本周重点 |
+| 5/12 (周二) | 晚上 | 🏸 羽毛球 + 下肢力量 | 中 | 羽毛球后力量 |
+| 5/13 (周三) | 16:30 | 🏃 轻松恢复跑 + 核心 | 低 | 恢复为主 |</p>
+<hr />
+<h2>🏃 跑步训练详情</h2>
+<h3>周五（5/8）：间歇跑训练</h3>
+<p><strong>目标</strong>：提升最大摄氧量和速度</p>
+<p>| 项目 | 内容 |
+|------|------|
+| 热身 | 2km 轻松跑 + 动态拉伸 |
+| 主训练 | 6×400 米间歇跑 |
+| 配速 | 每 400 米 2 分 30 秒 -2 分 45 秒 |
+| 恢复 | 慢跑 400 米（组间休息） |
+| 冷身 | 2km 轻松跑 + 静态拉伸 |
+| <strong>总距离</strong> | <strong>约 8km</strong> |</p>
+<hr />
+<h3>周一（5/11）：LSD 长距离慢跑 ⭐重点</h3>
+<p><strong>目标</strong>：增强耐力基础，提升脂肪代谢</p>
+<p>| 项目 | 内容 |
+|------|------|
+| 热身 | 1km 超慢跑 + 动态拉伸 |
+| 主训练 | 12-15km 持续慢跑 |
+| 配速 | 6:30-7:00 分钟/公里（能说话） |
+| 心率 | 区间 2（最大心率 65-75%） |
+| 补给 | 每 5km 补充 100-150ml 水 |
+| 冷身 | 1km 慢走 + 静态拉伸 15 分钟 |
+| <strong>总距离</strong> | <strong>14-17km</strong> |</p>
+<hr />
+<h3>周三（5/13）：轻松恢复跑</h3>
+<p><strong>目标</strong>：促进恢复，保持运动习惯</p>
+<p>| 项目 | 内容 |
+|------|------|
+| 距离 | 5-6km |
+| 配速 | 7:00-7:30 分钟/公里（很慢） |
+| 心率 | 区间 1-2（最大心率 60-70%） |
+| 感觉 | 能边跑边完整唱歌 |</p>
+<hr />
+<h2>💪 力量训练详情</h2>
+<h3>周五（5/8）：上肢力量训练</h3>
+<p><strong>时间</strong>：间歇跑后，或单独安排 30 分钟</p>
+<p>| 动作 | 组数×次数 | 组间休息 | 目标肌群 |
+|------|----------|---------|---------|
+| 俯卧撑 | 3×15 | 60 秒 | 胸肌、三头肌 |
+| 哑铃划船 | 3×12/侧 | 60 秒 | 背阔肌 |
+| 哑铃肩推 | 3×12 | 60 秒 | 三角肌 |
+| 哑铃弯举 | 3×15 | 45 秒 | 肱二头肌 |
+| 臂屈伸 | 3×15 | 45 秒 | 肱三头肌 |
+| 平板支撑 | 3×60 秒 | 60 秒 | 核心稳定 |</p>
+<p><strong>所需器械</strong>：哑铃（可用水瓶替代）、瑜伽垫</p>
+<hr />
+<h3>周二（5/12）：下肢力量训练</h3>
+<p><strong>时间</strong>：羽毛球后，或单独安排 40 分钟</p>
+<p>| 动作 | 组数×次数 | 组间休息 | 目标肌群 |
+|------|----------|---------|---------|
+| 深蹲 | 4×15 | 90 秒 | 股四头肌、臀大肌 |
+| 箭步蹲 | 3×12/腿 | 60 秒 | 股四头肌、臀肌 |
+| 硬拉 | 4×12 | 90 秒 | 腘绳肌、臀部 |
+| 小腿提踵 | 3×20 | 45 秒 | 小腿三头肌 |
+| 侧卧抬腿 | 3×15/侧 | 45 秒 | 臀中肌 |
+| 靠墙静蹲 | 3×60 秒 | 60 秒 | 膝关节稳定 |</p>
+<p><strong>注意</strong>：羽毛球后训练，强度适中，避免过度疲劳</p>
+<hr />
+<h3>周六（5/10）：核心训练（可选）</h3>
+<p><strong>时间</strong>：羽毛球后或单独安排 20 分钟</p>
+<p>| 动作 | 组数×时间/次数 | 组间休息 | 目标 |
+|------|--------------|---------|------|
+| 平板支撑 | 3×60 秒 | 60 秒 | 核心稳定 |
+| 侧平板支撑 | 3×45 秒/侧 | 45 秒 | 腹斜肌 |
+| 死虫式 | 3×12/侧 | 45 秒 | 深层核心 |
+| 俄罗斯转体 | 3×20 | 45 秒 | 腹斜肌 |
+| 仰卧抬腿 | 3×15 | 45 秒 | 下腹部 |
+| 鸟狗式 | 3×10/侧 | 45 秒 | 核心协调 |</p>
+<hr />
+<h2>🏸 羽毛球安排</h2>
+<p>| 日期 | 时间 | 强度 | 说明 |
+|------|------|------|------|
+| 周四（5/7） | 晚上 | 中等 | 正常训练 |
+| 周二（5/12） | 晚上 | 中等 | 后接下肢力量 |
+| 周六（5/10） | 白天 | 轻微 | 娱乐为主 |
+| 周日（5/11） | 白天 | 轻微 | 娱乐为主 |</p>
+<p><strong>羽毛球益处</strong>：</p>
+<ul>
+<li>提升敏捷性和反应速度</li>
+<li>增强下肢爆发力</li>
+<li>有氧无氧结合训练</li>
+</ul>
+<p><strong>注意事项</strong>：</p>
+<ul>
+<li>运动前充分热身（肩、腕、膝、踝）</li>
+<li>运动后拉伸（小腿、大腿、肩部）</li>
+<li>避免与高强度跑步同日进行</li>
+</ul>
+<hr />
+<h2>⚠️ 注意事项</h2>
+<h3>训练前检查</h3>
+<ul>
+<li>[ ] 睡眠充足（≥7 小时）</li>
+<li>[ ] 静息心率正常（与平时相差&lt;5 次）</li>
+<li>[ ] 无明显肌肉酸痛或关节疼痛</li>
+<li>[ ] 训练前 1 小时少量进食</li>
+</ul>
+<h3>恢复要点</h3>
+<ol>
+<li><strong>跑后 30 分钟内</strong>：补充蛋白质 + 碳水</li>
+<li><strong>力量训练后</strong>：补充蛋白质（20-30g）</li>
+<li><strong>充分补水</strong>：全天饮水量≥2 升</li>
+<li><strong>睡眠充足</strong>：每晚 7-8 小时</li>
+<li><strong>拉伸放松</strong>：每次训练后 10 分钟</li>
+</ol>
+<h3>受伤预防</h3>
+<ul>
+<li>出现疼痛立即停止</li>
+<li>每周跑量增幅不超过 10%</li>
+<li>羽毛球前后充分热身和拉伸</li>
+<li>力量训练注意动作标准</li>
+</ul>
+<hr />
+<h2>📈 训练进度追踪</h2>
+<h3>周中检查点（周一）</h3>
+<ul>
+<li>已完成训练：___ 次</li>
+<li>本周跑量：___ 公里</li>
+<li>身体状态：良好/一般/疲劳</li>
+</ul>
+<h3>周末总结（周日）</h3>
+<ul>
+<li>本周总跑量：___ 公里</li>
+<li>力量训练：___ 次</li>
+<li>目标完成度：___%</li>
+<li>下周调整方向：___</li>
+</ul>
+<hr />
+<h2>🎯 本周重点</h2>
+<ol>
+<li><strong>周一 LSD 长距离</strong>：本周最重要的训练，确保完成 12-15km</li>
+<li><strong>力量训练</strong>：首次系统安排，注意动作标准，不要追求重量</li>
+<li><strong>羽毛球协调</strong>：避免与高强度跑步冲突，合理安排</li>
+<li><strong>恢复优先</strong>：如有不适，优先休息，不要硬撑</li>
+</ol>
+<hr />
+<p><strong>祝你本周训练顺利！循序渐进，稳步提升！💪</strong></p>
+<p><em>下次更新：2026-05-14（周四）自动生成新计划</em>
+<em>数据来源：COROS 高驰运动手表 | 训练时间：每日 16:30</em></p>
+
+        </div>
+        <div class="footer">
+            <p>由 OpenClaw AI Agent 自动生成</p>
+            <p>查看更多精彩报告 → <a href="index.html">报告列表</a></p>
+        </div>
+    </div>
+</body>
+</html>

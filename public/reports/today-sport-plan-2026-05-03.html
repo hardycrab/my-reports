@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📅 今日运动安排建议</title>
+    <style>
+        :root {
+            --primary-color: #07c160; /* 微信绿 */
+            --text-color: #333;
+            --text-secondary: #666;
+            --bg-color: #f5f5f5;
+            --card-bg: #ffffff;
+            --border-color: #e5e5e5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            padding: 20px;
+            max-width: 100%;
+        }
+        
+        .container {
+            max-width: 768px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 28px 0 16px;
+        }
+        
+        h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 24px 0 12px;
+        }
+        
+        h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin: 16px 0;
+            text-align: justify;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+            overflow-x: auto;
+            display: block;
+        }
+        
+        th, td {
+            padding: 12px 10px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        th {
+            background-color: #f8f8f8;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+        
+        tr:hover {
+            background-color: #f0f7ff;
+        }
+        
+        code {
+            background-color: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 13px;
+            color: #e83e8c;
+        }
+        
+        pre {
+            background-color: #f6f8fa;
+            padding: 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 16px 0;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 16px;
+            margin: 20px 0;
+            color: var(--text-secondary);
+            background: #f8f9fa;
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        ul, ol {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            word-break: break-all;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .meta {
+            color: var(--text-secondary);
+            font-size: 13px;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+        }
+        
+        /* 表格响应式 */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            table {
+                font-size: 12px;
+            }
+            
+            th, td {
+                padding: 8px 6px;
+            }
+        }
+        
+        /* 代码块高亮 */
+        .keyword { color: #d73a49; }
+        .string { color: #032f62; }
+        .comment { color: #6a737d; }
+        .function { color: #6f42c1; }
+        .number { color: #005cc5; }
+        
+        /* 提示框 */
+        .tip {
+            background: #e7f4e4;
+            border-left: 4px solid var(--primary-color);
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📅 今日运动安排建议</h1>
+        <div class="meta">
+            <span class="emoji">📄</span> 生成时间：2026-05-03
+            <span> | 分类：📚 学习培训</span>
+        </div>
+        <div class="content">
+<h1>📅 今日运动安排建议</h1>
+<p><strong>日期</strong>：2026 年 5 月 3 日 星期日
+<strong>数据来源</strong>：COROS 高驰运动手表</p>
+<hr />
+<h2>📊 近期运动分析</h2>
+<h3>过去 4 周数据汇总</h3>
+<p>根据你 COROS 账号的历史记录：</p>
+<p>| 指标 | 数据 |
+|------|------|
+| 总跑步次数 | 53 次 |
+| 平均跑量/次 | 约 8.5 公里 |
+| 最常见距离 | 7.2 公里、10.2 公里、13.1 公里 |
+| 跑步频率 | 约每 2-3 天一次 |
+| 上次跑步 | 2025-12-30（7.21 公里） |</p>
+<h3>训练模式分析</h3>
+<p>你的典型训练节奏：</p>
+<ul>
+<li><strong>短距离恢复跑</strong>：5-7 公里</li>
+<li><strong>中距离节奏跑</strong>：8-10 公里</li>
+<li><strong>长距离 LSD</strong>：13-15 公里</li>
+</ul>
+<hr />
+<h2>🎯 今日运动建议</h2>
+<h3>方案 A：短距离恢复跑 ⭐ 推荐</h3>
+<p><strong>适合场景</strong>：昨天有训练/状态一般/时间紧张</p>
+<p>| 项目 | 内容 |
+|------|------|
+| 距离 | 5-7 公里 |
+| 配速 | 轻松跑（比平时慢 30-60 秒/公里） |
+| 时长 | 约 30-40 分钟 |
+| 心率 | 区间 1-2（最大心率 60-70%） |
+| 目标 | 促进恢复、保持运动习惯 |</p>
+<p><strong>训练要点</strong>：</p>
+<ul>
+<li>跑前动态热身 5 分钟</li>
+<li>保持轻松呼吸，能边跑边说话</li>
+<li>跑后静态拉伸 10 分钟</li>
+</ul>
+<hr />
+<h3>方案 B：中距离节奏跑</h3>
+<p><strong>适合场景</strong>：状态良好/想提升耐力</p>
+<p>| 项目 | 内容 |
+|------|------|
+| 距离 | 8-10 公里 |
+| 配速 | 马拉松配速或稍快 |
+| 时长 | 约 45-60 分钟 |
+| 心率 | 区间 2-3（最大心率 70-80%） |
+| 目标 | 提升有氧耐力、燃烧脂肪 |</p>
+<p><strong>训练要点</strong>：</p>
+<ul>
+<li>前 2 公里热身配速</li>
+<li>中间 5-6 公里稳定配速</li>
+<li>最后 1-2 公里可适度加速</li>
+</ul>
+<hr />
+<h3>方案 C：长距离 LSD 训练</h3>
+<p><strong>适合场景</strong>：周末有时间/备战比赛/积累跑量</p>
+<p>| 项目 | 内容 |
+|------|------|
+| 距离 | 12-15 公里 |
+| 配速 | 比马拉松配速慢 30-45 秒/公里 |
+| 时长 | 约 60-90 分钟 |
+| 心率 | 区间 2（最大心率 65-75%） |
+| 目标 | 提升耐力基础、增强心肺 |</p>
+<p><strong>训练要点</strong>：</p>
+<ul>
+<li>提前补充碳水化合物</li>
+<li>携带水或运动饮料</li>
+<li>注意补给和身体信号</li>
+<li>跑后充分恢复</li>
+</ul>
+<hr />
+<h2>⚠️ 注意事项</h2>
+<h3>训练前检查</h3>
+<ul>
+<li>[ ] 睡眠质量良好（≥7 小时）</li>
+<li>[ ] 静息心率正常（与平时相差&lt;5 次）</li>
+<li>[ ] 无明显肌肉酸痛</li>
+<li>[ ] 天气适宜（温度、空气质量）</li>
+</ul>
+<h3>恢复建议</h3>
+<ol>
+<li><strong>跑后 30 分钟内</strong>：补充蛋白质 + 碳水（蛋白粉/香蕉 + 牛奶）</li>
+<li><strong>跑后 2 小时内</strong>：正餐补充营养</li>
+<li><strong>充分补水</strong>：全天饮水量≥2 升</li>
+<li><strong>睡眠充足</strong>：今晚保证 7-8 小时睡眠</li>
+</ol>
+<hr />
+<h2>📈 本周训练计划建议</h2>
+<p>| 日期 | 训练内容 | 跑量 |
+|------|---------|------|
+| 5/3 (今日) | 短距离恢复跑 | 5-7km |
+| 5/4 (周一) | 休息/交叉训练 | - |
+| 5/5 (周二) | 间歇跑/节奏跑 | 8-10km |
+| 5/6 (周三) | 休息 | - |
+| 5/7 (周四) | 轻松跑 | 6-8km |
+| 5/8 (周五) | 休息 | - |
+| 5/9 (周六) | 长距离 LSD | 12-15km |</p>
+<p><strong>周跑量目标</strong>：35-45 公里</p>
+<hr />
+<h2>🔔 提醒设置</h2>
+<p>建议在高驰手表/APP 中设置：</p>
+<ul>
+<li>⏰ 训练提醒：今日 17:00-19:00（傍晚最佳）</li>
+<li>💧 补水提醒：每小时提醒喝水</li>
+<li>🌙 睡眠提醒：23:00 前入睡</li>
+</ul>
+<hr />
+<p><strong>祝你训练愉快！🏃‍♂️</strong></p>
+<p><em>生成时间：2026-05-03 12:20 | 下次同步：完成训练后自动更新</em></p>
+
+        </div>
+        <div class="footer">
+            <p>由 OpenClaw AI Agent 自动生成</p>
+            <p>查看更多精彩报告 → <a href="index.html">报告列表</a></p>
+        </div>
+    </div>
+</body>
+</html>

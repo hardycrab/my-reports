@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📅 本周训练计划（6月8日 - 6月14日）</title>
+    <style>
+        :root {
+            --primary-color: #07c160; /* 微信绿 */
+            --text-color: #333;
+            --text-secondary: #666;
+            --bg-color: #f5f5f5;
+            --card-bg: #ffffff;
+            --border-color: #e5e5e5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            padding: 20px;
+            max-width: 100%;
+        }
+        
+        .container {
+            max-width: 768px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 28px 0 16px;
+        }
+        
+        h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 24px 0 12px;
+        }
+        
+        h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin: 16px 0;
+            text-align: justify;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+            overflow-x: auto;
+            display: block;
+        }
+        
+        th, td {
+            padding: 12px 10px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        th {
+            background-color: #f8f8f8;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+        
+        tr:hover {
+            background-color: #f0f7ff;
+        }
+        
+        code {
+            background-color: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 13px;
+            color: #e83e8c;
+        }
+        
+        pre {
+            background-color: #f6f8fa;
+            padding: 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 16px 0;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 16px;
+            margin: 20px 0;
+            color: var(--text-secondary);
+            background: #f8f9fa;
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        ul, ol {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            word-break: break-all;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .meta {
+            color: var(--text-secondary);
+            font-size: 13px;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+        }
+        
+        /* 表格响应式 */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            table {
+                font-size: 12px;
+            }
+            
+            th, td {
+                padding: 8px 6px;
+            }
+        }
+        
+        /* 代码块高亮 */
+        .keyword { color: #d73a49; }
+        .string { color: #032f62; }
+        .comment { color: #6a737d; }
+        .function { color: #6f42c1; }
+        .number { color: #005cc5; }
+        
+        /* 提示框 */
+        .tip {
+            background: #e7f4e4;
+            border-left: 4px solid var(--primary-color);
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📅 本周训练计划（6月8日 - 6月14日）</h1>
+        <div class="meta">
+            <span class="emoji">📄</span> 生成时间：2026-06-08
+            <span> | 分类：🤖 AI 资讯</span>
+        </div>
+        <div class="content">
+<h1>📅 本周训练计划（6月8日 - 6月14日）</h1>
+<h2>📊 上周训练总结（20260601 - 20260607）</h2>
+<p>| 指标 | 数据 |
+|------|------|
+| 跑步次数 | 2 次 |
+| 总跑量 | 12.39 公里 |
+| 平均每次 | 6.20 公里 |
+| 平均时长 | 0 分钟 |</p>
+<h3>训练评价</h3>
+<p><strong>优点：</strong></p>
+<ul>
+<li>✅ 有一定的训练频率</li>
+<li>✅ 单次训练距离适中</li>
+</ul>
+<p><strong>改进建议：</strong></p>
+<ul>
+<li>⚠️ 建议增加训练次数至每周 3-4 次</li>
+<li>⚠️ 跑量偏低，建议循序渐进增加距离</li>
+</ul>
+<hr />
+<h2>🎯 本周训练目标</h2>
+<p>| 目标 | 数值 |
+|------|------|
+| 目标跑量 | 12-14 公里 |
+| 训练次数 | 3 次 |
+| 重点训练 | 耐力 |</p>
+<hr />
+<h2>📋 每日训练安排</h2>
+<p>| 日期 | 训练内容 | 目标距离 | 配速建议 |
+|------|---------|---------|----------|
+| 周一（6/8） | 休息/力量训练 | - | - |
+| 周二（6/9） | 间歇跑 | 6-8km | 快慢交替（400m×8-10 组） |
+| 周三（6/10） | 轻松跑 | 5-7km | 轻松，可交谈 |
+| 周四（6/11） | 休息 | - | - |
+| 周五（6/12） | 节奏跑 | 8-10km | 马拉松配速（稍吃力） |
+| 周六（6/13） | 休息/交叉训练 | - | - |
+| 周日（6/14） | LSD 长距离慢跑 | 10-12km | 轻松，心率 Zone2 |</p>
+<hr />
+<h2>⚠️ 注意事项</h2>
+<h3>训练时间</h3>
+<ul>
+<li>建议时间：每日 16:30-18:30</li>
+<li>避免饭后 1 小时内跑步</li>
+</ul>
+<h3>跑前热身（5-10 分钟）</h3>
+<ol>
+<li>关节活动：踝关节、膝关节、髋关节各 30 秒</li>
+<li>动态拉伸：高抬腿、后踢腿各 20 次</li>
+<li>慢跑 3-5 分钟激活身体</li>
+</ol>
+<h3>跑后拉伸（10 分钟）</h3>
+<ol>
+<li>小腿拉伸（腓肠肌）：每侧 30 秒×2 组</li>
+<li>大腿前侧（股四头肌）：每侧 30 秒×2 组</li>
+<li>大腿后侧（腘绳肌）：每侧 30 秒×2 组</li>
+<li>臀部拉伸：每侧 30 秒×2 组</li>
+</ol>
+<h3>补水与营养</h3>
+<ul>
+<li>跑前 1 小时补充 300-500ml 水</li>
+<li>跑步超过 1 小时需途中补水</li>
+<li>跑后 30 分钟内补充蛋白质和碳水</li>
+<li>日常保证 1.5-2L 饮水量</li>
+</ul>
+<h3>恢复建议</h3>
+<ul>
+<li>保证每晚 7-8 小时睡眠</li>
+<li>训练日后可进行泡沫轴放松</li>
+<li>如感到持续疲劳，增加休息日</li>
+</ul>
+<hr />
+<h2>📈 训练日志模板</h2>
+<p>每次训练后记录以下内容：</p>
+<pre><code>日期：YYYY-MM-DD
+训练类型：
+实际距离：km
+实际用时：分钟
+平均配速：'/km
+平均心率：bpm
+感受（1-10）：
+备注：
+</code></pre>
+<hr />
+<p><em>生成时间：2026-06-08 08:00 | 数据来源：COROS 高驰</em>
+<em>教练寄语：循序渐进，持之以恒。倾听身体的声音，享受跑步的乐趣！</em></p>
+
+        </div>
+        <div class="footer">
+            <p>由 OpenClaw AI Agent 自动生成</p>
+            <p>查看更多精彩报告 → <a href="index.html">报告列表</a></p>
+        </div>
+    </div>
+</body>
+</html>

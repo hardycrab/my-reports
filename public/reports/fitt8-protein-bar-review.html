@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FITT8 蛋白棒口味推荐</title>
+    <style>
+        :root {
+            --primary-color: #07c160; /* 微信绿 */
+            --text-color: #333;
+            --text-secondary: #666;
+            --bg-color: #f5f5f5;
+            --card-bg: #ffffff;
+            --border-color: #e5e5e5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            padding: 20px;
+            max-width: 100%;
+        }
+        
+        .container {
+            max-width: 768px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 28px 0 16px;
+        }
+        
+        h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 24px 0 12px;
+        }
+        
+        h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin: 16px 0;
+            text-align: justify;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+            overflow-x: auto;
+            display: block;
+        }
+        
+        th, td {
+            padding: 12px 10px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        th {
+            background-color: #f8f8f8;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+        
+        tr:hover {
+            background-color: #f0f7ff;
+        }
+        
+        code {
+            background-color: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 13px;
+            color: #e83e8c;
+        }
+        
+        pre {
+            background-color: #f6f8fa;
+            padding: 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 16px 0;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 16px;
+            margin: 20px 0;
+            color: var(--text-secondary);
+            background: #f8f9fa;
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        ul, ol {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            word-break: break-all;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .meta {
+            color: var(--text-secondary);
+            font-size: 13px;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+        }
+        
+        /* 表格响应式 */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            table {
+                font-size: 12px;
+            }
+            
+            th, td {
+                padding: 8px 6px;
+            }
+        }
+        
+        /* 代码块高亮 */
+        .keyword { color: #d73a49; }
+        .string { color: #032f62; }
+        .comment { color: #6a737d; }
+        .function { color: #6f42c1; }
+        .number { color: #005cc5; }
+        
+        /* 提示框 */
+        .tip {
+            background: #e7f4e4;
+            border-left: 4px solid var(--primary-color);
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>FITT8 蛋白棒口味推荐</h1>
+        <div class="meta">
+            <span class="emoji">📄</span> 生成时间：2026-07-28
+            <span> | 分类：📄 其他报告</span>
+        </div>
+        <div class="content">
+<h1>FITT8 蛋白棒口味推荐</h1>
+<p><strong>整理时间</strong>：2026-05-14
+<strong>来源</strong>：网络评价整理 + 用户反馈</p>
+<hr />
+<h2>🏆 热门口味 TOP 5</h2>
+<h3>1. 🍫 巧克力布朗尼口味 ⭐⭐⭐⭐⭐</h3>
+<p><strong>推荐指数</strong>：5/5
+<strong>热量</strong>：约 200-220 卡/根
+<strong>蛋白质</strong>：20g</p>
+<p><strong>评价</strong>：</p>
+<ul>
+<li>✅ 巧克力味浓郁，不甜腻</li>
+<li>✅ 口感接近真实布朗尼</li>
+<li>✅ 饱腹感强</li>
+<li>⚠️ 热量稍高</li>
+</ul>
+<p><strong>适合人群</strong>：巧克力爱好者、减脂期解馋</p>
+<hr />
+<h3>2. 🥜 花生酱口味 ⭐⭐⭐⭐⭐</h3>
+<p><strong>推荐指数</strong>：5/5
+<strong>热量</strong>：约 210-230 卡/根
+<strong>蛋白质</strong>：20g</p>
+<p><strong>评价</strong>：</p>
+<ul>
+<li>✅ 花生酱香味浓郁</li>
+<li>✅ 口感醇厚</li>
+<li>✅ 饱腹感最强</li>
+<li>⚠️ 对花生过敏者慎选</li>
+</ul>
+<p><strong>适合人群</strong>：花生酱爱好者、需要长时间饱腹</p>
+<hr />
+<h3>3. 🍓 草莓酸奶口味 ⭐⭐⭐⭐</h3>
+<p><strong>推荐指数</strong>：4/5
+<strong>热量</strong>：约 180-200 卡/根
+<strong>蛋白质</strong>：20g</p>
+<p><strong>评价</strong>：</p>
+<ul>
+<li>✅ 酸甜可口，清爽不腻</li>
+<li>✅ 热量相对较低</li>
+<li>✅ 女生偏爱口味</li>
+<li>⚠️ 草莓味偏人工</li>
+</ul>
+<p><strong>适合人群</strong>：喜欢清爽口味、控制热量</p>
+<hr />
+<h3>4. 🍪 曲奇奶油口味 ⭐⭐⭐⭐</h3>
+<p><strong>推荐指数</strong>：4/5
+<strong>热量</strong>：约 200-220 卡/根
+<strong>蛋白质</strong>：20g</p>
+<p><strong>评价</strong>：</p>
+<ul>
+<li>✅ 口感丰富，有曲奇颗粒</li>
+<li>✅ 奶油味足</li>
+<li>✅ 解馋效果好</li>
+<li>⚠️ 甜度稍高</li>
+</ul>
+<p><strong>适合人群</strong>：喜欢甜食、解馋需求</p>
+<hr />
+<h3>5. 🥥 椰子口味 ⭐⭐⭐⭐</h3>
+<p><strong>推荐指数</strong>：4/5
+<strong>热量</strong>：约 190-210 卡/根
+<strong>蛋白质</strong>：20g</p>
+<p><strong>评价</strong>：</p>
+<ul>
+<li>✅ 椰子清香</li>
+<li>✅ 口感独特</li>
+<li>✅ 热量适中</li>
+<li>⚠️ 不喜欢椰子味的慎选</li>
+</ul>
+<p><strong>适合人群</strong>：椰子爱好者、想尝试新口味</p>
+<hr />
+<h2>💡 选购建议</h2>
+<h3>减脂期推荐</h3>
+<p>| 优先级 | 口味 | 理由 |
+|--------|------|------|
+| 1 | 草莓酸奶 | 热量最低，清爽 |
+| 2 | 椰子 | 热量适中，清香 |
+| 3 | 巧克力布朗尼 | 解馋，饱腹感强 |</p>
+<h3>增肌期推荐</h3>
+<p>| 优先级 | 口味 | 理由 |
+|--------|------|------|
+| 1 | 花生酱 | 饱腹感最强，热量高 |
+| 2 | 巧克力布朗尼 | 口感好，蛋白质足 |
+| 3 | 曲奇奶油 | 解馋，训练后奖励 |</p>
+<h3>口感优先推荐</h3>
+<p>| 优先级 | 口味 | 理由 |
+|--------|------|------|
+| 1 | 巧克力布朗尼 | 最接近真实甜点 |
+| 2 | 花生酱 | 口感醇厚 |
+| 3 | 曲奇奶油 | 层次丰富 |</p>
+<hr />
+<h2>⚠️ 注意事项</h2>
+<h3>营养成分</h3>
+<ul>
+<li><strong>蛋白质</strong>：20g/根（优质乳清蛋白）</li>
+<li><strong>碳水</strong>：15-20g/根（低 GI）</li>
+<li><strong>脂肪</strong>：6-8g/根（健康脂肪）</li>
+<li><strong>热量</strong>：180-230 卡/根</li>
+</ul>
+<h3>食用时机</h3>
+<ul>
+<li>✅ <strong>训练后</strong>：补充蛋白质，促进恢复</li>
+<li>✅ <strong>加餐</strong>：两餐之间，防止饥饿</li>
+<li>✅ <strong>代餐</strong>：偶尔替代正餐（不建议长期）</li>
+<li>⚠️ <strong>睡前</strong>：不建议（热量可能过高）</li>
+</ul>
+<h3>禁忌人群</h3>
+<ul>
+<li>❌ 对乳制品过敏</li>
+<li>❌ 对花生过敏（花生酱口味）</li>
+<li>❌ 肾功能不全者（高蛋白）</li>
+<li>⚠️ 孕妇、哺乳期（咨询医生）</li>
+</ul>
+<hr />
+<h2>🛒 购买渠道</h2>
+<h3>线上渠道</h3>
+<p>| 平台 | 价格 | 优势 |
+|------|------|------|
+| 淘宝/天猫 | 约 15-20 元/根 | 品种全，活动多 |
+| 京东 | 约 16-22 元/根 | 物流快，正品保障 |
+| 拼多多 | 约 12-18 元/根 | 价格最低 |
+| 抖音 | 约 15-20 元/根 | 直播间优惠 |</p>
+<h3>线下渠道</h3>
+<p>| 渠道 | 价格 | 优势 |
+|------|------|------|
+| 健身房 | 约 20-25 元/根 | 方便购买 |
+| 便利店 | 约 18-22 元/根 | 随时可买 |
+| 进口超市 | 约 20-25 元/根 | 品种多 |</p>
+<hr />
+<h2>📊 用户评价汇总</h2>
+<h3>好评点</h3>
+<ul>
+<li>✅ 口感好，不像传统蛋白粉味道</li>
+<li>✅ 饱腹感强，一根顶 2-3 小时</li>
+<li>✅ 方便携带，开袋即食</li>
+<li>✅ 蛋白质含量高，20g/根</li>
+<li>✅ 低糖低脂，减脂期友好</li>
+</ul>
+<h3>差评点</h3>
+<ul>
+<li>⚠️ 价格偏高（15-25 元/根）</li>
+<li>⚠️ 部分口味偏甜</li>
+<li>⚠️ 个别批次口感偏硬</li>
+<li>⚠️ 口味选择不够多</li>
+</ul>
+<hr />
+<h2>🎯 最终推荐</h2>
+<h3>首选口味</h3>
+<p><strong>巧克力布朗尼</strong> ⭐⭐⭐⭐⭐</p>
+<ul>
+<li>最受欢迎</li>
+<li>口感最佳</li>
+<li>解馋效果好</li>
+<li>饱腹感强</li>
+</ul>
+<h3>性价比之选</h3>
+<p><strong>草莓酸奶</strong> ⭐⭐⭐⭐</p>
+<ul>
+<li>热量最低</li>
+<li>价格适中</li>
+<li>清爽不腻</li>
+</ul>
+<h3>尝鲜推荐</h3>
+<p><strong>花生酱</strong> ⭐⭐⭐⭐⭐</p>
+<ul>
+<li>口感独特</li>
+<li>饱腹感最强</li>
+<li>增肌期首选</li>
+</ul>
+<hr />
+<h2>💡 食用建议</h2>
+<h3>每日摄入量</h3>
+<ul>
+<li><strong>减脂期</strong>：1 根/天（加餐）</li>
+<li><strong>增肌期</strong>：1-2 根/天（训练后 + 加餐）</li>
+<li><strong>维持期</strong>：偶尔食用（解馋）</li>
+</ul>
+<h3>搭配建议</h3>
+<ul>
+<li>🥛 蛋白棒 + 牛奶 = 更满足</li>
+<li>☕ 蛋白棒 + 黑咖啡 = 减脂期完美加餐</li>
+<li>🍌 蛋白棒 + 香蕉 = 训练前能量补充</li>
+<li>🥤 蛋白棒 + 蛋白粉 = 训练后超级恢复</li>
+</ul>
+<hr />
+<p><strong>总结：巧克力布朗尼和花生酱是 FITT8 最受欢迎的两个口味，建议优先尝试！</strong> 🍫🥜</p>
+<hr />
+<p><em>整理时间：2026-05-14</em>
+<em>数据来源：网络评价 + 用户反馈</em></p>
+
+        </div>
+        <div class="footer">
+            <p>由 OpenClaw AI Agent 自动生成</p>
+            <p>查看更多精彩报告 → <a href="index.html">报告列表</a></p>
+        </div>
+    </div>
+</body>
+</html>

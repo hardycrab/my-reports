@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS2 饰品价格完整报告</title>
+    <style>
+        :root {
+            --primary-color: #07c160; /* 微信绿 */
+            --text-color: #333;
+            --text-secondary: #666;
+            --bg-color: #f5f5f5;
+            --card-bg: #ffffff;
+            --border-color: #e5e5e5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            padding: 20px;
+            max-width: 100%;
+        }
+        
+        .container {
+            max-width: 768px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 28px 0 16px;
+        }
+        
+        h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 24px 0 12px;
+        }
+        
+        h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin: 16px 0;
+            text-align: justify;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+            overflow-x: auto;
+            display: block;
+        }
+        
+        th, td {
+            padding: 12px 10px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        th {
+            background-color: #f8f8f8;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+        
+        tr:hover {
+            background-color: #f0f7ff;
+        }
+        
+        code {
+            background-color: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 13px;
+            color: #e83e8c;
+        }
+        
+        pre {
+            background-color: #f6f8fa;
+            padding: 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 16px 0;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 16px;
+            margin: 20px 0;
+            color: var(--text-secondary);
+            background: #f8f9fa;
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        ul, ol {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            word-break: break-all;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .meta {
+            color: var(--text-secondary);
+            font-size: 13px;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+        }
+        
+        /* 表格响应式 */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            table {
+                font-size: 12px;
+            }
+            
+            th, td {
+                padding: 8px 6px;
+            }
+        }
+        
+        /* 代码块高亮 */
+        .keyword { color: #d73a49; }
+        .string { color: #032f62; }
+        .comment { color: #6a737d; }
+        .function { color: #6f42c1; }
+        .number { color: #005cc5; }
+        
+        /* 提示框 */
+        .tip {
+            background: #e7f4e4;
+            border-left: 4px solid var(--primary-color);
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CS2 饰品价格完整报告</h1>
+        <div class="meta">
+            <span class="emoji">📄</span> 生成时间：2026-07-28
+            <span> | 分类：🛒 购物比价</span>
+        </div>
+        <div class="content">
+<h1>CS2 饰品价格完整报告</h1>
+<p><strong>查询时间</strong>: 2026-07-10 11:17 (GMT+8)<br />
+<strong>数据源</strong>: cs2.sh API<br />
+<strong>API Key</strong>: demo_smKmgaAgIjjUUoEahuwdAKWpqiUnjwMf<br />
+<strong>数据更新</strong>: 约每 5 分钟刷新</p>
+<hr />
+<h2>📊 查询结果总览</h2>
+<p>| 饰品 | 市场 | 最低售价 | 在售数量 | 最高求购 | 求购数量 |
+|------|------|---------|---------|---------|---------|
+| <strong>纪念包</strong> | BUFF | $1.76 | 2,575 | $1.73 | 702 |
+| <strong>纪念包</strong> | Youpin | $1.72 | 4,516 | $1.72 | 30 |
+| <strong>纪念包</strong> | Steam | $2.60 | 2,168 | $2.57 | 55,550 |
+| <strong>纪念包</strong> | CSFloat | $1.91 | 692 | - | - |
+| <strong>印花</strong> | BUFF | $0.88 | 1,280 | $0.84 | 657 |
+| <strong>印花</strong> | Youpin | $0.84 | 1,831 | $0.80 | 33 |
+| <strong>印花</strong> | Steam | $1.18 | 819 | $1.15 | 23,339 |</p>
+<hr />
+<h2>🎯 饰品 1: Paris 2023 Anubis Souvenir Package</h2>
+<p><strong>中文名称</strong>: 2023 年巴黎锦标赛阿努比斯纪念包</p>
+<h3>价格对比</h3>
+<p>| 市场 | 最低售价 | 在售数量 | 最高求购 | 求购数量 | 更新时间 |
+|------|---------|---------|---------|---------|----------|
+| <strong>Youpin</strong> | 💲 <strong>1.72</strong> | 4,516 | 💲 1.72 | 30 | 2026-07-10 11:05 |
+| <strong>BUFF</strong> | 💲 1.76 | 2,575 | 💲 1.73 | 702 | 2026-07-10 11:05 |
+| <strong>CSFloat</strong> | 💲 1.91 | 692 | - | - | 2026-07-10 11:05 |
+| <strong>Steam</strong> | 💲 2.60 | 2,168 | 💲 2.57 | 55,550 | 2026-07-10 11:05 |</p>
+<h3>💡 价格分析</h3>
+<p><strong>最佳买入平台</strong>: Youpin ($1.72)</p>
+<ul>
+<li>比 BUFF 便宜 $0.04 (2.3%)</li>
+<li>比 CSFloat 便宜 $0.19 (11.0%)</li>
+<li>比 Steam 便宜 $0.88 (33.8%)</li>
+</ul>
+<p><strong>最佳卖出平台</strong>: Steam ($2.57 求购价)</p>
+<ul>
+<li>比 Youpin 高 $0.85 (49.4%)</li>
+<li>比 BUFF 高 $0.84 (48.6%)</li>
+</ul>
+<p><strong>流动性分析</strong>:</p>
+<ul>
+<li>Steam 求购量最大 (55,550)，最容易卖出</li>
+<li>Youpin 在售量最大 (4,516)，选择最多</li>
+<li>BUFF 数据均衡，适合快速交易</li>
+</ul>
+<p><strong>套利机会</strong>:</p>
+<ul>
+<li>Youpin 买入 ($1.72) → Steam 卖出 ($2.57)</li>
+<li>毛利：$0.85 (49.4%)</li>
+<li>减去手续费后仍有可观利润</li>
+</ul>
+<hr />
+<h2>🎯 饰品 2: Sticker | Complexity Gaming (Holo) | Paris 2023</h2>
+<p><strong>中文名称</strong>: 印花 | Complexity Gaming（全息）| 2023 年巴黎锦标赛</p>
+<h3>价格对比</h3>
+<p>| 市场 | 最低售价 | 在售数量 | 最高求购 | 求购数量 | 更新时间 |
+|------|---------|---------|---------|---------|----------|
+| <strong>Youpin</strong> | 💲 <strong>0.84</strong> | 1,831 | 💲 0.80 | 33 | 2026-07-10 11:05 |
+| <strong>BUFF</strong> | 💲 0.88 | 1,280 | 💲 0.84 | 657 | 2026-07-10 11:05 |
+| <strong>Steam</strong> | 💲 1.18 | 819 | 💲 1.15 | 23,339 | 2026-07-10 11:05 |</p>
+<h3>💡 价格分析</h3>
+<p><strong>最佳买入平台</strong>: Youpin ($0.84)</p>
+<ul>
+<li>比 BUFF 便宜 $0.04 (4.5%)</li>
+<li>比 Steam 便宜 $0.34 (28.8%)</li>
+</ul>
+<p><strong>最佳卖出平台</strong>: Steam ($1.15 求购价)</p>
+<ul>
+<li>比 BUFF 高 $0.31 (36.9%)</li>
+<li>比 Youpin 高 $0.35 (43.8%)</li>
+</ul>
+<p><strong>流动性分析</strong>:</p>
+<ul>
+<li>Steam 求购量最大 (23,339)，最容易卖出</li>
+<li>Youpin 在售量最大 (1,831)，选择最多</li>
+<li>BUFF 求购量适中 (657)，交易活跃</li>
+</ul>
+<p><strong>套利机会</strong>:</p>
+<ul>
+<li>Youpin 买入 ($0.84) → Steam 卖出 ($1.15)</li>
+<li>毛利：$0.31 (36.9%)</li>
+<li>减去手续费后仍有利润空间</li>
+</ul>
+<hr />
+<h2>📈 市场总结</h2>
+<h3>共同特点</h3>
+<ol>
+<li>
+<p><strong>Youpin 价格最低</strong></p>
+<ul>
+<li>纪念包：$1.72 (全网最低)</li>
+<li>印花：$0.84 (全网最低)</li>
+<li>适合买入</li>
+</ul>
+</li>
+<li>
+<p><strong>Steam 价格最高</strong></p>
+<ul>
+<li>纪念包求购：$2.57 (全网最高)</li>
+<li>印花求购：$1.15 (全网最高)</li>
+<li>适合卖出</li>
+</ul>
+</li>
+<li>
+<p><strong>Steam 求购量巨大</strong></p>
+<ul>
+<li>纪念包：55,550 个求购</li>
+<li>印花：23,339 个求购</li>
+<li>流动性最好</li>
+</ul>
+</li>
+</ol>
+<h3>投资建议</h3>
+<h4>🎯 Paris 2023 Anubis Souvenir Package</h4>
+<p><strong>当前状态</strong>: ✅ 活跃交易</p>
+<ul>
+<li><strong>价格区间</strong>: $1.72 - $2.60</li>
+<li><strong>总在售</strong>: 9,951 个</li>
+<li><strong>总求购</strong>: 56,282 个</li>
+<li><strong>市场需求</strong>: 极高（求购 &gt;&gt; 在售）</li>
+</ul>
+<p><strong>操作建议</strong>:</p>
+<ul>
+<li>✅ <strong>买入</strong>: Youpin ($1.72)</li>
+<li>✅ <strong>卖出</strong>: Steam ($2.57)</li>
+<li>⚠️ <strong>注意</strong>: 纪念品包产量大，长期持有可能贬值</li>
+</ul>
+<h4>🎯 Sticker | Complexity Gaming (Holo) | Paris 2023</h4>
+<p><strong>当前状态</strong>: ✅ 活跃交易</p>
+<ul>
+<li><strong>价格区间</strong>: $0.84 - $1.18</li>
+<li><strong>总在售</strong>: 3,930 个</li>
+<li><strong>总求购</strong>: 24,029 个</li>
+<li><strong>市场需求</strong>: 高（求购 &gt;&gt; 在售）</li>
+</ul>
+<p><strong>操作建议</strong>:</p>
+<ul>
+<li>✅ <strong>买入</strong>: Youpin ($0.84)</li>
+<li>✅ <strong>卖出</strong>: Steam ($1.15)</li>
+<li>⚠️ <strong>注意</strong>: 战队印花价格波动较大</li>
+</ul>
+<hr />
+<h2>💰 套利策略</h2>
+<h3>策略 1: 跨平台套利</h3>
+<p><strong>纪念包</strong>:</p>
+<pre><code>Youpin 买入 ($1.72) → Steam 卖出 ($2.57)
+毛利：$0.85/个 (49.4%)
+</code></pre>
+<p><strong>印花</strong>:</p>
+<pre><code>Youpin 买入 ($0.84) → Steam 卖出 ($1.15)
+毛利：$0.31/个 (36.9%)
+</code></pre>
+<h3>策略 2: 批量交易</h3>
+<p><strong>资金</strong>: $1,000</p>
+<p><strong>纪念包</strong>:</p>
+<ul>
+<li>可买入：581 个 ($1,000 / $1.72)</li>
+<li>预期收入：$1,493 (581 × $2.57)</li>
+<li>毛利：$493</li>
+</ul>
+<p><strong>印花</strong>:</p>
+<ul>
+<li>可买入：1,190 个 ($1,000 / $0.84)</li>
+<li>预期收入：$1,369 (1,190 × $1.15)</li>
+<li>毛利：$369</li>
+</ul>
+<h3>策略 3: 长期持有</h3>
+<p><strong>风险</strong>:</p>
+<ul>
+<li>V 社新胶囊发布可能影响价格</li>
+<li>tournament 结束后需求下降</li>
+<li>Steam 市场手续费 15%</li>
+</ul>
+<p><strong>建议</strong>:</p>
+<ul>
+<li>短期套利优于长期持有</li>
+<li>关注 CS2 赛事动态</li>
+<li>分散投资多个饰品</li>
+</ul>
+<hr />
+<h2>⚠️ 风险提示</h2>
+<ol>
+<li>
+<p><strong>价格波动</strong></p>
+<ul>
+<li>CS2 饰品价格波动较大</li>
+<li>建议设置止损点</li>
+</ul>
+</li>
+<li>
+<p><strong>流动性风险</strong></p>
+<ul>
+<li>低流动性饰品难以快速变现</li>
+<li>优先选择高求购量饰品</li>
+</ul>
+</li>
+<li>
+<p><strong>平台风险</strong></p>
+<ul>
+<li>各平台手续费不同</li>
+<li>提现时间和费用需考虑</li>
+</ul>
+</li>
+<li>
+<p><strong>市场风险</strong></p>
+<ul>
+<li>V 社政策变化可能影响市场</li>
+<li>新饰品发布可能冲击价格</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2>🔧 技术信息</h2>
+<p><strong>API 端点</strong>: <code>POST /v1/prices/latest</code><br />
+<strong>请求方式</strong>: JSON POST<br />
+<strong>响应时间</strong>: &lt; 15 秒<br />
+<strong>数据新鲜度</strong>: 约 5 分钟更新<br />
+<strong>货币单位</strong>: USD<br />
+<strong>数据覆盖</strong>: BUFF, Youpin, CSFloat, Skinport, Steam, C5Game</p>
+<hr />
+<h2>📝 后续操作</h2>
+<h3>1. 定时监控</h3>
+<p>设置每 5 分钟查询一次：</p>
+<pre><code class="language-bash">*/5 * * * * python3 /path/to/cs2-price-tracker.py
+</code></pre>
+<h3>2. 价格提醒</h3>
+<p>设置价格阈值提醒：</p>
+<ul>
+<li>纪念包低于 $1.70 时提醒</li>
+<li>印花低于 $0.80 时提醒</li>
+</ul>
+<h3>3. 扩展跟踪</h3>
+<p>添加更多 Paris 2023 饰品：</p>
+<ul>
+<li>其他战队印花</li>
+<li>其他地图纪念包</li>
+<li>其他品质印花</li>
+</ul>
+<hr />
+<p><strong>报告生成</strong>: 2026-07-10 11:17<br />
+<strong>工具版本</strong>: cs2-price-tracker v1.0<br />
+<strong>数据覆盖</strong>: 6 个市场平台<br />
+<strong>查询饰品</strong>: 2 个</p>
+<hr />
+<h2>📊 数据可视化</h2>
+<h3>价格对比图</h3>
+<pre><code>纪念包价格对比:
+Youpin   ████████████████████ $1.72
+BUFF     ██████████████████████ $1.76
+CSFloat  ███████████████████████████ $1.91
+Steam    ███████████████████████████████████████ $2.60
+
+印花价格对比:
+Youpin   ██████████████████ $0.84
+BUFF     ████████████████████ $0.88
+Steam    █████████████████████████████ $1.18
+</code></pre>
+<h3>求购量对比</h3>
+<pre><code>纪念包求购量:
+Steam    ████████████████████████████████████████████████████ 55,550
+BUFF     ███████████████████████████████████ 702
+Youpin   ██ 30
+
+印花求购量:
+Steam    ██████████████████████████████████████████████ 23,339
+BUFF     █████████████████████████████████ 657
+Youpin   ██ 33
+</code></pre>
+<hr />
+<p><strong>投资有风险，决策需谨慎</strong><br />
+<strong>数据来源</strong>: cs2.sh API<br />
+<strong>最终解释权</strong>: 归投资者所有</p>
+
+        </div>
+        <div class="footer">
+            <p>由 OpenClaw AI Agent 自动生成</p>
+            <p>查看更多精彩报告 → <a href="index.html">报告列表</a></p>
+        </div>
+    </div>
+</body>
+</html>

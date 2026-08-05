@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 学习资料链接汇总</title>
+    <style>
+        :root {
+            --primary-color: #07c160; /* 微信绿 */
+            --text-color: #333;
+            --text-secondary: #666;
+            --bg-color: #f5f5f5;
+            --card-bg: #ffffff;
+            --border-color: #e5e5e5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            padding: 20px;
+            max-width: 100%;
+        }
+        
+        .container {
+            max-width: 768px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 28px 0 16px;
+        }
+        
+        h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 24px 0 12px;
+        }
+        
+        h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin: 16px 0;
+            text-align: justify;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+            overflow-x: auto;
+            display: block;
+        }
+        
+        th, td {
+            padding: 12px 10px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        th {
+            background-color: #f8f8f8;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+        
+        tr:hover {
+            background-color: #f0f7ff;
+        }
+        
+        code {
+            background-color: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 13px;
+            color: #e83e8c;
+        }
+        
+        pre {
+            background-color: #f6f8fa;
+            padding: 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 16px 0;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 16px;
+            margin: 20px 0;
+            color: var(--text-secondary);
+            background: #f8f9fa;
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        ul, ol {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            word-break: break-all;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .meta {
+            color: var(--text-secondary);
+            font-size: 13px;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+        }
+        
+        /* 表格响应式 */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            table {
+                font-size: 12px;
+            }
+            
+            th, td {
+                padding: 8px 6px;
+            }
+        }
+        
+        /* 代码块高亮 */
+        .keyword { color: #d73a49; }
+        .string { color: #032f62; }
+        .comment { color: #6a737d; }
+        .function { color: #6f42c1; }
+        .number { color: #005cc5; }
+        
+        /* 提示框 */
+        .tip {
+            background: #e7f4e4;
+            border-left: 4px solid var(--primary-color);
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 学习资料链接汇总</h1>
+        <div class="meta">
+            <span class="emoji">📄</span> 生成时间：2026-05-11
+            <span> | 分类：📄 其他报告</span>
+        </div>
+        <div class="content">
+<h1>📚 学习资料链接汇总</h1>
+<p><strong>整理时间</strong>：2026-05-11<br />
+<strong>覆盖期间</strong>：2026 年 5 月 2 日 - 5 月 10 日<br />
+<strong>来源</strong>：每日安排报告推荐资料</p>
+<hr />
+<h2>📖 分类索引</h2>
+<ol>
+<li><a href="#prompt-engineering--%E6%84%8F%E5%9B%BE%E8%A1%A8%E8%BE%BE">Prompt Engineering / 意图表达</a></li>
+<li><a href="#%E5%8C%BA%E5%9D%97%E9%93%BE--polymarket">区块链 / Polymarket</a></li>
+<li>[AI 编程 / 开发工具](#ai 编程--开发工具)</li>
+<li><a href="#%E7%BB%BC%E5%90%88%E5%AD%A6%E4%B9%A0%E5%B9%B3%E5%8F%B0">综合学习平台</a></li>
+</ol>
+<hr />
+<h2>Prompt Engineering / 意图表达</h2>
+<h3>1. 基础入门</h3>
+<p>| 资源名称 | 链接 | 说明 |
+|---------|------|------|
+| <strong>提示词工程 | 菜鸟教程</strong> | https://www.runoob.com/ai-agent/prompt-engineering.html | 系统性入门教程，讲解提示词工程的核心概念和实践方法 |
+| <strong>提示工程指南（中文版）</strong> | https://www.promptingguide.ai/zh | 系统的提示工程方法论与最佳实践 |
+| <strong>提示词工程从基础到高级 - 知乎</strong> | https://zhuanlan.zhihu.com/p/1990822341064803049 | 从基础到高级的完整实践指南，包含大量实际案例 |
+| <strong>Prompt-Engineering 提示词工程 - 腾讯云</strong> | https://cloud.tencent.com/developer/article/2663251 | 详解 Prompt 四要素、思维链提示、结构化输出等核心技巧 |</p>
+<h3>2. 进阶教程</h3>
+<p>| 资源名称 | 链接 | 说明 |
+|---------|------|------|
+| <strong>OpenAI Prompt Engineering 官方文档</strong> | https://platform.openai.com/docs/guides/prompt-engineering | OpenAI 官方提示工程指南，权威可靠 |
+| <strong>面向开发者的 LLM 入门教程 - Datawhale</strong> | https://github.com/datawhalechina/llm-cookbook | 中文开源教程，包含 21 课完整内容 |
+| <strong>在线阅读版</strong> | https://datawhalechina.github.io/llm-cookbook/ | Datawhale 教程在线版本 |
+| <strong>吴恩达 Prompt Engineering 课程（B 站）</strong> | https://www.bilibili.com/video/BV1Bo4y1A7FU/ | Andrew Ng &amp; Isa Fulford 主讲，1.5 小时，9 节视频课 |</p>
+<h3>3. 实战技巧</h3>
+<p>| 资源名称 | 链接 | 说明 |
+|---------|------|------|
+| <strong>提示词工程入门指南 - 知乎专栏</strong> | https://zhuanlan.zhihu.com/p/642551563 | 中文社区的实战案例与技巧总结 |
+| <strong>GitHub AI 编程主题</strong> | https://github.com/topics/ai-pair-programming | AI 结对编程相关开源项目集合 |</p>
+<hr />
+<h2>区块链 / Polymarket</h2>
+<h3>1. 官方资源</h3>
+<p>| 资源名称 | 链接 | 说明 |
+|---------|------|------|
+| <strong>Polymarket 官网</strong> | https://polymarket.com | Polymarket 预测市场平台 |
+| <strong>Polymarket 官方文档</strong> | https://docs.polymarket.com/ | 官方开发文档和 API 说明 |
+| <strong>Polymarket API GitHub 示例</strong> | https://github.com/Polymarket/api-examples | 官方 API 调用示例代码 |</p>
+<h3>2. 入门教程</h3>
+<p>| 资源名称 | 链接 | 说明 |
+|---------|------|------|
+| <strong>什么是 Polymarket？- CoinDesk</strong> | https://www.coindesk.com/learn/what-is-polymarket/ | Polymarket 基础介绍 |
+| <strong>什么是预测市场？- 币安学院</strong> | https://academy.binance.com/zh/articles/what-are-prediction-markets | 预测市场概念详解 |
+| <strong>什么是区块链？- 币安学院</strong> | https://academy.binance.com/zh/articles/what-is-blockchain | 区块链基础知识 |
+| <strong>Polymarket 去中心化预测市场 - Gate.io</strong> | https://www.gate.io/learn/articles/what-is-polymarket-decentralized-prediction-market/4318 | Polymarket 详细介绍 |
+| <strong>理解预测市场 - Polymarket Medium</strong> | https://medium.com/polymarket/understanding-prediction-markets | Polymarket 官方博客文章 |</p>
+<h3>3. 开发资源</h3>
+<p>| 资源名称 | 链接 | 说明 |
+|---------|------|------|
+| <strong>区块链预测市场开发指南 - Alchemy</strong> | https://www.alchemy.com/university/prediction-markets | Alchemy 大学的预测市场开发课程 |
+| <strong>什么是预测市场？- CoinGecko</strong> | https://www.coingecko.com/learn/what-is-polymarket | CoinGecko 的 Polymarket 介绍 |</p>
+<h3>4. 钱包工具</h3>
+<p>| 资源名称 | 链接 | 说明 |
+|---------|------|------|
+| <strong>MetaMask 学习中心</strong> | https://metamask.io/learn/ | MetaMask 钱包使用教程和区块链基础知识 |</p>
+<hr />
+<h2>AI 编程 / 开发工具</h2>
+<p>| 资源名称 | 链接 | 说明 |
+|---------|------|------|
+| <strong>GitHub AI 编程主题</strong> | https://github.com/topics/ai-pair-programming | AI 结对编程相关开源项目 |
+| <strong>ChatGPT Prompt Engineering for Developers</strong> | https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/ | DeepLearning.AI 短课程，1.5 小时 |</p>
+<hr />
+<h2>综合学习平台</h2>
+<p>| 平台名称 | 链接 | 说明 |
+|---------|------|------|
+| <strong>DeepLearning.AI</strong> | https://www.deeplearning.ai/ | 吴恩达创办的 AI 教育平台，提供高质量短课程 |
+| <strong>币安学院（中文）</strong> | https://academy.binance.com/zh | 区块链和加密货币学习平台 |
+| <strong>Alchemy University</strong> | https://www.alchemy.com/university | Web3 开发学习平台 |
+| <strong>CoinDesk Learn</strong> | https://www.coindesk.com/learn/ | 加密货币和区块链新闻学习平台 |
+| <strong>CoinGecko Learn</strong> | https://www.coingecko.com/learn/ | 加密货币数据和 learning 平台 |</p>
+<hr />
+<h2>📊 按日期整理</h2>
+<h3>5 月 2 日（意图表达专项训练）</h3>
+<ol>
+<li>提示词工程 | 菜鸟教程 - https://www.runoob.com/ai-agent/prompt-engineering.html</li>
+<li>提示词工程从基础到高级 - 知乎 - https://zhuanlan.zhihu.com/p/1990822341064803049</li>
+<li>Prompt-Engineering 提示词工程 - 腾讯云 - https://cloud.tencent.com/developer/article/2663251</li>
+</ol>
+<h3>5 月 3 日（Prompt 工程基础）</h3>
+<ol>
+<li>OpenAI Prompt Engineering 官方文档 - https://platform.openai.com/docs/guides/prompt-engineering</li>
+<li>提示工程指南（中文版） - https://www.promptingguide.ai/zh</li>
+<li>GitHub AI 编程主题 - https://github.com/topics/ai-pair-programming</li>
+</ol>
+<h3>5 月 4 日（意图表达进阶）</h3>
+<ol>
+<li>提示工程指南（中文版） - https://www.promptingguide.ai/zh</li>
+<li>面向开发者的 LLM 入门教程 - Datawhale - https://github.com/datawhalechina/llm-cookbook</li>
+<li>吴恩达 Prompt Engineering 课程（B 站） - https://www.bilibili.com/video/BV1Bo4y1A7FU/</li>
+</ol>
+<h3>5 月 5 日（Polymarket 启动）</h3>
+<ol>
+<li>提示工程指南（中文版） - https://www.promptingguide.ai/zh</li>
+<li>ChatGPT Prompt Engineering for Developers - https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/</li>
+<li>提示词工程入门指南 - 知乎专栏 - https://zhuanlan.zhihu.com/p/642551563</li>
+</ol>
+<h3>5 月 6 日（Polymarket 注册与配置）</h3>
+<ol>
+<li>Polymarket 官方文档 - https://docs.polymarket.com/</li>
+<li>什么是 Polymarket？- CoinDesk - https://www.coindesk.com/learn/what-is-polymarket/</li>
+<li>什么是预测市场？- 币安学院 - https://academy.binance.com/zh/articles/what-are-prediction-markets</li>
+</ol>
+<h3>5 月 7 日（市场数据探索）</h3>
+<ol>
+<li>Polymarket 去中心化预测市场 - Gate.io - https://www.gate.io/learn/articles/what-is-polymarket-decentralized-prediction-market/4318</li>
+<li>什么是 Polymarket？- 币安学院 - https://academy.binance.com/zh/articles/what-is-polymarket</li>
+<li>MetaMask 学习中心 - https://metamask.io/learn/</li>
+</ol>
+<h3>5 月 8 日（Polymarket API 初探）</h3>
+<ol>
+<li>Polymarket 官方文档 - https://docs.polymarket.com/</li>
+<li>Polymarket API GitHub 示例 - https://github.com/Polymarket/api-examples</li>
+<li>区块链预测市场开发指南 - Alchemy - https://www.alchemy.com/university/prediction-markets</li>
+</ol>
+<h3>5 月 9 日（自动化脚本开发）</h3>
+<ol>
+<li>Polymarket 官方文档 - https://docs.polymarket.com/</li>
+<li>理解预测市场 - CoinGecko - https://www.coingecko.com/learn/what-is-polymarket</li>
+<li>理解预测市场 - Polymarket Medium - https://medium.com/polymarket/understanding-prediction-markets</li>
+</ol>
+<h3>5 月 10 日（实战演练）</h3>
+<ol>
+<li>Polymarket 官网 - https://polymarket.com</li>
+<li>Polymarket 官方文档 - https://docs.polymarket.com</li>
+</ol>
+<hr />
+<h2>💡 使用建议</h2>
+<h3>新手入门路线</h3>
+<ol>
+<li>
+<p><strong>Prompt Engineering 基础</strong>：</p>
+<ul>
+<li>先看菜鸟教程入门</li>
+<li>再看吴恩达 1.5 小时课程</li>
+<li>最后阅读提示工程指南（中文版）</li>
+</ul>
+</li>
+<li>
+<p><strong>区块链/Polymarket 入门</strong>：</p>
+<ul>
+<li>先了解区块链基础（币安学院）</li>
+<li>再学习预测市场概念</li>
+<li>最后学习 Polymarket 平台使用</li>
+</ul>
+</li>
+<li>
+<p><strong>开发实战</strong>：</p>
+<ul>
+<li>阅读 Polymarket 官方文档</li>
+<li>参考 GitHub API 示例</li>
+<li>尝试调用 API 获取数据</li>
+</ul>
+</li>
+</ol>
+<h3>学习技巧</h3>
+<ul>
+<li><strong>每日 1-2 个链接</strong>：不要贪多，深度学习</li>
+<li><strong>做笔记</strong>：记录关键概念和代码示例</li>
+<li><strong>实践优先</strong>：学完立即动手尝试</li>
+<li><strong>社区讨论</strong>：遇到问题可在相关社区提问</li>
+</ul>
+<hr />
+<h2>📝 备注</h2>
+<ul>
+<li>所有链接均来自每日安排报告推荐</li>
+<li>链接有效性截至 2026-05-11</li>
+<li>部分链接可能需要科学上网访问</li>
+<li>建议收藏本汇总文档，方便后续查阅</li>
+</ul>
+<hr />
+<p><em>整理完成时间：2026-05-11</em><br />
+<em>覆盖期间：2026-05-02 至 2026-05-10</em><br />
+<em>总计链接数：约 30 个</em></p>
+
+        </div>
+        <div class="footer">
+            <p>由 OpenClaw AI Agent 自动生成</p>
+            <p>查看更多精彩报告 → <a href="index.html">报告列表</a></p>
+        </div>
+    </div>
+</body>
+</html>
