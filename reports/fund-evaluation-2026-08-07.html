@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>基金评估报告 - 2026-08-07</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #f0f2f5; color: #333; padding: 20px; }
+.container { max-width: 1200px; margin: 0 auto; }
+h1 { text-align: center; color: #1a1a2e; margin-bottom: 5px; font-size: 28px; }
+.subtitle { text-align: center; color: #888; margin-bottom: 25px; font-size: 14px; }
+.card { background: #fff; border-radius: 12px; padding: 24px; margin-bottom: 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+.card h2 { color: #1a1a2e; margin-bottom: 15px; font-size: 20px; border-left: 4px solid #4361ee; padding-left: 12px; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 20px; }
+.stat { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; padding: 20px; border-radius: 12px; text-align: center; }
+.stat.green { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); }
+.stat.red { background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%); }
+.stat.blue { background: linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%); }
+.stat.orange { background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%); }
+.stat .num { font-size: 28px; font-weight: 700; }
+.stat .label { font-size: 13px; opacity: 0.9; margin-top: 4px; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th { background: #f8f9fa; padding: 12px 8px; text-align: left; font-weight: 600; color: #555; border-bottom: 2px solid #dee2e6; }
+td { padding: 12px 8px; border-bottom: 1px solid #eee; vertical-align: top; }
+tr:hover { background: #f8f9ff; }
+.profit { color: #e74c3c; font-weight: 600; }
+.loss { color: #27ae60; font-weight: 600; }
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; background: #e3f2fd; color: #1976d2; }
+.opp-yes { background: #fff3e0; }
+.opp-no { background: #fff; }
+ul { padding-left: 20px; }
+li { margin-bottom: 8px; line-height: 1.6; }
+.trend-summary { display: flex; gap: 20px; flex-wrap: wrap; }
+.trend-item { padding: 12px 20px; border-radius: 8px; text-align: center; min-width: 120px; }
+.trend-bull { background: #e8f5e9; color: #2e7d32; }
+.trend-bear { background: #ffebee; color: #c62828; }
+.trend-neutral { background: #fff8e1; color: #f57f17; }
+footer { text-align: center; color: #999; font-size: 12px; margin-top: 30px; padding: 20px; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>📊 基金持仓评估报告</h1>
+<p class="subtitle">生成时间：2026-08-07 14:33 | 数据来源：天天基金/东方财富</p>
+
+<!-- 总览卡片 -->
+<div class="card">
+<h2>💰 账户总览</h2>
+<div class="stats">
+<div class="stat">
+<div class="num">¥140,154</div>
+<div class="label">持仓总金额</div>
+</div>
+<div class="stat red">
+<div class="num">¥-9,966</div>
+<div class="label">持有总盈亏</div>
+</div>
+<div class="stat green">
+<div class="num">¥+0</div>
+<div class="label">今日预估盈亏</div>
+</div>
+<div class="stat green">
+<div class="num">7</div>
+<div class="label">盈利基金</div>
+</div>
+<div class="stat red">
+<div class="num">9</div>
+<div class="label">亏损基金</div>
+</div>
+<div class="stat blue">
+<div class="num">16</div>
+<div class="label">持有基金总数</div>
+</div>
+</div>
+</div>
+
+<!-- 趋势统计 -->
+<div class="card">
+<h2>📈 趋势信号统计</h2>
+<div class="trend-summary">
+<div class="trend-item trend-bull">
+<div style="font-size:24px;font-weight:700">🟢 9</div>
+<div>多头排列</div>
+</div>
+<div class="trend-item trend-bear">
+<div style="font-size:24px;font-weight:700">🔴 7</div>
+<div>空头排列</div>
+</div>
+<div class="trend-item trend-neutral">
+<div style="font-size:24px;font-weight:700">🟡 0</div>
+<div>震荡/数据不足</div>
+</div>
+</div>
+</div>
+
+<!-- 持仓明细 -->
+<div class="card">
+<h2>📋 持仓明细 & 操作建议</h2>
+<div style="overflow-x:auto">
+<table>
+<thead>
+<tr>
+<th>基金</th>
+<th>标签</th>
+<th>持仓金额</th>
+<th>持有盈亏</th>
+<th>今日估值</th>
+<th>趋势信号</th>
+<th>操作建议</th>
+</tr>
+</thead>
+<tbody>
+
+        <tr>
+            <td><b>270023</b><br><span style="font-size:12px;color:#888">广发全球精选股票(QDII)A</span></td>
+            <td>QDII</td>
+            <td>¥13,010.23</td>
+            <td class="profit">¥+3,810.23</td>
+            <td>暂无估值</td>
+            <td>🟢 短期偏多<br><span style='font-size:11px;color:#666'>MA20:6.3314 MA60:N/A</span></td>
+            <td><b>⏸️ 观望</b><br><span style="font-size:11px;color:#666">趋势不明确，建议观望 | 海外配置分散风险</span></td>
+        </tr>
+        <tr>
+            <td><b>008972</b><br><span style="font-size:12px;color:#888">大成纳斯达克100ETF联接(QDII)C</span></td>
+            <td>QDII</td>
+            <td>¥2,207.39</td>
+            <td class="profit">¥+137.39</td>
+            <td>暂无估值</td>
+            <td>🔴 短期偏空<br><span style='font-size:11px;color:#666'>MA20:0.9120 MA60:N/A</span></td>
+            <td><b>⏸️ 观望</b><br><span style="font-size:11px;color:#666">趋势不明确，建议观望</span></td>
+        </tr>
+        <tr>
+            <td><b>519732</b><br><span style="font-size:12px;color:#888">交银定期支付双息平衡混合</span></td>
+            <td>均衡</td>
+            <td>¥8,727.59</td>
+            <td class="profit">¥+2,394.87</td>
+            <td>暂无估值</td>
+            <td>🔴 短期偏空<br><span style='font-size:11px;color:#666'>MA20:8.7921 MA60:N/A</span></td>
+            <td><b>⏸️ 观望</b><br><span style="font-size:11px;color:#666">趋势不明确，建议观望</span></td>
+        </tr>
+        <tr>
+            <td><b>161725</b><br><span style="font-size:12px;color:#888">招商中证白酒指数(LOF)A</span></td>
+            <td>消费</td>
+            <td>¥5,048.42</td>
+            <td class="loss">¥-2,621.70</td>
+            <td>暂无估值</td>
+            <td>🟢 短期偏多<br><span style='font-size:11px;color:#666'>MA20:0.5502 MA60:N/A</span></td>
+            <td><b>⏸️ 观望</b><br><span style="font-size:11px;color:#666">趋势不明确，建议观望</span></td>
+        </tr>
+        <tr>
+            <td><b>260108</b><br><span style="font-size:12px;color:#888">景顺长城新兴成长混合A</span></td>
+            <td>成长</td>
+            <td>¥2,022.87</td>
+            <td class="loss">¥-1,819.65</td>
+            <td>暂无估值</td>
+            <td>🟢 短期偏多<br><span style='font-size:11px;color:#666'>MA20:1.5258 MA60:N/A</span></td>
+            <td><b>⏸️ 观望</b><br><span style="font-size:11px;color:#666">趋势不明确，建议观望</span></td>
+        </tr>
+        <tr>
+            <td><b>515880</b><br><span style="font-size:12px;color:#888">华夏中证5G通信主题ETF联接A</span></td>
+            <td>科技</td>
+            <td>¥10,873.29</td>
+            <td class="profit">¥+211.99</td>
+            <td>暂无估值</td>
+            <td>🔴 短期偏空<br><span style='font-size:11px;color:#666'>MA20:0.6652 MA60:N/A</span></td>
+            <td><b>⏸️ 观望</b><br><span style="font-size:11px;color:#666">趋势不明确，建议观望</span></td>
+        </tr>
+        <tr>
+            <td><b>008889</b><br><span style="font-size:12px;color:#888">华夏国证半导体芯片ETF联接C</span></td>
+            <td>芯片</td>
+            <td>¥13,638.79</td>
+            <td class="profit">¥+2,543.12</td>
+            <td>暂无估值</td>
+            <td>🔴 短期偏空<br><span style='font-size:11px;color:#666'>MA20:2.3154 MA60:N/A</span></td>
+            <td><b>⏸️ 观望</b><br><span style="font-size:11px;color:#666">趋势不明确，建议观望</span></td>
+        </tr>
+        <tr>
+            <td><b>100056</b><br><span style="font-size:12px;color:#888">富国消费主题混合A</span></td>
+            <td>消费</td>
+            <td>¥5,919.09</td>
+            <td class="loss">¥-1,999.39</td>
+            <td>暂无估值</td>
+            <td>🟢 短期偏多<br><span style='font-size:11px;color:#666'>MA20:2.3366 MA60:N/A</span></td>
+            <td><b>⏸️ 观望</b><br><span style="font-size:11px;color:#666">趋势不明确，建议观望</span></td>
+        </tr>
+        <tr>
+            <td><b>003096</b><br><span style="font-size:12px;color:#888">中欧医疗健康混合C</span></td>
+            <td>医药</td>
+            <td>¥8,993.17</td>
+            <td class="loss">¥-3,356.83</td>
+            <td>暂无估值</td>
+            <td>🔴 短期偏空<br><span style='font-size:11px;color:#666'>MA20:1.8670 MA60:N/A</span></td>
+            <td><b>⏸️ 观望</b><br><span style="font-size:11px;color:#666">趋势不明确，建议观望 | 医药板块持续调整，注意止损</span></td>
+        </tr>
+        <tr>
+            <td><b>512900</b><br><span style="font-size:12px;color:#888">南方中证全指证券公司ETF联接A</span></td>
+            <td>券商</td>
+            <td>¥13,447.68</td>
+            <td class="profit">¥+622.43</td>
+            <td>暂无估值</td>
+            <td>🔴 短期偏空<br><span style='font-size:11px;color:#666'>MA20:1.0960 MA60:N/A</span></td>
+            <td><b>⏸️ 观望</b><br><span style="font-size:11px;color:#666">趋势不明确，建议观望</span></td>
+        </tr>
+        <tr>
+            <td><b>000217</b><br><span style="font-size:12px;color:#888">华安黄金ETF联接C</span></td>
+            <td>黄金</td>
+            <td>¥17,797.59</td>
+            <td class="loss">¥-1,102.92</td>
+            <td>暂无估值</td>
+            <td>🟢 短期偏多<br><span style='font-size:11px;color:#666'>MA20:2.9889 MA60:N/A</span></td>
+            <td><b>⏸️ 观望</b><br><span style="font-size:11px;color:#666">趋势不明确，建议观望 | 黄金避险属性可耐心持有</span></td>
+        </tr>
+        <tr>
+            <td><b>007028</b><br><span style="font-size:12px;color:#888">易方达中证500ETF联接A</span></td>
+            <td>宽基</td>
+            <td>¥5,688.52</td>
+            <td class="profit">¥+1,105.52</td>
+            <td>暂无估值</td>
+            <td>🟢 短期偏多<br><span style='font-size:11px;color:#666'>MA20:1.8707 MA60:N/A</span></td>
+            <td><b>⏸️ 观望</b><br><span style="font-size:11px;color:#666">趋势不明确，建议观望</span></td>
+        </tr>
+        <tr>
+            <td><b>501007</b><br><span style="font-size:12px;color:#888">汇添富中证互联网医疗(LOF)A</span></td>
+            <td>医疗</td>
+            <td>¥4,038.82</td>
+            <td class="loss">¥-2,180.66</td>
+            <td>暂无估值</td>
+            <td>🟢 短期偏多<br><span style='font-size:11px;color:#666'>MA20:0.8107 MA60:N/A</span></td>
+            <td><b>⏸️ 观望</b><br><span style="font-size:11px;color:#666">趋势不明确，建议观望 | 医药板块持续调整，注意止损</span></td>
+        </tr>
+        <tr>
+            <td><b>519069</b><br><span style="font-size:12px;color:#888">汇添富价值精选混合A</span></td>
+            <td>价值</td>
+            <td>¥14,347.95</td>
+            <td class="loss">¥-2,103.21</td>
+            <td>暂无估值</td>
+            <td>🔴 短期偏空<br><span style='font-size:11px;color:#666'>MA20:3.4354 MA60:N/A</span></td>
+            <td><b>⏸️ 观望</b><br><span style="font-size:11px;color:#666">趋势不明确，建议观望</span></td>
+        </tr>
+        <tr>
+            <td><b>002190</b><br><span style="font-size:12px;color:#888">农银新能源混合A</span></td>
+            <td>新能源</td>
+            <td>¥9,527.73</td>
+            <td class="loss">¥-2,222.27</td>
+            <td>暂无估值</td>
+            <td>🟢 短期偏多<br><span style='font-size:11px;color:#666'>MA20:2.6794 MA60:N/A</span></td>
+            <td><b>⏸️ 观望</b><br><span style="font-size:11px;color:#666">趋势不明确，建议观望</span></td>
+        </tr>
+        <tr>
+            <td><b>011102</b><br><span style="font-size:12px;color:#888">天弘中证光伏产业指数A</span></td>
+            <td>光伏</td>
+            <td>¥4,865.13</td>
+            <td class="loss">¥-3,384.87</td>
+            <td>暂无估值</td>
+            <td>🟢 短期偏多<br><span style='font-size:11px;color:#666'>MA20:0.7141 MA60:N/A</span></td>
+            <td><b>⏸️ 观望</b><br><span style="font-size:11px;color:#666">趋势不明确，建议观望 | 光伏产能过剩，反弹减仓</span></td>
+        </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<!-- 统计套利 -->
+<div class="card">
+<h2>⚡ 统计套利配对分析</h2>
+<p style="color:#666;font-size:13px;margin-bottom:15px">基于近30日净值数据，计算基金对相对强弱的标准化偏离（z-score），|z|>1 提示套利机会</p>
+<table>
+<thead>
+<tr>
+<th>配对</th>
+<th>基金</th>
+<th>状态</th>
+<th>分析</th>
+</tr>
+</thead>
+<tbody>
+
+        <tr class="opp-no">
+            <td>白酒 vs 消费主题</td>
+            <td>招商中证白酒指数(LOF)A<br>vs<br>富国消费主题混合A</td>
+            <td><b>⏸️ 数据不足</b></td>
+            <td>近30日历史数据不足，暂无法计算</td>
+        </tr>
+        <tr class="opp-no">
+            <td>中欧医疗 vs 互联网医疗</td>
+            <td>中欧医疗健康混合C<br>vs<br>汇添富中证互联网医疗(LOF)A</td>
+            <td><b>⏸️ 数据不足</b></td>
+            <td>近30日历史数据不足，暂无法计算</td>
+        </tr>
+        <tr class="opp-no">
+            <td>新能源 vs 光伏</td>
+            <td>农银新能源混合A<br>vs<br>天弘中证光伏产业指数A</td>
+            <td><b>⏸️ 数据不足</b></td>
+            <td>近30日历史数据不足，暂无法计算</td>
+        </tr>
+        <tr class="opp-no">
+            <td>5G通信 vs 半导体芯片</td>
+            <td>华夏中证5G通信主题ETF联接A<br>vs<br>华夏国证半导体芯片ETF联接C</td>
+            <td><b>⏸️ 数据不足</b></td>
+            <td>近30日历史数据不足，暂无法计算</td>
+        </tr>
+        <tr class="opp-no">
+            <td>中证500 vs 价值精选</td>
+            <td>易方达中证500ETF联接A<br>vs<br>汇添富价值精选混合A</td>
+            <td><b>⏸️ 数据不足</b></td>
+            <td>近30日历史数据不足，暂无法计算</td>
+        </tr>
+        <tr class="opp-no">
+            <td>广发全球 vs 纳斯达克100</td>
+            <td>广发全球精选股票(QDII)A<br>vs<br>大成纳斯达克100ETF联接(QDII)C</td>
+            <td><b>⏸️ 数据不足</b></td>
+            <td>近30日历史数据不足，暂无法计算</td>
+        </tr>
+        <tr class="opp-no">
+            <td>交银双息 vs 价值精选</td>
+            <td>交银定期支付双息平衡混合<br>vs<br>汇添富价值精选混合A</td>
+            <td><b>⏸️ 数据不足</b></td>
+            <td>近30日历史数据不足，暂无法计算</td>
+        </tr>
+</tbody>
+</table>
+</div>
+
+<!-- 操作建议汇总 -->
+<div class="card">
+<h2>🎯 综合操作建议</h2>
+
+<h3 style="color:#f57f17;margin:15px 0 10px">⏸️ 建议观望（16只）</h3>
+<ul><li><b>270023</b> 广发全球精选股票(QDII)A: 趋势不明确，建议观望 | 海外配置分散风险</li><li><b>008972</b> 大成纳斯达克100ETF联接(QDII)C: 趋势不明确，建议观望</li><li><b>519732</b> 交银定期支付双息平衡混合: 趋势不明确，建议观望</li><li><b>161725</b> 招商中证白酒指数(LOF)A: 趋势不明确，建议观望</li><li><b>260108</b> 景顺长城新兴成长混合A: 趋势不明确，建议观望</li><li><b>515880</b> 华夏中证5G通信主题ETF联接A: 趋势不明确，建议观望</li><li><b>008889</b> 华夏国证半导体芯片ETF联接C: 趋势不明确，建议观望</li><li><b>100056</b> 富国消费主题混合A: 趋势不明确，建议观望</li><li><b>003096</b> 中欧医疗健康混合C: 趋势不明确，建议观望 | 医药板块持续调整，注意止损</li><li><b>512900</b> 南方中证全指证券公司ETF联接A: 趋势不明确，建议观望</li><li><b>000217</b> 华安黄金ETF联接C: 趋势不明确，建议观望 | 黄金避险属性可耐心持有</li><li><b>007028</b> 易方达中证500ETF联接A: 趋势不明确，建议观望</li><li><b>501007</b> 汇添富中证互联网医疗(LOF)A: 趋势不明确，建议观望 | 医药板块持续调整，注意止损</li><li><b>519069</b> 汇添富价值精选混合A: 趋势不明确，建议观望</li><li><b>002190</b> 农银新能源混合A: 趋势不明确，建议观望</li><li><b>011102</b> 天弘中证光伏产业指数A: 趋势不明确，建议观望 | 光伏产能过剩，反弹减仓</li></ul>
+
+</div>
+
+<!-- 财经新闻 -->
+<div class="card">
+<h2>📰 财经要闻</h2>
+<table>
+<thead>
+<tr><th>来源</th><th>新闻标题</th><th>时间</th></tr>
+</thead>
+<tbody>
+
+        <tr>
+            <td><span class="badge">东方财富</span></td>
+            <td>港股&#8220;药王&#8221;盘中股价创历史新高，药明康德盘中涨幅超7%</td>
+            <td style="color:#999;font-size:12px;white-space:nowrap">14:29</td>
+        </tr>
+        <tr>
+            <td><span class="badge">东方财富</span></td>
+            <td>宇树科技将积极探索人形机器人、机甲等更多产品形态</td>
+            <td style="color:#999;font-size:12px;white-space:nowrap">14:28</td>
+        </tr>
+        <tr>
+            <td><span class="badge">东方财富</span></td>
+            <td>&#8220;AI教父&#8221;拉响警报：人类可能无法战胜下一代AI模型</td>
+            <td style="color:#999;font-size:12px;white-space:nowrap">14:24</td>
+        </tr>
+        <tr>
+            <td><span class="badge">东方财富</span></td>
+            <td>美国设置多晶硅底价较国内价格高出约3.4倍</td>
+            <td style="color:#999;font-size:12px;white-space:nowrap">14:21</td>
+        </tr>
+        <tr>
+            <td><span class="badge">东方财富</span></td>
+            <td>中际旭创A股跳水跌超4%</td>
+            <td style="color:#999;font-size:12px;white-space:nowrap">14:19</td>
+        </tr>
+        <tr>
+            <td><span class="badge">东方财富</span></td>
+            <td>现货白银日内涨幅扩大至3%</td>
+            <td style="color:#999;font-size:12px;white-space:nowrap">14:18</td>
+        </tr>
+        <tr>
+            <td><span class="badge">东方财富</span></td>
+            <td>宽货币+风格收敛+盈利剪刀差共振！中证1000增强ETF连续4日获资金净申购</td>
+            <td style="color:#999;font-size:12px;white-space:nowrap">14:16</td>
+        </tr>
+        <tr>
+            <td><span class="badge">东方财富</span></td>
+            <td>火山引擎上线Seedance 2.5 API服务</td>
+            <td style="color:#999;font-size:12px;white-space:nowrap">14:15</td>
+        </tr>
+        <tr>
+            <td><span class="badge">东方财富</span></td>
+            <td>联想集团日内涨超6%</td>
+            <td style="color:#999;font-size:12px;white-space:nowrap">14:15</td>
+        </tr>
+        <tr>
+            <td><span class="badge">东方财富</span></td>
+            <td>福建启动防台风二级应急响应 沿海19条航线停航</td>
+            <td style="color:#999;font-size:12px;white-space:nowrap">14:18</td>
+        </tr>
+</tbody>
+</table>
+</div>
+
+<footer>
+<p>📊 基金评估报告 | 生成时间：2026-08-07 14:33</p>
+<p>⚠️ 本报告仅供参考，不构成投资建议。投资有风险，决策需谨慎。</p>
+<p>趋势策略：MA20/MA60 均线系统 | 套利策略：相对强弱 z-score 分析</p>
+</footer>
+</div>
+</body>
+</html>
