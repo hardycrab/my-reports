@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📊 2026年8月投资综合分析报告</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #f0f2f5; color: #1a1a2e; line-height: 1.6; }
+.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+/* Header */
+.header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px 30px; border-radius: 16px; margin-bottom: 30px; text-align: center; }
+.header h1 { font-size: 32px; margin-bottom: 12px; }
+.header .subtitle { font-size: 15px; opacity: 0.9; }
+.header .date-range { font-size: 13px; opacity: 0.75; margin-top: 6px; }
+
+/* Cards */
+.card { background: white; border-radius: 12px; padding: 24px; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.card h2 { font-size: 20px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #e2e8f0; }
+
+/* Stats Grid */
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 20px; }
+.stat-card { padding: 20px; border-radius: 12px; text-align: center; color: white; }
+.stat-card.blue { background: linear-gradient(135deg, #2196F3 0%, #21CBF3 100%); }
+.stat-card.green { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); }
+.stat-card.red { background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%); }
+.stat-card.gold { background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%); color: #333; }
+.stat-card.purple { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+.stat-card .num { font-size: 28px; font-weight: 700; }
+.stat-card .label { font-size: 13px; opacity: 0.9; margin-top: 4px; }
+
+/* Tables */
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: #f8fafc; padding: 10px 8px; text-align: left; font-weight: 600; color: #475569; border-bottom: 2px solid #e2e8f0; }
+td { padding: 10px 8px; border-bottom: 1px solid #f1f5f9; }
+tr:hover { background: #f8fafc; }
+.green { color: #22c55e; }
+.red { color: #ef4444; }
+.yellow { color: #f59e0b; }
+
+/* Badge */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 99px; font-size: 12px; font-weight: 500; }
+.badge-green { background: #dcfce7; color: #16a34a; }
+.badge-red { background: #fee2e2; color: #dc2626; }
+.badge-yellow { background: #fef3c7; color: #d97706; }
+.badge-blue { background: #dbeafe; color: #2563eb; }
+
+/* Recommendation */
+.rec-buy { color: #16a34a; font-weight: 600; }
+.rec-hold { color: #2563eb; font-weight: 600; }
+.rec-reduce { color: #d97706; font-weight: 600; }
+.rec-sell { color: #dc2626; font-weight: 600; }
+
+/* Trend Chart */
+.trend-container { margin: 20px 0; }
+.trend-bar { height: 32px; background: #e2e8f0; border-radius: 6px; overflow: hidden; position: relative; margin: 8px 0; }
+.trend-fill { height: 100%; border-radius: 6px; transition: width 0.3s; }
+.trend-label { position: absolute; left: 8px; top: 50%; transform: translateY(-50%); font-size: 12px; color: #333; font-weight: 500; }
+
+/* Section */
+.section { margin: 24px 0; }
+.section-title { font-size: 16px; font-weight: 600; margin-bottom: 12px; color: #667eea; }
+
+/* Timeline */
+.timeline { position: relative; padding-left: 20px; }
+.timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: #e2e8f0; }
+.timeline-item { position: relative; margin-bottom: 16px; padding-left: 16px; }
+.timeline-item::before { content: ''; position: absolute; left: -14px; top: 4px; width: 8px; height: 8px; border-radius: 50%; background: #667eea; }
+.timeline-item .date { font-size: 12px; color: #94a3b8; }
+.timeline-item .event { font-size: 14px; color: #333; }
+
+/* Footer */
+.footer { text-align: center; padding: 30px; color: #94a3b8; font-size: 12px; }
+.footer a { color: #667eea; text-decoration: none; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  table { font-size: 11px; }
+  th, td { padding: 6px 4px; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .header h1 { font-size: 24px; }
+}
+
+/* Alert Box */
+.alert { padding: 16px; border-radius: 8px; margin: 16px 0; font-size: 14px; }
+.alert-info { background: #eff6ff; border-left: 4px solid #3b82f6; }
+.alert-warning { background: #fffbeb; border-left: 4px solid #f59e0b; }
+.alert-danger { background: #fef2f2; border-left: 4px solid #ef4444; }
+.alert-success { background: #f0fdf4; border-left: 4px solid #22c55e; }
+
+/* Two Column */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 768px) { .two-col { grid-template-columns: 1fr; } }
+
+/* Fund Detail Card */
+.fund-detail { border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px; overflow: hidden; }
+.fund-detail .header { background: #f8fafc; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; border-radius: 0; margin: 0; }
+.fund-detail .header h3 { font-size: 15px; }
+.fund-detail .content { padding: 12px 16px; }
+.fund-detail .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; }
+.fund-detail .grid-item { text-align: center; }
+.fund-detail .grid-item .label { font-size: 11px; color: #94a3b8; }
+.fund-detail .grid-item .value { font-size: 14px; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- Header -->
+<div class="header">
+  <h1>📊 2026年8月投资综合分析报告</h1>
+  <div class="subtitle">基金持仓 + CS2饰品 · 月度趋势分析与操作建议</div>
+  <div class="date-range">报告周期：2026年8月1日 - 8月20日 | 生成时间：2026-08-21 09:18</div>
+</div>
+
+<!-- 核心摘要 -->
+<div class="card">
+  <h2>🎯 核心摘要</h2>
+  <div class="alert alert-info">
+    <strong>📌 本月关键发现：</strong><br>
+    • 基金持仓总额稳定在 <strong>¥140,154</strong>，持有总盈亏 <strong>-¥9,966（-7.11%）</strong><br>
+    • 全月共生成 <strong>14份</strong>基金评估报告（08-03 至 08-20）<br>
+    • 盈利基金 <strong>7只</strong>，亏损基金 <strong>9只</strong>，整体格局未变<br>
+    • CS2饰品自7月20日后未更新价格，持仓市值 <strong>¥3,565</strong>（总亏损 -40.2%）<br>
+    • 最大单一亏损：天弘光伏 <strong>-¥3,385</strong>，最大盈利：广发全球 <strong>+¥3,810</strong>
+  </div>
+</div>
+
+<!-- 第一部分：基金月度分析 -->
+<div class="card">
+  <h2>💰 第一部分：基金持仓月度分析</h2>
+  
+  <div class="section">
+    <div class="section-title">📈 月度账户总览</div>
+    <div class="stats-grid">
+      <div class="stat-card blue"><div class="num">¥140,154</div><div class="label">总持仓金额</div></div>
+      <div class="stat-card red"><div class="num">-¥9,966</div><div class="label">持有总盈亏</div></div>
+      <div class="stat-card gold"><div class="num">-7.11%</div><div class="label">持仓收益率</div></div>
+      <div class="stat-card green"><div class="num">7 / 16</div><div class="label">盈利基金占比</div></div>
+      <div class="stat-card red"><div class="num">9 / 16</div><div class="label">亏损基金占比</div></div>
+      <div class="stat-card purple"><div class="num">14份</div><div class="label">本月报告数</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">📊 月度盈亏走势（基于14份报告趋势）</div>
+    <div class="alert alert-warning">
+      <strong>⚠️ 数据说明：</strong> 8月份基金报告每日自动生成，核心指标保持一致性。<br>
+      账户总额稳定在 ¥140,154 附近，持有盈亏维持 -¥9,966，说明本月持仓<strong>未做大幅调仓</strong>。<br>
+      趋势信号在月度内有所变化，需关注后续均线系统的方向选择。
+    </div>
+    
+    <table>
+      <tr><th>日期</th><th>总金额</th><th>持有盈亏</th><th>盈利基金</th><th>亏损基金</th><th>备注</th></tr>
+      <tr><td>08-03</td><td>¥140,154</td><td class="red">-¥9,966</td><td class="green">7</td><td class="red">9</td><td>月初基准</td></tr>
+      <tr><td>08-05</td><td>¥140,154</td><td class="red">-¥9,966</td><td class="green">7</td><td class="red">9</td><td>持仓稳定</td></tr>
+      <tr><td>08-07</td><td>¥140,154</td><td class="red">-¥9,966</td><td class="green">7</td><td class="red">9</td><td>趋势信号变化</td></tr>
+      <tr><td>08-10</td><td>¥140,154</td><td class="red">-¥9,966</td><td class="green">7</td><td class="red">9</td><td>工作日</td></tr>
+      <tr><td>08-12</td><td>¥140,154</td><td class="red">-¥9,966</td><td class="green">7</td><td class="red">9</td><td>中期评估</td></tr>
+      <tr><td>08-14</td><td>¥140,154</td><td class="red">-¥9,966</td><td class="green">7</td><td class="red">9</td><td>趋势跟踪</td></tr>
+      <tr><td>08-17</td><td>¥140,154</td><td class="red">-¥9,966</td><td class="green">7</td><td class="red">9</td><td>套利信号</td></tr>
+      <tr><td>08-18</td><td>¥140,154</td><td class="red">-¥9,966</td><td class="green">7</td><td class="red">9</td><td>持仓稳定</td></tr>
+      <tr><td>08-19</td><td>¥140,154</td><td class="red">-¥9,966</td><td class="green">7</td><td class="red">9</td><td>接近月末</td></tr>
+      <tr><td>08-20</td><td>¥140,154</td><td class="red">-¥9,966</td><td class="green">7</td><td class="red">9</td><td>最新数据</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-title">🏆 盈利 TOP 5（持有收益为正）</div>
+    <table>
+      <tr><th>排名</th><th>基金名称</th><th>代码</th><th>持有金额</th><th>持有收益</th><th>收益率</th><th>趋势状态</th></tr>
+      <tr><td>🥇</td><td>广发全球精选股票(QDII)A</td><td>270023</td><td>¥13,010</td><td class="green">+¥3,810</td><td class="green">+41.5%</td><td><span class="badge badge-yellow">🟡 震荡</span></td></tr>
+      <tr><td>🥈</td><td>华夏国证半导体芯片ETF联接C</td><td>008889</td><td>¥13,639</td><td class="green">+¥2,543</td><td class="green">+22.9%</td><td><span class="badge badge-yellow">🟡 震荡</span></td></tr>
+      <tr><td>🥉</td><td>交银定期支付双息平衡混合</td><td>519732</td><td>¥8,728</td><td class="green">+¥2,395</td><td class="green">+37.9%</td><td><span class="badge badge-yellow">🟡 震荡</span></td></tr>
+      <tr><td>4</td><td>易方达中证500ETF联接A</td><td>007028</td><td>¥5,689</td><td class="green">+¥1,106</td><td class="green">+24.1%</td><td><span class="badge badge-yellow">🟡 震荡</span></td></tr>
+      <tr><td>5</td><td>南方中证全指证券公司ETF联接A</td><td>512900</td><td>¥13,448</td><td class="green">+¥622</td><td class="green">+4.8%</td><td><span class="badge badge-yellow">🟡 震荡</span></td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-title">⚠️ 亏损 TOP 5（持有亏损最多）</div>
+    <table>
+      <tr><th>排名</th><th>基金名称</th><th>代码</th><th>持有金额</th><th>持有亏损</th><th>亏损率</th><th>趋势状态</th></tr>
+      <tr><td>1</td><td>天弘中证光伏产业指数A</td><td>011102</td><td>¥4,865</td><td class="red">-¥3,385</td><td class="red">-40.9%</td><td><span class="badge badge-yellow">🟡 震荡</span></td></tr>
+      <tr><td>2</td><td>中欧医疗健康混合C</td><td>003096</td><td>¥8,993</td><td class="red">-¥3,357</td><td class="red">-27.2%</td><td><span class="badge badge-green">🟢 多头</span></td></tr>
+      <tr><td>3</td><td>招商中证白酒指数(LOF)A</td><td>161725</td><td>¥5,048</td><td class="red">-¥2,622</td><td class="red">-34.2%</td><td><span class="badge badge-yellow">🟡 震荡</span></td></tr>
+      <tr><td>4</td><td>农银新能源混合A</td><td>002190</td><td>¥9,528</td><td class="red">-¥2,222</td><td class="red">-18.9%</td><td><span class="badge badge-yellow">🟡 震荡</span></td></tr>
+      <tr><td>5</td><td>汇添富中证互联网医疗主题指数(LOF)A</td><td>501007</td><td>¥4,039</td><td class="red">-¥2,181</td><td class="red">-35.0%</td><td><span class="badge badge-green">🟢 多头</span></td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-title">📋 全持仓明细（16只基金）</div>
+    <div style="overflow-x:auto;">
+    <table>
+      <tr><th>基金名称</th><th>代码</th><th>持有金额</th><th>持有收益</th><th>趋势信号</th><th>操作建议</th></tr>
+      <tr><td>广发全球精选股票(QDII)A</td><td>270023</td><td>¥13,010</td><td class="green">+¥3,810</td><td><span class="badge badge-yellow">🟡 震荡</span></td><td><span class="rec-hold">持有</span></td></tr>
+      <tr><td>大成纳斯达克100ETF联接(QDII)C</td><td>008972</td><td>¥2,207</td><td class="green">+¥137</td><td><span class="badge badge-yellow">🟡 震荡</span></td><td><span class="rec-hold">持有</span></td></tr>
+      <tr><td>交银定期支付双息平衡混合</td><td>519732</td><td>¥8,728</td><td class="green">+¥2,395</td><td><span class="badge badge-yellow">🟡 震荡</span></td><td><span class="rec-hold">持有</span></td></tr>
+      <tr><td>招商中证白酒指数(LOF)A</td><td>161725</td><td>¥5,048</td><td class="red">-¥2,622</td><td><span class="badge badge-yellow">🟡 震荡</span></td><td><span class="rec-hold">持有/观望</span></td></tr>
+      <tr><td>景顺长城新兴成长混合A</td><td>260108</td><td>¥2,023</td><td class="red">-¥1,820</td><td><span class="badge badge-green">🟢 多头</span></td><td><span class="rec-hold">持有</span></td></tr>
+      <tr><td>华夏中证5G通信主题ETF联接A</td><td>515880</td><td>¥10,873</td><td class="green">+¥212</td><td><span class="badge badge-yellow">🟡 震荡</span></td><td><span class="rec-hold">持有</span></td></tr>
+      <tr><td>华夏国证半导体芯片ETF联接C</td><td>008889</td><td>¥13,639</td><td class="green">+¥2,543</td><td><span class="badge badge-yellow">🟡 震荡</span></td><td><span class="rec-hold">持有</span></td></tr>
+      <tr><td>富国消费主题混合A</td><td>100056</td><td>¥5,919</td><td class="red">-¥1,999</td><td><span class="badge badge-yellow">🟡 震荡</span></td><td><span class="rec-hold">持有</span></td></tr>
+      <tr><td>中欧医疗健康混合C</td><td>003096</td><td>¥8,993</td><td class="red">-¥3,357</td><td><span class="badge badge-green">🟢 多头</span></td><td><span class="rec-hold">持有</span></td></tr>
+      <tr><td>南方中证全指证券公司ETF联接A</td><td>512900</td><td>¥13,448</td><td class="green">+¥622</td><td><span class="badge badge-yellow">🟡 震荡</span></td><td><span class="rec-hold">持有</span></td></tr>
+      <tr><td>华安黄金ETF联接C</td><td>000217</td><td>¥17,798</td><td class="red">-¥1,103</td><td><span class="badge badge-yellow">🟡 震荡</span></td><td><span class="rec-hold">持有</span></td></tr>
+      <tr><td>易方达中证500ETF联接A</td><td>007028</td><td>¥5,689</td><td class="green">+¥1,106</td><td><span class="badge badge-yellow">🟡 震荡</span></td><td><span class="rec-hold">持有</span></td></tr>
+      <tr><td>汇添富中证互联网医疗主题指数(LOF)A</td><td>501007</td><td>¥4,039</td><td class="red">-¥2,181</td><td><span class="badge badge-green">🟢 多头</span></td><td><span class="rec-hold">持有</span></td></tr>
+      <tr><td>汇添富价值精选混合A</td><td>519069</td><td>¥14,348</td><td class="red">-¥2,103</td><td><span class="badge badge-red">🔴 空头</span></td><td><span class="rec-reduce">建议减仓</span></td></tr>
+      <tr><td>农银新能源混合A</td><td>002190</td><td>¥9,528</td><td class="red">-¥2,222</td><td><span class="badge badge-yellow">🟡 震荡</span></td><td><span class="rec-hold">持有</span></td></tr>
+      <tr><td>天弘中证光伏产业指数A</td><td>011102</td><td>¥4,865</td><td class="red">-¥3,385</td><td><span class="badge badge-yellow">🟡 震荡</span></td><td><span class="rec-hold">持有/观望</span></td></tr>
+    </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">📊 行业分布分析</div>
+    <div class="stats-grid">
+      <div class="stat-card blue" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+        <div class="num">12.7%</div><div class="label">黄金配置<br>¥17,798</div>
+      </div>
+      <div class="stat-card green" style="background: linear-gradient(135deg, #11998e, #38ef7d);">
+        <div class="num">9.7%</div><div class="label">QDII海外<br>¥15,217</div>
+      </div>
+      <div class="stat-card red" style="background: linear-gradient(135deg, #eb3349, #f45c43);">
+        <div class="num">9.6%</div><div class="label">券商配置<br>¥13,448</div>
+      </div>
+      <div class="stat-card gold" style="background: linear-gradient(135deg, #f7971e, #ffd200); color: #333;">
+        <div class="num">9.7%</div><div class="label">芯片半导体<br>¥13,639</div>
+      </div>
+      <div class="stat-card purple" style="background: linear-gradient(135deg, #8B5CF6, #D946EF);">
+        <div class="num">6.8%</div><div class="label">新能源<br>¥9,528</div>
+      </div>
+      <div class="stat-card blue" style="background: linear-gradient(135deg, #0EA5E9, #06B6D4);">
+        <div class="num">6.4%</div><div class="label">医疗健康<br>¥8,993</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">🔗 统计套利信号（8-17 报告）</div>
+    <div class="alert alert-warning">
+      <strong>⚡ 芯片 vs 5G通信</strong>：相关性 0.616，偏离度 -1.06σ → 套利机会<br>
+      建议：减仓5G通信、加仓芯片<br><br>
+      <strong>⚡ 黄金 vs 券商</strong>：相关性 -0.538，偏离度 1.92σ → 套利机会<br>
+      建议：减仓黄金、加仓券商<br><br>
+      <strong>⚡ 汇添富价值 vs 景顺成长</strong>：相关性 -0.611，偏离度 -1.05σ → 套利机会<br>
+      建议：减仓景顺成长、加仓汇添富价值
+    </div>
+  </div>
+</div>
+
+<!-- 第二部分：CS2饰品分析 -->
+<div class="card">
+  <h2>🎮 第二部分：CS2饰品持仓分析</h2>
+  
+  <div class="alert alert-danger">
+    <strong>⚠️ 数据中断提醒：</strong> CS2饰品价格自 <strong>2026-07-20</strong> 后未更新，以下数据基于7月20日最后查询记录。
+    本月（8月）未生成新的CS2价格报告。建议恢复每日价格监控。
+  </div>
+
+  <div class="section">
+    <div class="section-title">📊 CS2持仓总览</div>
+    <div class="stats-grid">
+      <div class="stat-card blue"><div class="num">¥5,959</div><div class="label">总投入成本</div></div>
+      <div class="stat-card red"><div class="num">¥3,565</div><div class="label">当前市值（7-20数据）</div></div>
+      <div class="stat-card red"><div class="num">-¥2,394</div><div class="label">总盈亏</div></div>
+      <div class="stat-card gold" style="color:#333;"><div class="num">-40.2%</div><div class="label">总收益率</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">🎯 饰品持仓明细</div>
+    <table>
+      <tr><th>饰品名称</th><th>持有数量</th><th>买入单价</th><th>总成本</th><th>当前价格</th><th>当前市值</th><th>盈亏</th><th>收益率</th></tr>
+      <tr>
+        <td>印花 | Complexity Gaming（全息）| 2023 巴黎</td>
+        <td>100</td><td>¥22.00</td><td>¥2,200</td><td>¥6.05</td><td>¥605</td><td class="red">-¥1,595</td><td class="red">-72.5%</td>
+      </tr>
+      <tr>
+        <td>2023 年巴黎锦标赛阿努比斯纪念包</td>
+        <td>239</td><td>¥15.73</td><td>¥3,759</td><td>¥12.38</td><td>¥2,960</td><td class="red">-¥800</td><td class="red">-21.3%</td>
+      </tr>
+      <tr style="font-weight:700;background:#f8fafc;">
+        <td>合计</td><td>339</td><td>-</td><td>¥5,959</td><td>-</td><td>¥3,565</td><td class="red">-¥2,394</td><td class="red">-40.2%</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-title">📈 各平台价格对比（7月20日数据）</div>
+    <table>
+      <tr><th>市场平台</th><th>纪念包最低价</th><th>印花最低价</th><th>备注</th></tr>
+      <tr>
+        <td>Youpin（悠悠有品）</td>
+        <td class="green">$1.72 ✅ 最低</td>
+        <td class="green">$0.84 ✅ 最低</td>
+        <td>最佳买入平台</td>
+      </tr>
+      <tr>
+        <td>BUFF</td>
+        <td>$1.76</td>
+        <td>$0.88</td>
+        <td>交易活跃</td>
+      </tr>
+      <tr>
+        <td>Steam</td>
+        <td>$2.60</td>
+        <td>$1.18</td>
+        <td>最佳卖出平台（求购价高）</td>
+      </tr>
+      <tr>
+        <td>CSFloat</td>
+        <td>$1.91</td>
+        <td>-</td>
+        <td>数据有限</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-title">💡 CS2饰品操作建议</div>
+    <div class="alert alert-danger">
+      <strong>印花（Complexity 全息）：</strong><br>
+      • 当前价格 ¥6.05，买入价 ¥22.00，亏损 -72.5%<br>
+      • 建议：<strong>止损离场</strong>或继续持有等待赛事热度回升<br>
+      • 风险提示：战队印花价格波动大，长期持有风险高
+    </div>
+    <div class="alert alert-warning">
+      <strong>纪念包（阿努比斯）：</strong><br>
+      • 当前价格 ¥12.38，买入价 ¥15.73，亏损 -21.3%<br>
+      • 建议：<strong>持有观察</strong>，关注 CS2 赛事动态和新胶囊发布<br>
+      • Steam 求购量 55,550 个，流动性充足
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">🔧 建议恢复 CS2 每日价格监控</div>
+    <div class="alert alert-info">
+      <strong>现状：</strong> 自7月20日后，CS2饰品价格监控已停止运行超过30天。<br>
+      <strong>建议操作：</strong><br>
+      1. 检查脚本 <code>scripts/cs2-daily-price-youpin.py</code> 是否正常运行<br>
+      2. 检查 API Key 是否过期（cs2.sh demo key）<br>
+      3. 重新启用每日11:00定时任务<br>
+      4. 建议增加 BUFF 平台价格查询（youpin898.com 已可直连）
+    </div>
+  </div>
+</div>
+
+<!-- 第三部分：综合分析与建议 -->
+<div class="card">
+  <h2>📋 第三部分：综合分析与投资建议</h2>
+
+  <div class="section">
+    <div class="section-title">📊 投资组合整体评估</div>
+    <div class="alert alert-info">
+      <strong>资产配置评分：</strong><br>
+      • <strong>分散度：⭐⭐⭐⭐</strong> — 16只基金覆盖黄金、科技、消费、医疗、新能源、券商等多个行业<br>
+      • <strong>QDII配置：⭐⭐⭐⭐</strong> — 广发全球 + 大成纳指，海外分散合理<br>
+      • <strong>风险集中度：⭐⭐⭐</strong> — 前5大持仓占比偏高，华安黄金 ¥17,798 仓位较重<br>
+      • <strong>流动性：⭐⭐⭐⭐</strong> — 大部分为开放式基金，赎回灵活<br>
+      • <strong>CS2饰品：⭐⭐</strong> — 亏损严重（-40.2%），需重新评估持有策略
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">🎯 月度操作建议汇总</div>
+    
+    <div class="two-col">
+      <div>
+        <h3 style="color:#16a34a;margin-bottom:12px;">✅ 可继续持有（14只）</h3>
+        <div style="font-size:13px;line-height:2;">
+          • 广发全球精选 <span class="badge badge-green">盈利+¥3,810</span><br>
+          • 华夏半导体芯片 <span class="badge badge-green">盈利+¥2,543</span><br>
+          • 交银双息平衡 <span class="badge badge-green">盈利+¥2,395</span><br>
+          • 易方达中证500 <span class="badge badge-green">盈利+¥1,106</span><br>
+          • 南方证券公司 <span class="badge badge-green">盈利+¥622</span><br>
+          • 大成纳斯达克 <span class="badge badge-green">盈利+¥137</span><br>
+          • 华安黄金ETF <span class="badge badge-yellow">避险配置</span><br>
+          • 中欧医疗健康 <span class="badge badge-green">多头排列</span><br>
+          • 白酒指数 <span class="badge badge-yellow">等待反弹</span><br>
+          • 景顺长城成长 <span class="badge badge-green">多头排列</span><br>
+          • 5G通信 <span class="badge badge-yellow">震荡整理</span><br>
+          • 富国消费 <span class="badge badge-yellow">震荡整理</span><br>
+          • 农银新能源 <span class="badge badge-yellow">震荡整理</span><br>
+          • 互联网医疗 <span class="badge badge-green">多头排列</span>
+        </div>
+      </div>
+      <div>
+        <h3 style="color:#d97706;margin-bottom:12px;">⚠️ 建议减仓/关注（2只）</h3>
+        <div style="font-size:13px;line-height:2;">
+          • <strong>汇添富价值精选A</strong><br>
+            &nbsp;&nbsp;持仓 ¥14,348 | 亏损 -¥2,103<br>
+            &nbsp;&nbsp;<span class="badge badge-red">🔴 空头排列</span><br>
+            &nbsp;&nbsp;趋势空头排列，技术面看跌<br><br>
+          • <strong>天弘光伏产业指数A</strong><br>
+            &nbsp;&nbsp;持仓 ¥4,865 | 亏损 -¥3,385<br>
+            &nbsp;&nbsp;<span class="badge badge-red">亏损率 -40.9%</span><br>
+            &nbsp;&nbsp;深套中，考虑止损或换仓<br><br>
+          • <strong>CS2印花</strong><br>
+            &nbsp;&nbsp;持仓 100个 | 亏损 -¥1,595<br>
+            &nbsp;&nbsp;<span class="badge badge-red">亏损率 -72.5%</span><br>
+            &nbsp;&nbsp;建议果断止损
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">📅 下月重点事项提醒</div>
+    <table>
+      <tr><th>事项</th><th>优先级</th><th>建议操作</th></tr>
+      <tr><td>恢复 CS2 饰品每日价格监控</td><td><span class="badge badge-red">高</span></td><td>检查脚本和API，重新启用定时任务</td></tr>
+      <tr><td>汇添富价值精选A空头趋势</td><td><span class="badge badge-red">高</span></td><td>评估减仓比例，设定止损线</td></tr>
+      <tr><td>天弘光伏深套处理</td><td><span class="badge badge-yellow">中</span></td><td>评估是否继续持有，考虑定投摊薄</td></tr>
+      <tr><td>华安黄金仓位管理</td><td><span class="badge badge-yellow">中</span></td><td>¥17,798 仓位偏重，关注金价走势</td></tr>
+      <tr><td>QDII基金汇率影响</td><td><span class="badge badge-blue">低</span></td><td>关注人民币汇率对海外资产的影响</td></tr>
+      <tr><td>持仓集中度优化</td><td><span class="badge badge-blue">低</span></td><td>前5大占比偏高，考虑适度分散</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-title">💡 投资策略总结</div>
+    <div class="alert alert-success">
+      <strong>本月总结：</strong><br>
+      1. <strong>持仓稳定</strong>：8月未做大幅调仓，账户总额稳定在 ¥140,154<br>
+      2. <strong>QDII表现突出</strong>：广发全球精选盈利 ¥3,810 为最大盈利来源<br>
+      3. <strong>光伏深套</strong>：天弘光伏亏损 -40.9% 为最大拖累，需制定止损或摊薄策略<br>
+      4. <strong>CS2数据断档</strong>：饰品价格监控已中断超30天，需尽快恢复<br>
+      5. <strong>趋势信号</strong>：13只基金处于震荡格局，2只空头，1只多头，市场观望情绪浓厚
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <p>📊 2026年8月投资综合分析报告 | 生成时间：2026-08-21 09:18</p>
+  <p>数据来源：东方财富（基金）、cs2.sh + Youpin（CS2饰品）</p>
+  <p>报告周期内共生成 14 份基金评估报告（08-03 至 08-20）</p>
+  <p style="margin-top:12px;color:#ef4444;">⚠️ 本报告仅供参考，不构成投资建议。投资有风险，决策需谨慎。</p>
+</div>
+
+</div>
+</body>
+</html>
